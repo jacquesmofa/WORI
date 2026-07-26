@@ -74,7 +74,7 @@ export default function DonatePage() {
                   {t('footer.followUs')}
                 </span>
                 <a
-                  href="https://facebook.com/wadikaja"
+                  href="https://www.facebook.com/Wadi-Kaja-Organization-for-Refugee-and-Immigrant-108592454153210/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -83,16 +83,16 @@ export default function DonatePage() {
                   <i className="ri-facebook-fill text-sm" />
                 </a>
                 <a
-                  href="https://twitter.com/wadikaja"
+                  href="https://twitter.com/KajaWadi"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Twitter"
+                  aria-label="X (Twitter)"
                   className="w-8 h-8 rounded-full bg-cream-200/60 flex items-center justify-center text-charcoal-600/50 hover:bg-emerald-800 hover:text-cream-100 transition-all"
                 >
                   <i className="ri-twitter-x-fill text-sm" />
                 </a>
                 <a
-                  href="https://youtube.com/@wadikaja"
+                  href="https://www.youtube.com/channel/UCy4W_QKNpQM-tgSQVjLbxDg/featured"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="YouTube"
@@ -101,7 +101,7 @@ export default function DonatePage() {
                   <i className="ri-youtube-fill text-sm" />
                 </a>
                 <a
-                  href="https://instagram.com/wadikaja"
+                  href="https://www.instagram.com/ordera1643/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -110,13 +110,22 @@ export default function DonatePage() {
                   <i className="ri-instagram-fill text-sm" />
                 </a>
                 <a
-                  href="https://linkedin.com/company/wadikaja"
+                  href="https://www.linkedin.com/in/nasseradin-abdullah-867b4a128/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                   className="w-8 h-8 rounded-full bg-cream-200/60 flex items-center justify-center text-charcoal-600/50 hover:bg-emerald-800 hover:text-cream-100 transition-all"
                 >
                   <i className="ri-linkedin-fill text-sm" />
+                </a>
+                <a
+                  href="https://vt.tiktok.com/ZSmte2UVb/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok"
+                  className="w-8 h-8 rounded-full bg-cream-200/60 flex items-center justify-center text-charcoal-600/50 hover:bg-emerald-800 hover:text-cream-100 transition-all"
+                >
+                  <i className="ri-tiktok-fill text-sm" />
                 </a>
               </div>
             </div>

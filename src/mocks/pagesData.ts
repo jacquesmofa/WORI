@@ -670,6 +670,7 @@ export const partnersData = {
     { name: 'CAMH', type: 'Mental Health', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.camh.ca/' },
     { name: 'WoodGreen Community Services', type: 'Social Services', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.woodgreen.org/' },
     { name: 'YMCA of Greater Toronto', type: 'Youth & Community', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784299318/ymcagta-logo_hipljy.jpg', url: 'https://ymcagta.org/' },
+    { name: 'Tropicana Community Services', type: 'Youth & Community', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784296206/cropped-TCS-logo_2x-300x92_xe61cd.webp', url: 'https://tropicanacommunity.org/' },
   ],
 };
 
@@ -717,12 +718,28 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784295207/IMG_20200424_121918_579__1_b6fl1z.jpg',
     },
     {
+      id: 'evt-ramadan-2027',
+      title: 'Ramadan Iftar Community Gathering 2027',
+      date: '2027-02-27',
+      location: 'WORI Community Hall, Scarborough',
+      description: 'Join us for a blessed evening of community iftar during the holy month of Ramadan. Breaking fast together, sharing traditional meals, and strengthening bonds of unity and compassion.',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784296628/1366-by-501-300dpi-2000x1200_irq4ge.png',
+    },
+    {
       id: 'evt-5',
       title: "Women's Empowerment Summit 2027",
       date: '2027-03-08',
       location: 'Metro Toronto Convention Centre',
       description: 'International Women\'s Day summit featuring workshops on entrepreneurship, leadership, and financial independence for immigrant women.',
       flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784298529/wori-awards-14-1536x1024_axrgst.jpg',
+    },
+    {
+      id: 'evt-canada-2027',
+      title: 'Canada Day Celebration 2027',
+      date: '2027-07-01',
+      location: 'Milliken Park, Scarborough',
+      description: 'A vibrant celebration of Canadian identity with multicultural food, live music, face painting, and citizenship oath ceremony for new Canadians.',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1785062749/Wadi-Kaja-canada-day-2026_bwe3qt.jpg',
     },
     {
       id: 'evt-6',
@@ -740,7 +757,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2026-07-01',
       location: 'Milliken Park, Scarborough',
       description: 'A vibrant celebration of Canadian identity with multicultural food, live music, face painting, and citizenship oath ceremony for new Canadians.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784650837/Canada-Day-2022_uvumg9.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1785062749/Wadi-Kaja-canada-day-2026_bwe3qt.jpg',
     },
     {
       id: 'evt-p2',
@@ -773,6 +790,14 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       location: 'Camp Tamarack, Ontario',
       description: 'Weekend retreat for newcomer youth aged 14-21 focusing on leadership development, cultural exchange, and community building.',
       flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784649622/Day23_img22_moiseg.jpg',
+    },
+    {
+      id: 'evt-ramadan-2026',
+      title: 'Ramadan Iftar Community Gathering 2026',
+      date: '2026-03-18',
+      location: 'WORI Community Hall, Scarborough',
+      description: 'A blessed evening of community iftar bringing together families, neighbors, and friends to break fast, share traditional meals, and strengthen bonds of unity during the holy month of Ramadan.',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784296628/1366-by-501-300dpi-2000x1200_irq4ge.png',
     },
     {
       id: 'evt-p6',

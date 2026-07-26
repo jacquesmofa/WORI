@@ -94,6 +94,11 @@ const PARTNERS: Partner[] = [
     logo: `${CLD}/v1784299242/YWCA-logo_xwgjpk.jpg`,
     url: 'https://www.ywcacanada.ca/',
   },
+  {
+    name: 'Tropicana Community Services',
+    logo: `${CLD}/v1784296206/cropped-TCS-logo_2x-300x92_xe61cd.webp`,
+    url: 'https://tropicanacommunity.org/',
+  },
 ];
 
 export default function PartnersSection() {

@@ -9,7 +9,7 @@ export default function ActionCTASection() {
         style={{ minHeight: '220px' }}
       >
         <img
-          src="https://readdy.ai/api/search-image?query=Professional%20social%20worker%20having%20a%20warm%20one-on-one%20consultation%20with%20a%20refugee%20family%20in%20a%20modern%20bright%20office%20in%20Toronto%20Canada%2C%20natural%20light%2C%20diverse%20participants%2C%20compassionate%20and%20focused%20atmosphere%2C%20warm%20cream%20and%20green%20color%20tones%2C%20editorial%20quality%20photography&width=800&height=500&seq=wori-cta-consultation&orientation=landscape"
+          src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784299336/event-img_k9xxzv.jpg"
           alt="Book a consultation at WORI"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -19,7 +19,7 @@ export default function ActionCTASection() {
             Need Consultation
           </h2>
           <Link
-            to="/contact"
+            to="/booking"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-white hover:bg-cream-100 text-emerald-900 text-sm font-bold rounded-full transition-all whitespace-nowrap"
           >
             Book Now
@@ -34,7 +34,7 @@ export default function ActionCTASection() {
         style={{ minHeight: '220px' }}
       >
         <img
-          src="https://readdy.ai/api/search-image?query=Enthusiastic%20diverse%20group%20of%20volunteers%20wearing%20green%20WORI%20t-shirts%20smiling%20together%20at%20a%20community%20event%20in%20Toronto%20Canada%2C%20outdoor%20setting%20with%20banners%2C%20cheerful%20and%20energetic%20atmosphere%2C%20bright%20sunny%20day%2C%20strong%20community%20spirit%20and%20inclusivity%2C%20documentary%20event%20photography&width=800&height=500&seq=wori-cta-volunteer&orientation=landscape"
+          src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784650812/23_e4w8zr.jpg"
           alt="Volunteer with WORI"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

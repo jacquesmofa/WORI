@@ -2,11 +2,6 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { eventsData, type WoriEvent } from '@/mocks/pagesData';
 import { Link } from 'react-router-dom';
 
-function formatDisplayDate(dateStr: string): string {
-  const d = new Date(dateStr + 'T00:00:00');
-  return d.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
-}
-
 function sortUpcoming(events: WoriEvent[]): WoriEvent[] {
   return [...events].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 }
@@ -22,7 +17,6 @@ export default function EventsSection() {
   const now = new Date();
   const todayStr = now.toISOString().split('T')[0];
 
-  // Automatically split upcoming vs past based on current date
   const [upcoming, setUpcoming] = useState<WoriEvent[]>(() => {
     const up = eventsData.upcoming
       .filter((e) => e.date >= todayStr)
@@ -37,7 +31,6 @@ export default function EventsSection() {
     return sortPast(pa);
   });
 
-  // Re-check every 60 seconds so events auto-move from upcoming→past when their date passes
   useEffect(() => {
     const interval = setInterval(() => {
       const checkNow = new Date();
@@ -51,7 +44,6 @@ export default function EventsSection() {
     return () => clearInterval(interval);
   }, []);
 
-  // --- Upcoming Carousel ---
   const [upcomingIdx, setUpcomingIdx] = useState(0);
   const upcomingMax = Math.max(0, upcoming.length - VISIBLE_COUNT);
 
@@ -63,7 +55,6 @@ export default function EventsSection() {
     setUpcomingIdx((prev) => Math.max(prev - 1, 0));
   }, []);
 
-  // Swipe for upcoming
   const upcomingTrackRef = useRef<HTMLDivElement>(null);
   const swipeUpcoming = useRef({ startX: 0, dragging: false });
 
@@ -83,7 +74,6 @@ export default function EventsSection() {
     }
   };
 
-  // --- Past Carousel ---
   const [pastIdx, setPastIdx] = useState(0);
   const pastMax = Math.max(0, past.length - VISIBLE_COUNT);
 
@@ -113,13 +103,11 @@ export default function EventsSection() {
     }
   };
 
-  // Card width calculation
   const cardWidth = `calc((100% - ${PEEK_WIDTH}px) / ${VISIBLE_COUNT})`;
 
   return (
     <section className="py-14 md:py-20 bg-cream-200/30 overflow-hidden">
       <div className="px-6 lg:px-12 max-w-7xl mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-10">
           <span className="inline-block px-3 py-1 rounded-full bg-emerald-800/10 border border-emerald-800/20 text-xs font-semibold text-emerald-800 uppercase tracking-widest mb-3">
             Events
@@ -180,7 +168,7 @@ export default function EventsSection() {
                   className="flex gap-4 transition-transform duration-500 ease-out"
                   style={{ transform: `translateX(-${upcomingIdx * (100 / VISIBLE_COUNT)}%)` }}
                 >
-                  {upcoming.map((evt, i) => (
+                  {upcoming.map((evt) => (
                     <div
                       key={evt.id}
                       className="flex-shrink-0 group cursor-pointer"
@@ -194,7 +182,6 @@ export default function EventsSection() {
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
                           />
-                          {/* Date badge */}
                           <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1.5 text-center shadow-sm">
                             <span className="block text-xs font-bold text-emerald-800 uppercase leading-tight">
                               {new Date(evt.date + 'T00:00:00').toLocaleDateString('en-CA', { month: 'short' })}
@@ -216,7 +203,6 @@ export default function EventsSection() {
                   ))}
                 </div>
               </div>
-              {/* Right peek indicator */}
               {upcomingIdx < upcomingMax && (
                 <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-cream-200/40 to-transparent pointer-events-none" />
               )}
@@ -271,7 +257,7 @@ export default function EventsSection() {
                   className="flex gap-4 transition-transform duration-500 ease-out"
                   style={{ transform: `translateX(-${pastIdx * (100 / VISIBLE_COUNT)}%)` }}
                 >
-                  {past.map((evt, i) => (
+                  {past.map((evt) => (
                     <div
                       key={evt.id}
                       className="flex-shrink-0 group cursor-pointer"
@@ -285,7 +271,6 @@ export default function EventsSection() {
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0"
                             loading="lazy"
                           />
-                          {/* Date badge */}
                           <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1.5 text-center shadow-sm">
                             <span className="block text-xs font-bold text-charcoal-500 uppercase leading-tight">
                               {new Date(evt.date + 'T00:00:00').toLocaleDateString('en-CA', { month: 'short' })}
@@ -307,7 +292,6 @@ export default function EventsSection() {
                   ))}
                 </div>
               </div>
-              {/* Right peek indicator */}
               {pastIdx < pastMax && (
                 <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-cream-200/40 to-transparent pointer-events-none" />
               )}
@@ -315,7 +299,6 @@ export default function EventsSection() {
           )}
         </div>
 
-        {/* View All Events CTA */}
         <div className="text-center mt-10">
           <Link
             to="/events"

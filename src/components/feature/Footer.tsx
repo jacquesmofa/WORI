@@ -36,6 +36,7 @@ export default function Footer() {
     { icon: 'ri-twitter-x-line', label: 'X', href: 'https://twitter.com/KajaWadi' },
     { icon: 'ri-linkedin-fill', label: 'LinkedIn', href: 'https://www.linkedin.com/in/nasseradin-abdullah-867b4a128/' },
     { icon: 'ri-youtube-fill', label: 'YouTube', href: 'https://www.youtube.com/channel/UCy4W_QKNpQM-tgSQVjLbxDg/featured' },
+    { icon: 'ri-tiktok-fill', label: 'TikTok', href: 'https://vt.tiktok.com/ZSmte2UVb/' },
   ];
 
   return (

@@ -120,7 +120,8 @@ export default {
     paypalDesc: 'Quick and secure PayPal checkout.',
     stripe: 'Donate via Stripe',
     stripeDesc: 'Credit card, Apple Pay, Google Pay.',
-    secure: 'Secure payment. Tax receipts issued immediately.',
+    secure: 'Secure payment.',
+    cta: 'Donate Now',
   },
   // Newsletter
   newsletter: {
@@ -236,7 +237,7 @@ export default {
       craCharity: 'CRA Registered Charity: 748873338RR0001',
       auditedSince: 'Annual audited financial statements since 2012',
       percentProgram: '86% of funds directed to direct program delivery',
-      taxReceiptImmediate: 'Tax receipts issued immediately via email',
+      taxReceiptImmediate: 'Tax receipts sent via email',
       monthlyReports: 'Monthly donor impact reports available',
       viewAnnualReports: 'View Annual Reports',
       enterAmount: 'Enter amount (CAD)',
