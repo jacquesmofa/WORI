@@ -1,5 +1,11 @@
 RewriteEngine On
 RewriteBase /
+
+# Force HTTPS (uncomment on production if SSL is active)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Don't rewrite files or directories that actually exist
 RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -7,7 +13,7 @@ RewriteRule . /index.html [L]
 
 # Enable Gzip compression
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json application/xml text/plain text/xml image/svg+xml
 </IfModule>
 
 # Browser caching for static assets
@@ -17,7 +23,15 @@ RewriteRule . /index.html [L]
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
   ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
 </IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Custom error pages (SPA fallback handles 404 naturally, but good to have)
+ErrorDocument 404 /index.html

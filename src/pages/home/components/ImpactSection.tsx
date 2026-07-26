@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { homeStats } from '@/mocks/homeData';
+import { useSiteContent } from '@/hooks/useSiteContent';
 
 export default function ImpactSection() {
   const { t } = useTranslation();
+  const { getContent, getImage } = useSiteContent();
 
   const stats = [
     { value: homeStats.familiesServed.toLocaleString(), label: t('stats.familiesServed') },
@@ -11,6 +13,11 @@ export default function ImpactSection() {
     { value: homeStats.volunteersActive.toString(), label: t('stats.volunteersActive') },
     { value: homeStats.yearsOfService.toString(), label: t('stats.yearsOfService') },
   ];
+
+  const impactImage = getImage(
+    'impact.image',
+    'https://readdy.ai/api/search-image?query=Diverse%20group%20of%20smiling%20refugee%20and%20immigrant%20families%20standing%20together%20in%20a%20bright%20modern%20community%20center%2C%20warm%20natural%20light%2C%20genuine%20happiness%20and%20hope%2C%20multicultural%20community%2C%20warm%20cream%20and%20emerald%20green%20color%20tones%2C%20editorial%20documentary%20photography%2C%20professional%20high-quality&width=800&height=600&seq=impact1&orientation=landscape'
+  );
 
   return (
     <section className="relative bg-cream-100 py-16 md:py-24 overflow-hidden">
@@ -30,7 +37,7 @@ export default function ImpactSection() {
           <div className="w-full lg:w-1/2 relative">
             <div className="relative rounded-2xl overflow-hidden">
               <img
-                src="https://readdy.ai/api/search-image?query=Diverse%20group%20of%20smiling%20refugee%20and%20immigrant%20families%20standing%20together%20in%20a%20bright%20modern%20community%20center%2C%20warm%20natural%20light%2C%20genuine%20happiness%20and%20hope%2C%20multicultural%20community%2C%20warm%20cream%20and%20emerald%20green%20color%20tones%2C%20editorial%20documentary%20photography%2C%20professional%20high-quality&width=800&height=600&seq=impact1&orientation=landscape"
+                src={impactImage}
                 alt="Diverse community members at WORI settlement center"
                 className="w-full h-64 md:h-80 lg:h-96 object-cover object-center"
               />
@@ -53,13 +60,13 @@ export default function ImpactSection() {
           <div className="w-full lg:w-1/2">
             <div className="mb-6">
               <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
-                {t('impact.label')}
+                {getContent('impact.label')}
               </span>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] font-medium text-charcoal-700 leading-[1.15] mb-5 text-balance">
-                {t('impact.title')}
+                {getContent('impact.title')}
               </h2>
               <p className="text-base text-charcoal-600/70 leading-relaxed">
-                {t('impact.description')}
+                {getContent('impact.description')}
               </p>
             </div>
 
@@ -110,7 +117,7 @@ export default function ImpactSection() {
             to="/about"
             className="text-sm font-semibold text-emerald-800 hover:text-emerald-700 flex items-center gap-1.5 transition-colors whitespace-nowrap"
           >
-            {t('impact.cta')}
+            {getContent('impact.cta')}
             <i className="ri-arrow-right-line" />
           </Link>
         </div>

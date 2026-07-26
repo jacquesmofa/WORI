@@ -7,7 +7,7 @@ export default function PartnersPage() {
     <PageLayout
       title="Partners & Funders"
       subtitle="WORI's work is made possible by the generous support of government partners, foundations, corporate sponsors, and community organizations."
-      bgImage="https://readdy.ai/api/search-image?query=Prestigious%20partnership%20event%20with%20elegant%20banners%20and%20diverse%20attendees%20networking%20in%20a%20modern%20conference%20hall%2C%20warm%20golden%20lighting%2C%20cream%20and%20emerald%20green%20decor%2C%20professional%20corporate%20atmosphere%2C%20editorial%20photography&width=1920&height=600&seq=partnershero1&orientation=landscape"
+      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784649639/Day23_img30_qdnr0n.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },
         { label: 'Partners & Funders' },
@@ -24,18 +24,27 @@ export default function PartnersPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {partnersData.government.map((p) => (
-              <div
+              <a
                 key={p.name}
-                className="flex items-center gap-4 p-5 rounded-xl bg-cream-200/40 border border-cream-300/40 hover:border-gold-500/20 transition-all"
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-5 rounded-xl bg-cream-200/40 border border-cream-300/40 hover:border-gold-500/20 hover:shadow-md hover:shadow-emerald-900/5 transition-all cursor-pointer group"
               >
-                <div className="w-12 h-12 rounded-xl bg-emerald-800/8 flex items-center justify-center shrink-0">
-                  <i className="ri-government-line text-emerald-800 text-xl" />
+                <div className="w-14 h-14 rounded-xl bg-white border border-cream-200 flex items-center justify-center shrink-0 overflow-hidden p-2">
+                  <img
+                    src={p.logo}
+                    alt={p.name}
+                    className="max-w-full max-h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                    loading="lazy"
+                  />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-charcoal-700">{p.name}</h3>
+                  <h3 className="text-sm font-semibold text-charcoal-700 group-hover:text-emerald-800 transition-colors">{p.name}</h3>
                   <span className="text-xs text-charcoal-600/50">{p.level} Partner</span>
                 </div>
-              </div>
+                <i className="ri-arrow-right-up-line text-charcoal-600/30 group-hover:text-gold-600 ml-auto transition-all" />
+              </a>
             ))}
           </div>
         </div>
@@ -52,16 +61,24 @@ export default function PartnersPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {partnersData.foundations.map((p) => (
-              <div
+              <a
                 key={p.name}
-                className="p-5 rounded-xl bg-cream-100 border border-cream-300/40 hover:border-gold-500/20 transition-all hover:shadow-md hover:shadow-emerald-900/5"
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-5 rounded-xl bg-cream-100 border border-cream-300/40 hover:border-gold-500/20 hover:shadow-md hover:shadow-emerald-900/5 transition-all cursor-pointer group"
               >
-                <div className="w-10 h-10 rounded-lg bg-gold-500/10 flex items-center justify-center mb-3">
-                  <i className="ri-hand-heart-line text-gold-600 text-lg" />
+                <div className="w-12 h-12 rounded-lg bg-white border border-cream-200 flex items-center justify-center mb-3 overflow-hidden p-2">
+                  <img
+                    src={p.logo}
+                    alt={p.name}
+                    className="max-w-full max-h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                    loading="lazy"
+                  />
                 </div>
-                <h3 className="text-sm font-semibold text-charcoal-700 mb-1">{p.name}</h3>
+                <h3 className="text-sm font-semibold text-charcoal-700 group-hover:text-emerald-800 transition-colors mb-1">{p.name}</h3>
                 <span className="text-xs text-charcoal-600/50">Focus: {p.focus}</span>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -78,16 +95,24 @@ export default function PartnersPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {partnersData.corporate.map((p) => (
-              <div
+              <a
                 key={p.name}
-                className="p-5 rounded-xl bg-cream-200/40 border border-cream-300/40 hover:border-gold-500/20 transition-all text-center"
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-5 rounded-xl bg-cream-200/40 border border-cream-300/40 hover:border-gold-500/20 hover:shadow-md hover:shadow-emerald-900/5 transition-all cursor-pointer group text-center"
               >
-                <div className="w-10 h-10 rounded-lg bg-emerald-800/8 flex items-center justify-center mx-auto mb-3">
-                  <i className="ri-building-4-line text-emerald-800 text-lg" />
+                <div className="w-14 h-14 rounded-lg bg-white border border-cream-200 flex items-center justify-center mx-auto mb-3 overflow-hidden p-2">
+                  <img
+                    src={p.logo}
+                    alt={p.name}
+                    className="max-w-full max-h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                    loading="lazy"
+                  />
                 </div>
-                <h3 className="text-sm font-semibold text-charcoal-700 mb-1">{p.name}</h3>
+                <h3 className="text-sm font-semibold text-charcoal-700 group-hover:text-emerald-800 transition-colors mb-1">{p.name}</h3>
                 <span className="text-xs text-charcoal-600/50">{p.category}</span>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -104,20 +129,27 @@ export default function PartnersPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {partnersData.community.map((p) => (
-              <div
+              <a
                 key={p.name}
-                className="p-4 rounded-xl bg-cream-100 border border-cream-300/40 hover:border-gold-500/20 transition-all"
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-xl bg-cream-100 border border-cream-300/40 hover:border-gold-500/20 hover:shadow-md hover:shadow-emerald-900/5 transition-all cursor-pointer group flex items-center gap-3"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-800/8 flex items-center justify-center shrink-0">
-                    <i className="ri-community-line text-emerald-800 text-sm" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium text-charcoal-700">{p.name}</h3>
-                    <span className="text-xs text-charcoal-600/50">{p.type}</span>
-                  </div>
+                <div className="w-10 h-10 rounded-lg bg-white border border-cream-200 flex items-center justify-center shrink-0 overflow-hidden p-1.5">
+                  <img
+                    src={p.logo}
+                    alt={p.name}
+                    className="max-w-full max-h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                    loading="lazy"
+                  />
                 </div>
-              </div>
+                <div>
+                  <h3 className="text-sm font-medium text-charcoal-700 group-hover:text-emerald-800 transition-colors">{p.name}</h3>
+                  <span className="text-xs text-charcoal-600/50">{p.type}</span>
+                </div>
+                <i className="ri-arrow-right-up-line text-charcoal-600/30 group-hover:text-gold-600 ml-auto transition-all shrink-0" />
+              </a>
             ))}
           </div>
         </div>
@@ -135,14 +167,14 @@ export default function PartnersPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all whitespace-nowrap"
             >
               Contact Partnerships Team
               <i className="ri-arrow-right-line" />
             </Link>
             <Link
               to="/donate"
-              className="inline-flex items-center gap-2 px-7 py-3.5 border border-charcoal-700/15 hover:border-charcoal-700/40 text-charcoal-700 text-sm font-medium rounded-full transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 border border-charcoal-700/15 hover:border-charcoal-700/40 text-charcoal-700 text-sm font-medium rounded-full transition-all whitespace-nowrap"
             >
               Make a Donation
             </Link>

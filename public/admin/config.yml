@@ -1,0 +1,119 @@
+backend:
+  name: github
+  repo: jacquesmofa/WORI
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: oqdvximy
+    api_key: "628222561339787"
+
+collections:
+  - name: "pages"
+    label: "Website Pages"
+    files:
+      - file: "src/data/site-content.json"
+        label: "Site Content Database"
+        name: "site_content"
+        fields:
+          - label: "English Content"
+            name: "en"
+            widget: "object"
+            fields:
+              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
+              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
+              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+              - { label: "Hero Image URL", name: "heroImage", widget: "string", required: false }
+              - { label: "Hero CTA Primary", name: "heroCtaPrimary", widget: "string", required: false }
+              - { label: "Hero CTA Secondary", name: "heroCtaSecondary", widget: "string", required: false }
+              - { label: "Vision Label", name: "visionLabel", widget: "string", required: false }
+              - { label: "Vision Title", name: "visionTitle", widget: "string", required: false }
+              - { label: "Vision Description", name: "visionDescription", widget: "text", required: false }
+              - { label: "Vision Image", name: "visionImage", widget: "image", required: false }
+              - { label: "About Organization Description", name: "aboutDescription", widget: "text", required: false }
+              - { label: "Sudan Crisis Title", name: "sudanCrisisTitle", widget: "string", required: false }
+              - { label: "Sudan Crisis Message", name: "sudanCrisisMessage", widget: "text", required: false }
+              - { label: "Gallery Section Title", name: "galleryTitle", widget: "string", required: false }
+              - { label: "Gallery Section Subtitle", name: "gallerySubtitle", widget: "text", required: false }
+          - label: "French Content"
+            name: "fr"
+            widget: "object"
+            fields:
+              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
+              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
+              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+              - { label: "Vision Label", name: "visionLabel", widget: "string", required: false }
+              - { label: "Vision Title", name: "visionTitle", widget: "string", required: false }
+              - { label: "Vision Description", name: "visionDescription", widget: "text", required: false }
+          - label: "Arabic Content"
+            name: "ar"
+            widget: "object"
+            fields:
+              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
+              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
+              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+              - { label: "Vision Label", name: "visionLabel", widget: "string", required: false }
+              - { label: "Vision Title", name: "visionTitle", widget: "string", required: false }
+              - { label: "Vision Description", name: "visionDescription", widget: "text", required: false }
+          - label: "Amharic Content"
+            name: "am"
+            widget: "object"
+            fields:
+              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
+              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
+              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+          - label: "Somali Content"
+            name: "so"
+            widget: "object"
+            fields:
+              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
+              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
+              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+          - label: "Tigrinya Content"
+            name: "ti"
+            widget: "object"
+            fields:
+              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
+              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
+              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+          - label: "Swahili Content"
+            name: "sw"
+            widget: "object"
+            fields:
+              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
+              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
+              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+          - label: "Oromo Content"
+            name: "om"
+            widget: "object"
+            fields:
+              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
+              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
+              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+          - label: "Hausa Content"
+            name: "ha"
+            widget: "object"
+            fields:
+              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
+              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
+              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+
+      - file: "src/data/about.json"
+        label: "About Page Content"
+        name: "about"
+        fields:
+          - { label: "Mission Statement (English)", name: "mission_en", widget: "text" }
+          - { label: "Mission Statement (Arabic)", name: "mission_ar", widget: "text" }
+          - { label: "Mission Statement (Swahili)", name: "mission_sw", widget: "text" }
+          - { label: "Mission Statement (Oromo)", name: "mission_om", widget: "text" }
+          - { label: "Mission Statement (Hausa)", name: "mission_ha", widget: "text" }
+          - { label: "Vision Statement (English)", name: "vision_en", widget: "text" }
+          - { label: "Vision Statement (Arabic)", name: "vision_ar", widget: "text" }
+          - { label: "Executive Director Name", name: "executive_director_name", widget: "string" }
+          - { label: "Executive Director Title", name: "executive_director_title", widget: "string" }
+          - { label: "Annual Letter (English)", name: "annual_letter_en", widget: "text" }
+          - { label: "Executive Director Photo", name: "executive_director_photo", widget: "image" }

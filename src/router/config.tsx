@@ -1,6 +1,7 @@
 import type { RouteObject } from "react-router-dom";
 import NotFound from "../pages/NotFound";
 import Home from "../pages/home/page";
+import AdminPage from "../pages/admin/page";
 
 // About & Governance
 import AboutPage from "../pages/about/page";
@@ -31,9 +32,13 @@ import NewsPage from "../pages/news/page";
 import PartnersPage from "../pages/partners/page";
 import ContactPage from "../pages/contact/page";
 import VolunteerPage from "../pages/volunteer/page";
+import EventsPage from "../pages/events/page";
+import ProgramsServicesPage from "../pages/services/page";
+import BookingPage from "../pages/booking/page";
 
 const routes: RouteObject[] = [
   { path: "/", element: <Home /> },
+  { path: "/admin", element: <AdminPage /> },
 
   // About & Governance
   { path: "/about", element: <AboutPage /> },
@@ -61,9 +66,12 @@ const routes: RouteObject[] = [
   { path: "/donate", element: <DonatePage /> },
   { path: "/crisis-center", element: <CrisisCenterPage /> },
   { path: "/news", element: <NewsPage /> },
+  { path: "/events", element: <EventsPage /> },
   { path: "/partners", element: <PartnersPage /> },
   { path: "/contact", element: <ContactPage /> },
   { path: "/volunteer", element: <VolunteerPage /> },
+  { path: "/booking", element: <BookingPage /> },
+  { path: "/services", element: <ProgramsServicesPage /> },
 
   { path: "*", element: <NotFound /> },
 ];

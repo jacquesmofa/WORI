@@ -102,6 +102,81 @@ export default function ServicePage({ serviceKey }: ServicePageProps) {
         </div>
       </section>
 
+      {/* How to Access */}
+      <section className="px-6 lg:px-10 py-14 md:py-20 bg-cream-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
+            {/* Eligibility */}
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-gold-500/10 flex items-center justify-center">
+                  <i className="ri-user-star-line text-gold-600 text-lg" />
+                </div>
+                <h3 className="font-serif text-xl text-charcoal-700">
+                  {t('pages.services.common.eligibility')}
+                </h3>
+              </div>
+              <p className="text-sm text-charcoal-600/70 leading-relaxed mb-6">
+                {t('pages.services.common.eligibilityDesc')}
+              </p>
+              <ul className="space-y-3">
+                {[
+                  'Government-assisted refugees (GARs)',
+                  'Privately sponsored refugees',
+                  'Asylum claimants & protected persons',
+                  'Permanent residents & convention refugees',
+                  'Temporary residents with work/study permits',
+                  'Naturalized Canadian citizens (first 3 years)',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <i className="ri-checkbox-circle-fill text-gold-500 text-sm mt-0.5 shrink-0" />
+                    <span className="text-sm text-charcoal-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Intake Process */}
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-emerald-800/8 flex items-center justify-center">
+                  <i className="ri-guide-line text-emerald-800 text-lg" />
+                </div>
+                <h3 className="font-serif text-xl text-charcoal-700">
+                  {t('pages.services.common.intakeProcess')}
+                </h3>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { step: '01', title: t('pages.services.common.step1Title'), desc: t('pages.services.common.step1Desc'), icon: 'ri-phone-line' },
+                  { step: '02', title: t('pages.services.common.step2Title'), desc: t('pages.services.common.step2Desc'), icon: 'ri-clipboard-line' },
+                  { step: '03', title: t('pages.services.common.step3Title'), desc: t('pages.services.common.step3Desc'), icon: 'ri-links-line' },
+                  { step: '04', title: t('pages.services.common.step4Title'), desc: t('pages.services.common.step4Desc'), icon: 'ri-heart-pulse-line' },
+                ].map((item) => (
+                  <div key={item.step} className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-cream-200/50 flex items-center justify-center shrink-0 border border-cream-300/40">
+                      <span className="text-xs font-bold text-emerald-800">{item.step}</span>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-charcoal-700 mb-0.5">{item.title}</h4>
+                      <p className="text-xs text-charcoal-600/60 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 pt-5 border-t border-cream-300/40">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-800 hover:text-emerald-700 transition-colors"
+                >
+                  {t('pages.services.common.connect')} <i className="ri-arrow-right-line" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-emerald-900">
         <div className="max-w-5xl mx-auto">

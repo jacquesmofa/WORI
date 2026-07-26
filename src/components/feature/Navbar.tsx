@@ -15,9 +15,16 @@ const LANGUAGE_META: Record<string, { flag: string; native: string; code: string
   am: { flag: '🇪🇹', native: 'አማርኛ', code: 'AM' },
   so: { flag: '🇸🇴', native: 'Soomaali', code: 'SO' },
   ti: { flag: '🇪🇷', native: 'ትግርኛ', code: 'TI' },
+  sw: { flag: '🇹🇿', native: 'Kiswahili', code: 'SW' },
+  om: { flag: '🇪🇹', native: 'Afaan Oromoo', code: 'OM' },
+  ha: { flag: '🇳🇬', native: 'Harshen Hausa', code: 'HA' },
 };
 
-export default function Navbar() {
+interface NavbarProps {
+  transparent?: boolean;
+}
+
+export default function Navbar({ transparent: forceTransparent }: NavbarProps = {}) {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
@@ -25,7 +32,7 @@ export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === '/' || forceTransparent;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -90,6 +97,7 @@ export default function Navbar() {
       children: [
         { label: t('newsMenu.crisisCenter'), path: '/crisis-center' },
         { label: t('newsMenu.newsUpdates'), path: '/news' },
+        { label: t('newsMenu.eventsGallery'), path: '/events' },
         { label: t('newsMenu.partners'), path: '/partners' },
       ],
     },
@@ -99,11 +107,15 @@ export default function Navbar() {
   const currentLang = LANGUAGE_META[i18n.language] || LANGUAGE_META.en;
 
   // Transparency: ONLY on home page, at top, not scrolled. Otherwise solid.
-  const isTransparent = isHomePage && !scrolled;
+  const isTransparent = (isHomePage || forceTransparent) && !scrolled;
 
   const navTextClass = isTransparent
     ? 'text-cream-100/90 hover:text-white'
     : 'text-charcoal-700 hover:text-emerald-800';
+
+  const bookingBtnClass = isTransparent
+    ? 'border-cream-100/30 hover:border-cream-100/60 text-cream-100'
+    : 'border-emerald-800/20 hover:border-emerald-800/40 text-charcoal-700 hover:text-emerald-800';
 
   const navBgClass = isTransparent
     ? 'bg-gradient-to-b from-black/50 via-black/30 to-transparent'
@@ -122,16 +134,15 @@ export default function Navbar() {
               className="flex items-center gap-2.5 shrink-0"
               aria-label="WORI Home"
             >
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-emerald-800 flex items-center justify-center">
-                <span className="font-serif text-gold-500 font-bold text-base md:text-lg">
-                  W
-                </span>
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg overflow-hidden bg-cream-100 flex items-center justify-center">
+                <img
+                  src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784294788/WORI-logo2_j6w6nu.jpg"
+                  alt="WORI Logo"
+                  width="48"
+                  height="48"
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <span
-                className={`font-serif font-semibold text-base md:text-lg tracking-tight ${isTransparent ? 'text-cream-100' : 'text-charcoal-700'}`}
-              >
-                WORI
-              </span>
             </Link>
 
             {/* Desktop Nav */}
@@ -235,6 +246,15 @@ export default function Navbar() {
               >
                 {t('nav.donate')}
                 <i className="ri-arrow-right-line text-sm" />
+              </Link>
+
+              {/* Book Appointment */}
+              <Link
+                to="/booking"
+                className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 border text-sm font-medium rounded-full transition-all whitespace-nowrap ${bookingBtnClass}`}
+              >
+                {t('pages.booking.title')}
+                <i className="ri-calendar-line text-sm" />
               </Link>
 
               {/* Mobile Menu Button */}

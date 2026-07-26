@@ -1,0 +1,146 @@
+{
+  "en": {
+    "hero": {
+      "badge": "Canadian Registered Charity — CRN: 748873338RR0001",
+      "title": "Empowering Newcomers, Building Futures",
+      "subtitle": "Since 2008, WORI has been a beacon of hope for refugees and immigrants across Canada.",
+      "image": "",
+      "ctaPrimary": "Explore Our Programs",
+      "ctaSecondary": "Donate Today"
+    },
+    "vision": {
+      "text": "Refugees and immigrants, especially those who have experienced wars and persecution, leading self-sufficient and dignified lives in a socially inclusive society."
+    },
+    "about": {
+      "description": "Wadi-Kaja Organization for Refugees and Immigrants (WORI) is a non-profit organization in Toronto, Canada. The organization helps with refugees, and new immigrants in GTA. The organization also provides settlement services, translation and interpretation for new immigrants to Canada.",
+      "image": ""
+    },
+    "impact": {
+      "label": "Our Impact",
+      "title": "Every life we touch strengthens the fabric of our communities",
+      "description": "From emergency housing to career mentorship, WORI delivers comprehensive settlement and wellbeing services tailored to the unique journeys of refugees and immigrants in Canada.",
+      "image": "",
+      "cta": "Discover Our Story"
+    }
+  },
+  "fr": {
+    "hero": {
+      "badge": "Organisme de Bienfaisance Canadien — NE: 748873338RR0001",
+      "title": "Autonomiser les Nouveaux Arrivants, Bâtir l'Avenir",
+      "subtitle": "Depuis 2008, WORI est un phare d'espoir pour les réfugiés et immigrants au Canada.",
+      "image": "",
+      "ctaPrimary": "Découvrir Nos Programmes",
+      "ctaSecondary": "Faire un Don"
+    },
+    "vision": {
+      "text": "Les réfugiés et immigrants, en particulier ceux qui ont vécu des guerres et des persécutions, menant des vies autonomes et dignes dans une société socialement inclusive."
+    },
+    "about": {
+      "description": "Wadi-Kaja Organization for Refugees and Immigrants (WORI) est une organisation à but non lucratif à Toronto, Canada. L'organisation aide les réfugiés et les nouveaux immigrants dans le Grand Toronto.",
+      "image": ""
+    },
+    "impact": {
+      "label": "Notre Impact",
+      "title": "Chaque vie que nous touchons renforce le tissu de nos communautés",
+      "description": "Du logement d'urgence au mentorat professionnel, WORI offre des services complets d'établissement et de bien-être.",
+      "image": "",
+      "cta": "Découvrir Notre Histoire"
+    }
+  },
+  "ar": {
+    "hero": {
+      "badge": "جمعية خيرية مسجلة في كندا — رقم: 748873338RR0001",
+      "title": "تمكين القادمين الجدد، بناء المستقبل",
+      "subtitle": "منذ عام 2008، كانت WORI منارة أمل للاجئين والمهاجرين في جميع أنحاء كندا.",
+      "image": "",
+      "ctaPrimary": "استكشف برامجنا",
+      "ctaSecondary": "تبرع اليوم"
+    },
+    "vision": {
+      "text": "اللاجئون والمهاجرون، ولا سيما أولئك الذين عانوا من الحروب والاضطهاد، يعيشون حياة كريمة ومعتمدة على الذات في مجتمع شامل."
+    },
+    "about": {
+      "description": "منظمة وادي كاجا للاجئين والمهاجرين هي منظمة غير ربحية في تورنتو، كندا. تساعد المنظمة اللاجئين والمهاجرين الجدد في منطقة تورنتو الكبرى.",
+      "image": ""
+    },
+    "impact": {
+      "label": "تأثيرنا",
+      "title": "كل حياة نلمسها تعزز نسيج مجتمعاتنا",
+      "description": "من الإسكان الطارئ إلى التوجيه المهني، تقدم WORI خدمات شاملة للاستقرار والرفاهية.",
+      "image": "",
+      "cta": "اكتشف قصتنا"
+    }
+  },
+  "am": {
+    "hero": {
+      "badge": "የካናዳ የበጎ አድራጎት ድርጅት — CRN: 748873338RR0001",
+      "title": "አዲስ መጤዎችን ማብቃት፣ መስተጋብር መሥራት",
+      "subtitle": "ከ2008 ጀምሮ WORI ለስደተኞች እና ለወሰን ተሻጋሪዎች በካናዳ አንድ ተስፋ ብርሃን ነበረች።",
+      "image": "",
+      "ctaPrimary": "ፕሮግራሞቻችንን ይመልከቱ",
+      "ctaSecondary": "ዛሬ ይለግሱ"
+    },
+    "vision": {
+      "text": "ስደተኞች እና ወሰን ተሻጋሪዎች፣ በተለይም ጦርነት እና ስደት ያሳለፉ፣ ዋስ ስሜት ካለ ማህበረሰብ ውስጥ ሙሉ ህይወት ይኖሩ።"
+    },
+    "about": {
+      "description": "WORI ካናዳ ቶሮንቶ ውስጥ ለስደተኞች እና ለወሰን ተሻጋሪዎች አገልግሎት የሚሰጥ ድርጅት ነው።",
+      "image": ""
+    },
+    "impact": {
+      "label": "የእኛ ተጽእኖ",
+      "title": "እያንዳንዱ ሕይወት የምንነካው ማህበረሰባችንን ያጠናክራል",
+      "description": "WORI ለስደተኞች እና ወሰን ተሻጋሪዎች አጠቃላይ አገልግሎቶችን ትሰጣለች።",
+      "image": "",
+      "cta": "ታሪካችንን ይፈልጉ"
+    }
+  },
+  "so": {
+    "hero": {
+      "badge": "Dalladda Khayrka ee Kanada — CRN: 748873338RR0001",
+      "title": "Xoojinta Kuwa Cusub, Dhismaha Mustaqbalka",
+      "subtitle": "Tan iyo 2008, WORI waxay ahayd geesi u soo jeeda qaxootiga iyo muhaajiriinta ee Kanada.",
+      "image": "",
+      "ctaPrimary": "Sahaminta Barnaamijyadeena",
+      "ctaSecondary": "Tabaruc Maanta"
+    },
+    "vision": {
+      "text": "Qaxootiga iyo muhaajiriinta, gaar ahaan kuwa la kulmay dagaallada iyo silcinta, ku nool nolosha xurta iyo sharafta leh bulshada ku jirta."
+    },
+    "about": {
+      "description": "WORI waa urur aan faa'iido doon ahayn oo ku yaalla Toronto, Kanada oo u adeega qaxootiga iyo muhaajiriinta cusub.",
+      "image": ""
+    },
+    "impact": {
+      "label": "Saamayntaadeena",
+      "title": "Nolol kasta aan taabano way xoojineysa gudaha bulshooyinkeena",
+      "description": "WORI waxay bixisaa adeegyo dhammaystiran oo dejinta iyo nafaqada ah.",
+      "image": "",
+      "cta": "Akhri Sheekadeena"
+    }
+  },
+  "ti": {
+    "hero": {
+      "badge": "ቤ/ፍ ጸጋ ካናዳ — CRN: 748873338RR0001",
+      "title": "ምህዋር ንመጻእቲ፡ መወዳእታ ንድሕነት",
+      "subtitle": "ካብ 2008፡ WORI ንስደተኛታትን ስደተኛታትን ኣብ ካናዳ ተስፋ ትህብ።",
+      "image": "",
+      "ctaPrimary": "ኣገልግሎትና ርአ",
+      "ctaSecondary": "ሕጂ ተዋህብ"
+    },
+    "vision": {
+      "text": "ስደተኛታት፡ ብፍላይ ናይ ኲናትን ስደትን ዝወሰዱ፡ ምሉእ ናጻ ህይወት ኣብ ሕብሪ ሕብሩ ሕብረተሰብ ይንብሩ።"
+    },
+    "about": {
+      "description": "WORI ኣብ ቶሮንቶ ካናዳ ንስደተኛታትን ስደተኛታትን ኣገልግሎት ዝህብ ዘይርዶ ትካል እዩ።",
+      "image": ""
+    },
+    "impact": {
+      "label": "ናተና ፅንዓት",
+      "title": "እንነኣስ ብዝነኣስ ነብሪ ነብሪ ንምህዋር",
+      "description": "WORI ንስደተኛታትን ስደተኛታትን ኣጠቃሊ ኣገልግሎታት ትህብ።",
+      "image": "",
+      "cta": "ታሪኽና ርአ"
+    }
+  }
+}

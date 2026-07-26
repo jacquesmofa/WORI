@@ -31,10 +31,11 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: 'ri-facebook-fill', label: 'Facebook', href: 'https://facebook.com' },
-    { icon: 'ri-instagram-line', label: 'Instagram', href: 'https://instagram.com' },
-    { icon: 'ri-twitter-x-line', label: 'X', href: 'https://x.com' },
-    { icon: 'ri-linkedin-fill', label: 'LinkedIn', href: 'https://linkedin.com' },
+    { icon: 'ri-facebook-fill', label: 'Facebook', href: 'https://www.facebook.com/Wadi-Kaja-Organization-for-Refugee-and-Immigrant-108592454153210/' },
+    { icon: 'ri-instagram-line', label: 'Instagram', href: 'https://www.instagram.com/ordera1643/' },
+    { icon: 'ri-twitter-x-line', label: 'X', href: 'https://twitter.com/KajaWadi' },
+    { icon: 'ri-linkedin-fill', label: 'LinkedIn', href: 'https://www.linkedin.com/in/nasseradin-abdullah-867b4a128/' },
+    { icon: 'ri-youtube-fill', label: 'YouTube', href: 'https://www.youtube.com/channel/UCy4W_QKNpQM-tgSQVjLbxDg/featured' },
   ];
 
   return (
@@ -45,10 +46,14 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gold-500/15 flex items-center justify-center border border-gold-500/20">
-                <span className="font-serif text-gold-500 font-bold text-lg">
-                  W
-                </span>
+              <div className="w-10 h-10 rounded-lg overflow-hidden bg-cream-100 flex items-center justify-center">
+                <img
+                  src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784294788/WORI-logo2_j6w6nu.jpg"
+                  alt="WORI Logo"
+                  width="40"
+                  height="40"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-serif font-semibold text-lg text-cream-100">
                 WORI
@@ -57,9 +62,23 @@ export default function Footer() {
             <p className="text-sm text-cream-200/70 leading-relaxed mb-3 max-w-xs">
               {t('footer.description')}
             </p>
-            <p className="text-xs text-gold-500/80 font-medium">
+            <p className="text-xs text-gold-500/80 font-medium mb-3">
               {t('footer.charityInfo')}
             </p>
+            <div className="space-y-1.5 text-xs text-cream-200/60">
+              <div className="flex items-start gap-2">
+                <i className="ri-map-pin-line text-gold-500/70 mt-0.5" />
+                <span>10 Milner Business Court Suite 306, Scarborough, ON M1B 3C6</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <i className="ri-phone-line text-gold-500/70" />
+                <a href="tel:+16477778322" className="hover:text-gold-400 transition-colors">+1-647-777-8322</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <i className="ri-mail-line text-gold-500/70" />
+                <a href="mailto:info@wadikajaorganization.org" className="hover:text-gold-400 transition-colors">info@wadikajaorganization.org</a>
+              </div>
+            </div>
           </div>
 
           {/* Newsletter Column */}
