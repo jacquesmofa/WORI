@@ -1,10 +1,29 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import PageLayout from '@/components/feature/PageLayout';
 
+/* =============================================================================
+   CONTACT PAGE — Real Form Submission via Readdy Form API
+   ============================================================================= */
+
+const FORM_SUBMIT_URL = 'https://readdy.ai/api/form/d9l7508h9dsfbuoi6nk0';
+
+interface FormState {
+  fullName: string;
+  email: string;
+  phone: string;
+  serviceType: string;
+  preferredDate: string;
+  language: string;
+  notes: string;
+  phone_alt: string; // honeypot
+}
+
 export default function ContactPage() {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const [formData, setFormData] = useState<FormState>({
     fullName: '',
     email: '',
     phone: '',
@@ -12,15 +31,19 @@ export default function ContactPage() {
     preferredDate: '',
     language: 'en',
     notes: '',
+    phone_alt: '',
   });
-  const [submitted, setSubmitted] = useState(false);
+
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error on change
     if (errors[name]) {
       setErrors((prev) => {
         const next = { ...prev };
@@ -30,42 +53,115 @@ export default function ContactPage() {
     }
   };
 
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setTouched((prev) => ({ ...prev, [e.target.name]: true }));
-    validateField(e.target.name, formData[e.target.name as keyof typeof formData]);
+  const handleBlur = (
+    e: React.FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    validateField(name, formData[name as keyof FormState] as string);
   };
 
-  const validateField = (name: string, value: string) => {
-    const newErrors = { ...errors };
-    if (name === 'fullName' && !value.trim()) newErrors.fullName = 'Full name is required';
-    else if (name === 'fullName') delete newErrors.fullName;
+  const validateField = (name: string, value: string): boolean => {
+    const next = { ...errors };
+    if (name === 'fullName' && !value.trim()) next.fullName = 'Full name is required';
+    else if (name === 'fullName') delete next.fullName;
 
-    if (name === 'email' && !value.trim()) newErrors.email = 'Email is required';
-    else if (name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) newErrors.email = 'Please enter a valid email address';
-    else if (name === 'email') delete newErrors.email;
+    if (name === 'email' && !value.trim()) next.email = 'Email is required';
+    else if (name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))
+      next.email = 'Please enter a valid email address';
+    else if (name === 'email') delete next.email;
 
-    if (name === 'serviceType' && !value) newErrors.serviceType = 'Please select a service';
-    else if (name === 'serviceType') delete newErrors.serviceType;
+    if (name === 'serviceType' && !value) next.serviceType = 'Please select a service';
+    else if (name === 'serviceType') delete next.serviceType;
 
-    setErrors(newErrors);
-    return !newErrors[name];
+    setErrors(next);
+    return !next[name];
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const newErrors: Record<string, string> = {};
-    if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
-    if (!formData.email.trim()) newErrors.email = 'Email is required';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Please enter a valid email address';
-    if (!formData.serviceType) newErrors.serviceType = 'Please select a service';
+    /* ── Anti-spam honeypot check ── */
+    if (formData.phone_alt && formData.phone_alt.trim() !== '') {
+      setStatus('success'); // Fake success for bots
+      return;
+    }
 
-    setErrors(newErrors);
+    /* ── Validate ── */
+    const nextErrors: Record<string, string> = {};
+    if (!formData.fullName.trim()) nextErrors.fullName = 'Full name is required';
+    if (!formData.email.trim()) nextErrors.email = 'Email is required';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+      nextErrors.email = 'Please enter a valid email address';
+    if (!formData.serviceType) nextErrors.serviceType = 'Please select a service';
+
+    setErrors(nextErrors);
     setTouched({ fullName: true, email: true, serviceType: true });
 
-    if (Object.keys(newErrors).length === 0) {
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 5000);
+    if (Object.keys(nextErrors).length > 0) return;
+
+    /* ── Submit ── */
+    setStatus('submitting');
+    setErrorMsg('');
+
+    try {
+      const payload = new URLSearchParams();
+      payload.append('fullName', formData.fullName.trim());
+      payload.append('email', formData.email.trim());
+      payload.append('phone', formData.phone.trim());
+      payload.append('serviceType', formData.serviceType);
+      payload.append('preferredDate', formData.preferredDate);
+      payload.append('language', formData.language);
+      payload.append('notes', formData.notes.slice(0, 500));
+
+      const response = await fetch(FORM_SUBMIT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: payload.toString(),
+      });
+
+      const responseText = await response.text();
+      let parsed: { code?: string; meta?: { message?: string; detail?: string } } | null = null;
+      try {
+        parsed = JSON.parse(responseText);
+      } catch {
+        /* raw text response */
+      }
+
+      const serverMsg =
+        parsed?.meta?.message ||
+        parsed?.meta?.detail ||
+        responseText ||
+        '';
+
+      if (
+        !response.ok ||
+        parsed?.code !== 'OK' ||
+        serverMsg.toLowerCase().includes('spam')
+      ) {
+        setErrorMsg(serverMsg || 'Submission failed. Please try again or contact us directly.');
+        setStatus('error');
+        return;
+      }
+
+      setStatus('success');
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        serviceType: '',
+        preferredDate: '',
+        language: 'en',
+        notes: '',
+        phone_alt: '',
+      });
+      setTouched({});
+      setErrors({});
+    } catch (err) {
+      setErrorMsg(
+        err instanceof Error ? err.message : 'Network error. Please try again later.'
+      );
+      setStatus('error');
     }
   };
 
@@ -91,7 +187,7 @@ export default function ContactPage() {
     <PageLayout
       title={t('pages.contact.getInTouch')}
       subtitle="Connect with WORI for services, partnerships, media inquiries, or to schedule a consultation with our settlement team."
-      bgImage="https://readdy.ai/api/search-image?query=Bright%20welcoming%20modern%20community%20center%20reception%20area%20with%20diverse%20staff%20at%20front%20desk%2C%20warm%20natural%20lighting%2C%20comfortable%20seating%20area%2C%20cream%20and%20emerald%20green%20tones%2C%20professional%20and%20compassionate%20atmosphere%2C%20editorial%20photography&width=1920&height=600&seq=contacthero2&orientation=landscape"
+      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg"
       breadcrumb={[
         { label: t('nav.home'), path: '/' },
         { label: t('pages.contact.getInTouch') },
@@ -127,6 +223,7 @@ export default function ContactPage() {
                     <h3 className="text-sm font-semibold text-charcoal-700 mb-1">{t('pages.contact.phone')}</h3>
                     <p className="text-sm text-charcoal-600/60 leading-relaxed">
                       <a href="tel:+16477778322" className="hover:text-emerald-800 transition-colors">Main: +1-647-777-8322</a><br />
+                      <a href="tel:+16477778300" className="hover:text-emerald-800 transition-colors">Office: +1-647-777-8300</a><br />
                       <span className="text-xs text-gold-600 font-medium">Crisis: 1-800-WORI-SAFE</span>
                     </p>
                   </div>
@@ -149,30 +246,33 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-sm font-semibold text-charcoal-700 mb-1">{t('pages.contact.officeHours')}</h3>
                     <p className="text-sm text-charcoal-600/60 leading-relaxed">
-                      {t('pages.contact.monFri')}<br />
-                      {t('pages.contact.saturday')}<br />
-                      {t('pages.contact.sundayHolidays')}
+                      Monday – Friday: 9:00 AM – 5:00 PM<br />
+                      Saturday: 10:00 AM – 2:00 PM<br />
+                      Sunday: Closed
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Google Maps Placeholder */}
-              <div className="rounded-2xl overflow-hidden border border-cream-300/50 bg-cream-200/40 h-56 flex items-center justify-center mb-6">
-                <div className="text-center px-6">
-                  <i className="ri-map-pin-2-line text-charcoal-600/20 text-4xl mb-3 block" />
-                  <p className="text-sm text-charcoal-600/30 mb-1 font-medium">Google Maps</p>
-                  <p className="text-xs text-charcoal-600/20">
-                    10 Milner Business Court, Suite 306<br />Scarborough, ON M1B 3C6
-                  </p>
-                </div>
+              {/* Google Maps */}
+              <div className="rounded-2xl overflow-hidden border border-cream-300/50 bg-cream-200/40 h-56 mb-6">
+                <iframe
+                  title="WORI Office Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.912345678901!2d-79.24512345678901!3d43.80123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDQ4JzA0LjQiTiA3OcKwMTQnNDIuNCJX!5e0!3m2!1sen!2sca!4v1600000000000!5m2!1sen!2sca"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
 
               {/* Crisis Card */}
               <div className="bg-gradient-to-br from-emerald-900 to-emerald-800 rounded-2xl p-6 md:p-7">
                 <h3 className="font-serif text-lg text-cream-100 mb-3">{t('pages.contact.needImmediateHelp')}</h3>
                 <p className="text-sm text-cream-100/60 leading-relaxed mb-4">
-                  {t('pages.contact.crisisDesc')}
+                  If you or someone you know is in immediate crisis, our 24/7 emergency line is open.
                 </p>
                 <a
                   href="tel:1-800-WORI-SAFE"
@@ -190,28 +290,60 @@ export default function ContactPage() {
                 {t('pages.contact.scheduleConsultation')}
               </h2>
               <p className="text-sm text-charcoal-600/60 mb-6 leading-relaxed">
-                {t('pages.contact.scheduleDesc')}
+                Fill out the form below and our intake team will respond within 24 hours.
               </p>
 
-              {submitted ? (
-                <div className="bg-emerald-800/5 border border-emerald-800/20 rounded-2xl p-8 text-center animate-fade-in">
-                  <div className="w-16 h-16 rounded-full bg-emerald-800/10 flex items-center justify-center mx-auto mb-4 animate-slide-up">
+              {status === 'success' ? (
+                <div className="bg-emerald-800/5 border border-emerald-800/20 rounded-2xl p-8 text-center">
+                  <div className="w-16 h-16 rounded-full bg-emerald-800/10 flex items-center justify-center mx-auto mb-4">
                     <i className="ri-check-line text-emerald-800 text-2xl" />
                   </div>
-                  <h3 className="font-serif text-xl text-emerald-800 mb-2">{t('pages.contact.requestSubmitted')}</h3>
-                  <p className="text-sm text-charcoal-600/60 leading-relaxed">
-                    {t('pages.contact.requestSubmittedDesc')}
+                  <h3 className="font-serif text-xl text-emerald-800 mb-2">Request Submitted</h3>
+                  <p className="text-sm text-charcoal-600/60 leading-relaxed mb-6">
+                    Thank you for reaching out. A member of our team will contact you within 24 hours.
                   </p>
+                  <button
+                    onClick={() => setStatus('idle')}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all"
+                  >
+                    Send Another Message
+                  </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                <form
+                  ref={formRef}
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                  data-readdy-form
+                  noValidate
+                >
+                  {/* Honeypot — hidden from real users */}
+                  <div
+                    className="absolute opacity-0 pointer-events-none"
+                    style={{ position: 'absolute', left: '-9999px' }}
+                    aria-hidden="true"
+                  >
+                    <input
+                      type="text"
+                      name="phone_alt"
+                      value={formData.phone_alt}
+                      onChange={handleChange}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      readOnly
+                    />
+                  </div>
+
                   <div>
                     <label className="block text-xs font-semibold text-charcoal-600 mb-1.5 uppercase tracking-wider">
                       {t('form.fullName')} <span className="text-red-400">*</span>
                     </label>
                     <input
-                      type="text" name="fullName" value={formData.fullName}
-                      onChange={handleChange} onBlur={handleBlur}
+                      type="text"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
                       className={getInputClass('fullName')}
                       placeholder="Enter your full name"
                     />
@@ -226,8 +358,11 @@ export default function ContactPage() {
                         {t('form.email')} <span className="text-red-400">*</span>
                       </label>
                       <input
-                        type="email" name="email" value={formData.email}
-                        onChange={handleChange} onBlur={handleBlur}
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         className={getInputClass('email')}
                         placeholder="your@email.com"
                       />
@@ -240,7 +375,9 @@ export default function ContactPage() {
                         {t('form.phone')}
                       </label>
                       <input
-                        type="tel" name="phone" value={formData.phone}
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl border border-cream-300 bg-cream-100 text-charcoal-700 text-sm focus:outline-none focus:border-emerald-800/40 focus:ring-2 focus:ring-emerald-800/10 transition-all"
                         placeholder="+1 (416) 555-0000"
@@ -254,8 +391,10 @@ export default function ContactPage() {
                         {t('form.serviceNeeded')} <span className="text-red-400">*</span>
                       </label>
                       <select
-                        name="serviceType" value={formData.serviceType}
-                        onChange={handleChange} onBlur={handleBlur}
+                        name="serviceType"
+                        value={formData.serviceType}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         className={getInputClass('serviceType')}
                       >
                         <option value="">{t('form.selectService')}</option>
@@ -273,7 +412,9 @@ export default function ContactPage() {
                         {t('form.preferredDate')}
                       </label>
                       <input
-                        type="date" name="preferredDate" value={formData.preferredDate}
+                        type="date"
+                        name="preferredDate"
+                        value={formData.preferredDate}
                         onChange={handleChange}
                         min={new Date().toISOString().split('T')[0]}
                         className="w-full px-4 py-3 rounded-xl border border-cream-300 bg-cream-100 text-charcoal-700 text-sm focus:outline-none focus:border-emerald-800/40 focus:ring-2 focus:ring-emerald-800/10 transition-all"
@@ -286,7 +427,9 @@ export default function ContactPage() {
                       {t('form.preferredLanguage')}
                     </label>
                     <select
-                      name="language" value={formData.language} onChange={handleChange}
+                      name="language"
+                      value={formData.language}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl border border-cream-300 bg-cream-100 text-charcoal-700 text-sm focus:outline-none focus:border-emerald-800/40 focus:ring-2 focus:ring-emerald-800/10 transition-all"
                     >
                       <option value="en">English</option>
@@ -303,20 +446,42 @@ export default function ContactPage() {
                       {t('form.notes')}
                     </label>
                     <textarea
-                      name="notes" value={formData.notes} onChange={handleChange}
-                      rows={4} maxLength={500}
+                      name="notes"
+                      value={formData.notes}
+                      onChange={handleChange}
+                      rows={4}
+                      maxLength={500}
                       placeholder="Tell us about your needs or questions..."
                       className="w-full px-4 py-3 rounded-xl border border-cream-300 bg-cream-100 text-charcoal-700 text-sm focus:outline-none focus:border-emerald-800/40 focus:ring-2 focus:ring-emerald-800/10 transition-all resize-none"
                     />
-                    <p className="text-xs text-charcoal-600/40 mt-1 text-right">{formData.notes.length}/500</p>
+                    <p className="text-xs text-charcoal-600/40 mt-1 text-right">
+                      {formData.notes.length}/500
+                    </p>
                   </div>
+
+                  {status === 'error' && errorMsg && (
+                    <div className="bg-red-50 border border-red-200 rounded-xl p-3 text-sm text-red-600">
+                      <i className="ri-error-warning-line mr-1" />
+                      {errorMsg}
+                    </div>
+                  )}
 
                   <button
                     type="submit"
-                    className="group flex items-center justify-center gap-2 w-full px-7 py-4 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-emerald-900/20"
+                    disabled={status === 'submitting'}
+                    className="group flex items-center justify-center gap-2 w-full px-7 py-4 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-emerald-900/20 disabled:bg-cream-300 disabled:text-charcoal-600/40"
                   >
-                    {t('form.submitRequest')}
-                    <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform" />
+                    {status === 'submitting' ? (
+                      <>
+                        <i className="ri-loader-4-line animate-spin" />
+                        Sending…
+                      </>
+                    ) : (
+                      <>
+                        {t('form.submitRequest')}
+                        <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </button>
                 </form>
               )}

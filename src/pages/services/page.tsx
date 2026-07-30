@@ -184,7 +184,7 @@ export default function ProgramsServicesPage() {
     <PageLayout
       title="Programs & Services"
       subtitle="Eleven interconnected programs across two strategic directories, each designed to meet newcomers where they are and walk alongside them toward belonging and self-determination."
-      bgImage="https://readdy.ai/api/search-image?query=Diverse%20group%20of%20people%20from%20different%20ethnic%20backgrounds%20engaged%20in%20various%20community%20services%20at%20a%20bright%20modern%20center%2C%20warm%20natural%20lighting%2C%20collaborative%20atmosphere%2C%20cream%20and%20emerald%20green%20accents%2C%20editorial%20photography%2C%20professional%20high-end%20quality&width=1920&height=600&seq=programshero1&orientation=landscape"
+      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg"
       breadcrumb={[
         { label: t('nav.home'), path: '/' },
         { label: 'Programs & Services' },
@@ -200,7 +200,7 @@ export default function ProgramsServicesPage() {
             >
               <div className="absolute inset-0 opacity-10">
                 <img
-                  src="https://readdy.ai/api/search-image?query=Warm%20welcoming%20reception%20area%20with%20diverse%20staff%20helping%20newcomers%20at%20a%20modern%20community%20center%2C%20maps%20and%20information%20boards%20on%20walls%2C%20cream%20and%20emerald%20green%20tones%2C%20documentary%20style&width=800&height=600&seq=dirsettle1&orientation=landscape"
+                  src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649543/Arrived-Refugee-Photos-page-004_orwibh.jpg"
                   alt=""
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -225,7 +225,7 @@ export default function ProgramsServicesPage() {
             >
               <div className="absolute inset-0 opacity-10">
                 <img
-                  src="https://readdy.ai/api/search-image?query=Bright%20modern%20community%20wellness%20center%20with%20diverse%20people%20engaged%20in%20group%20activities%20yoga%20and%20counseling%20sessions%2C%20warm%20natural%20light%20through%20large%20windows%2C%20cream%20and%20sage%20green%20tones%2C%20editorial%20photography&width=800&height=600&seq=dirwell1&orientation=landscape"
+                  src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784648610/yoga-session-img20_l4w0jx.jpg"
                   alt=""
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

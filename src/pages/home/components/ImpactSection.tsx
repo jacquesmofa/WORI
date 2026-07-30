@@ -16,7 +16,7 @@ export default function ImpactSection() {
 
   const impactImage = getImage(
     'impact.image',
-    'https://readdy.ai/api/search-image?query=Diverse%20group%20of%20smiling%20refugee%20and%20immigrant%20families%20standing%20together%20in%20a%20bright%20modern%20community%20center%2C%20warm%20natural%20light%2C%20genuine%20happiness%20and%20hope%2C%20multicultural%20community%2C%20warm%20cream%20and%20emerald%20green%20color%20tones%2C%20editorial%20documentary%20photography%2C%20professional%20high-quality&width=800&height=600&seq=impact1&orientation=landscape'
+    'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649543/Arrived-Refugee-Photos-page-004_orwibh.jpg'
   );
 
   return (
@@ -99,7 +99,7 @@ export default function ImpactSection() {
               </div>
               <div className="shrink-0 w-full sm:w-32 h-32 rounded-xl overflow-hidden">
                 <img
-                  src="https://readdy.ai/api/search-image?query=Elegant%20gala%20awards%20ceremony%20with%20golden%20trophy%20on%20stage%2C%20warm%20ambient%20lighting%2C%20sophisticated%20event%20photography%2C%20emerald%20green%20and%20gold%20color%20scheme%2C%20shallow%20depth%20of%20field%2C%20prestigious%20atmosphere&width=300&height=300&seq=awards1&orientation=squarish"
+                  src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784298421/wori-awards-10-2048x1365_zzvzlm.jpg"
                   alt="WORI Awards ceremony"
                   className="w-full h-full object-cover object-center"
                 />

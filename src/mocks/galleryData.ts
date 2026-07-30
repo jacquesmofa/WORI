@@ -11,7 +11,7 @@ export interface GalleryCategory {
   images: GalleryImage[];
 }
 
-const CLD = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto';
+const CLD = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve';
 
 export const galleryCategories: GalleryCategory[] = [
   {

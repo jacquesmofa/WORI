@@ -1,3 +1,6 @@
+const CLD = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve';
+const LOGO = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9';
+
 export const aboutTimeline = [
   {
     year: '2008',
@@ -118,46 +121,52 @@ export const missionVision = {
 
 export const boardMembers = [
   {
-    name: 'Dr. Amara Osei',
-    role: 'Board Chair',
-    bio: 'Former UNHCR resettlement officer with 18 years of experience in refugee protection and international humanitarian law.',
-    image:
-      'https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20a%20distinguished%20African%20woman%20executive%20in%20her%2050s%20wearing%20elegant%20formal%20attire%2C%20warm%20confident%20smile%2C%20neutral%20cream%20studio%20background%2C%20editorial%20corporate%20headshot%20photography%2C%20soft%20natural%20lighting%2C%20high-end%20quality&width=400&height=500&seq=board1&orientation=portrait',
+    name: 'Ruyina Ahmad Fahim',
+    role: 'Secretary',
+    bio: 'Dedicated board member bringing community leadership and a deep commitment to refugee services and organizational governance at WORI.',
+    image: `${CLD}/v1784647738/ruyina-ahmad-fahim_kk3yxf.jpg`,
   },
   {
-    name: 'James McAllister',
-    role: 'Vice Chair & Finance Committee Lead',
-    bio: 'Chartered Professional Accountant (CPA, CA) specializing in non-profit governance and CRA charitable compliance.',
-    image:
-      'https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20a%20distinguished%20Canadian%20man%20in%20his%2050s%20wearing%20a%20navy%20suit%20and%20tie%2C%20warm%20approachable%20expression%2C%20neutral%20cream%20studio%20background%2C%20editorial%20corporate%20headshot%20photography%2C%20soft%20natural%20lighting%2C%20high-end%20quality&width=400&height=500&seq=board2&orientation=portrait',
+    name: 'Abduesalam Ibrahim Saleh',
+    role: 'Fundraising Manager',
+    bio: 'Experienced fundraising professional building partnerships and driving resource development to sustain WORI\'s mission and expand program reach.',
+    image: `${CLD}/v1784647724/Abduesalam-Ibrahim-Saleh_gxxxe2.jpg`,
   },
   {
-    name: 'Fatima Al-Rashid',
-    role: 'Secretary & Community Liaison',
-    bio: 'Community organizer and former refugee who arrived in Canada in 2009, now leading grassroots advocacy for newcomer rights.',
-    image:
-      'https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20a%20Middle%20Eastern%20woman%20in%20her%2040s%20wearing%20elegant%20modest%20professional%20attire%2C%20confident%20warm%20smile%2C%20neutral%20cream%20studio%20background%2C%20editorial%20corporate%20headshot%20photography%2C%20soft%20natural%20lighting%2C%20high-end%20quality&width=400&height=500&seq=board3&orientation=portrait',
+    name: 'Ephraim A. Ephraim',
+    role: 'Volunteer Coordinator',
+    bio: 'Passionate advocate for community volunteerism, coordinating WORI\'s 340+ active volunteers across all program areas.',
+    image: `${CLD}/v1784647728/ephraim-T-ephraimBoard_zbrpns.jpg`,
   },
   {
-    name: 'Dr. Yonas Tesfaye',
-    role: 'Programs Committee Chair',
-    bio: 'Clinical psychologist specializing in trauma-informed care for refugees, with research published in Lancet Psychiatry.',
-    image:
-      'https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20an%20East%20African%20man%20in%20his%2040s%20wearing%20glasses%20and%20a%20charcoal%20suit%2C%20intellectual%20and%20warm%20expression%2C%20neutral%20cream%20studio%20background%2C%20editorial%20corporate%20headshot%20photography%2C%20soft%20natural%20lighting%2C%20high-end%20quality&width=400&height=500&seq=board4&orientation=portrait',
+    name: 'Stephen Watt',
+    role: 'Board Member',
+    bio: 'Brings governance expertise and a commitment to transparency, accountability, and best practices in non-profit stewardship.',
+    image: `${CLD}/v1784647722/stephen-watt_lwvlza.jpg`,
   },
   {
-    name: 'Sarah Lindqvist',
-    role: 'Fundraising & Partnerships Lead',
-    bio: 'Senior philanthropy advisor with 15 years of experience connecting high-net-worth donors and foundations with refugee causes.',
-    image:
-      'https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20a%20Scandinavian-Canadian%20woman%20in%20her%2040s%20wearing%20a%20cream%20blazer%2C%20warm%20confident%20smile%2C%20neutral%20cream%20studio%20background%2C%20editorial%20corporate%20headshot%20photography%2C%20soft%20natural%20lighting%2C%20high-end%20quality&width=400&height=500&seq=board5&orientation=portrait',
+    name: 'Shams Erfan',
+    role: 'Board Member',
+    bio: 'Community leader with deep roots in the refugee and immigrant community, championing culturally sensitive service delivery.',
+    image: `${CLD}/v1784647720/shams-erfan_rtj9sk.jpg`,
   },
   {
-    name: 'Abebe Haile',
-    role: 'Youth & Volunteer Representative',
-    bio: 'University of Toronto graduate and former WORI youth client who now leads our volunteer recruitment and training programs.',
-    image:
-      'https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20a%20young%20East%20African%20man%20in%20his%20late%2020s%20wearing%20a%20smart%20casual%20blazer%2C%20bright%20optimistic%20smile%2C%20neutral%20cream%20studio%20background%2C%20editorial%20corporate%20headshot%20photography%2C%20soft%20natural%20lighting%2C%20high-end%20quality&width=400&height=500&seq=board6&orientation=portrait',
+    name: 'Mary Jarjiss',
+    role: 'Board Member',
+    bio: 'Dedicated advocate for women\'s empowerment and family settlement services, bringing lived experience and professional expertise to the board.',
+    image: `${CLD}/v1784647733/muna-abdelwasie-mahmoud_ml9m89.jpg`,
+  },
+  {
+    name: 'Adam Ahmed',
+    role: 'Board Member',
+    bio: 'Contributing strategic insight and community connections to advance WORI\'s mission of empowering newcomers across the Greater Toronto Area.',
+    image: `${CLD}/v1784296204/Adam-Ahmed-274x300_nz8avx.jpg`,
+  },
+  {
+    name: 'Hamdan Mohamat Youssouif',
+    role: 'Board Member',
+    bio: 'Bringing international perspective and a strong commitment to human rights, community development, and refugee support to the WORI board.',
+    image: `${CLD}/v1784296204/Adam-Ahmed-274x300_nz8avx.jpg`,
   },
 ];
 
@@ -213,19 +222,19 @@ export const annualReports = [
 ];
 
 export const executiveDirector = {
-  name: 'Dr. Layla Mahmoud',
+  name: 'Nasseradin Bahar Abdullah',
   title: 'Executive Director',
   letter:
-    'Dear Friends, Partners, and Community Members,\n\nWhen I founded WORI in 2008, I carried a simple conviction: that every refugee and immigrant arriving on Canadian soil deserves not just shelter, but dignity, belonging, and a genuine pathway to thrive. Today, nearly two decades later, that conviction burns brighter than ever.\n\nIn 2024, we served 12,480 families — a record that both humbles and motivates us. Behind every number is a human story: a mother learning her first English words, a father securing his first Canadian paycheque, a child finding friends in a new school, a senior discovering community in our recreational programs.\n\nOur work is only possible because of you — our donors, volunteers, board members, government partners, and the courageous families who trust us with their journeys. Together, we are building something extraordinary: a Canada that truly lives up to its promise as a beacon of hope for the world.\n\nThis year, we expanded our services into six languages, launched our digital platform, and deepened our crisis response capabilities. Yet we know the need continues to grow. Wars, climate displacement, and global inequality are sending more families to our doors every month.\n\nI invite you to stand with us. Whether you donate, volunteer, partner, or simply share our story, you are part of this mission. Together, we are not just settling newcomers — we are building the future of Canada.\n\nWith deepest gratitude,\n\nDr. Layla Mahmoud\nExecutive Director, WORI',
+    'Dear Clients, Partners, and Community Members,\n\nSince 2020, I have had the honour of serving as Executive Director for the Wadi-Kaja Organization for Refugee and Immigrant Services. Having worked with refugees for over a decade — in camps across Africa, the Middle East, and Southeast Asia — I know firsthand what it means to face displacement, uncertainty, and the longing for dignity and belonging.\n\nThat personal experience is what drives every decision I make at WORI. When a mother walks through our doors for the first time, when a father secures his first Canadian job, when a child starts school with a smile — those moments are why we exist.\n\nIn 2024, we served 12,480 families across Ontario. This milestone reflects the dedication of our staff, the generosity of our donors, the commitment of our volunteers, and — most importantly — the courage and resilience of the families who trust us with their journeys.\n\nI have collaborated with UNHCR, UNESCO, ICRC, WFP, the Church World Service, and many other organizations. I hold a Bachelor of Arts in Public Relations from the African University College of Communications, with additional training and certification in Refugee Status Determination from IRCC and UNHCR.\n\nThis year, we expanded our digital platform, deepened our crisis response capabilities for the Sudan emergency, and launched multi-language services reaching families in six languages.\n\nI invite you to stand with us — through donations, volunteering, or simply sharing our story. Together, we are not just settling newcomers: we are building the future of Canada.\n\nWith deepest gratitude,\n\nNasseradin Bahar Abdullah\nExecutive Director, WORI',
   image:
-    'https://readdy.ai/api/search-image?query=Professional%20executive%20portrait%20of%20a%20Middle%20Eastern-Canadian%20woman%20in%20her%2050s%20wearing%20an%20elegant%20emerald%20green%20blazer%2C%20warm%20dignified%20expression%2C%20natural%20light%20from%20large%20windows%2C%20prestigious%20office%20setting%20with%20bookshelves%2C%20editorial%20portrait%20photography%2C%20high-end%20quality&width=600&height=750&seq=exec1&orientation=portrait',
+    `${CLD}/v1784647735/nasseradin-bahar-abdullah_nlj0th.jpg`,
 };
 
 export const servicePages = {
   settlement: {
-    heroTitle: 'Immigrant Settlement Services',
+    heroTitle: 'Immigration Settlement Services In Toronto',
     heroSubtitle:
-      'Comprehensive, culturally sensitive settlement support that transforms uncertainty into opportunity for every newcomer family.',
+      'Wadi-Kaja Organization for Refugees and Immigrants (WORI) is a non-profit organization in Toronto, Canada. The organization helps with refugees, and new immigrants in GTA. The organization also provides settlement services, translation and interpretation for new immigrants to Canada.',
     sections: [
       {
         title: 'Arrival & Welcome Services',
@@ -243,11 +252,7 @@ export const servicePages = {
           'We organize community dinners, cultural exchange events, and mentorship pairings that help newcomers build social networks and feel genuine belonging in their new Canadian communities.',
       },
     ],
-    stats: [
-      { value: '4,200+', label: 'Families Settled in 2024' },
-      { value: '24hrs', label: 'Average Response Time' },
-      { value: '96%', label: 'Client Satisfaction' },
-    ],
+    stats: [],
     cta: { label: 'Request Settlement Support', path: '/contact' },
   },
   ircc: {
@@ -256,7 +261,7 @@ export const servicePages = {
       'Your authoritative guide to Immigration, Refugees and Citizenship Canada processes, forms, and compliance requirements.',
     sections: [
       {
-        title: 'Application Form Repository',
+        title: 'IRCC Application Forms & Other Useful Resources',
         description:
           'Access the complete catalog of IRCC forms organized by immigration stream: refugee protection, family sponsorship, permanent residence, work permits, and study permits. Each form includes plain-language guidance in six languages.',
       },
@@ -271,67 +276,74 @@ export const servicePages = {
           'Comprehensive guides to navigating Canadian life: understanding the healthcare system, tenant rights, employment standards, taxation for newcomers, and provincial benefit programs.',
       },
     ],
-    stats: [
-      { value: '340+', label: 'Forms & Guides Available' },
-      { value: '6', label: 'Languages Supported' },
-      { value: '89%', label: 'Application Success Rate' },
+    stats: [],
+    extraButtons: [
+      { label: 'IRCC Application Forms', href: 'https://www.rstp.ca/en/applications/the-refugee-sponsorship-application-forms/', external: true },
+      { label: 'RAP (Resettlement Assistance Program) Rates', href: 'https://www.rstp.ca/en/bvor/rap-rates/', external: true },
     ],
-    cta: { label: 'Access IRCC Resources', path: '/contact' },
+    cta: { label: 'Access IRCC Resources', path: '/services' },
   },
   'language-mentorship': {
     heroTitle: 'Newcomer Language Mentorship',
     heroSubtitle:
-      'One-on-one and small-group language mentorship that accelerates English and French fluency through cultural connection.',
+      'Helping newcomers build confidence, communication skills, and meaningful community connections.',
     sections: [
       {
-        title: 'Volunteer Mentor Matching',
+        title: 'Welcome to the Newcomer Language Mentorship Program',
         description:
-          'Each newcomer is carefully matched with a trained volunteer language mentor based on shared interests, professional background, and cultural considerations. Mentors commit to weekly sessions for a minimum of six months.',
+          'Starting a new life in Canada is both exciting and challenging — and language is one of the most important parts of feeling at home. Our program is designed to support newcomers as they improve their English skills, build confidence in everyday communication, and connect with their new community. Whether you are learning English for daily interactions, employment, school, or social life, we are here to help you every step of the way.',
       },
       {
-        title: 'Practical Conversation Focus',
+        title: 'Our Mission',
         description:
-          'Unlike traditional classroom instruction, our mentorship focuses on real-world communication: job interviews, medical appointments, parent-teacher meetings, grocery shopping, and community navigation.',
+          'The Newcomer Language Mentorship Program is dedicated to helping newcomers improve everyday English fluency, strengthen workplace and professional communication skills, build confidence in speaking, listening, reading, and writing, develop social connections and feel more at home in their community, and access culturally sensitive support in a welcoming and inclusive environment. We believe that language is more than just words — it is connection, empowerment, and belonging.',
       },
       {
-        title: 'Digital & In-Person Hybrid',
+        title: 'What the Program Offers',
         description:
-          'Mentorship sessions are available both in-person at our community centers and virtually through our secure platform, accommodating newcomers in remote or underserved areas.',
+          'We understand that everyone has different learning styles, schedules, and comfort levels. Our program provides flexible learning opportunities including in-person classes held in community-friendly spaces where newcomers can practice English and build friendships, online sessions for those who prefer learning from home, and multilingual support — our volunteer mentors speak Arabic, Farsi, Tigrinya, Urdu, and Hebrew to ensure all participants feel understood and supported.',
+      },
+      {
+        title: 'A Supportive Community of Mentors',
+        description:
+          'Our volunteer mentors are passionate about helping newcomers succeed. They provide one-on-one or small group guidance, conversation practice, help with pronunciation and vocabulary, support with job-related communication, and offer encouragement, patience, and care. Each mentor is trained to offer culturally sensitive support, respecting the diverse backgrounds and experiences of all learners.',
+      },
+      {
+        title: 'Why Join the Program?',
+        description:
+          'Participants gain improved English communication, greater confidence in daily life, better preparation for employment or education, stronger social connections, and a supportive community that celebrates your progress. This program is not just about language — it is about belonging, empowerment, and creating a strong foundation for your future in Canada. Your journey matters and we are honored to be part of it.',
       },
     ],
-    stats: [
-      { value: '520', label: 'Active Mentor Pairs' },
-      { value: '6mo', label: 'Average Program Duration' },
-      { value: '78%', label: 'Participants Improved by 2+ CLB Levels' },
-    ],
+    stats: [],
     cta: { label: 'Become a Language Mentor', path: '/volunteer' },
   },
   'private-sponsorship': {
-    heroTitle: 'Private Sponsorship Desk',
+    heroTitle: 'Private Sponsorship of Refugees (PSR) Program',
     heroSubtitle:
-      'Guiding Canadian citizens and permanent residents through the journey of privately sponsoring a refugee family.',
+      'Wadi-Kaja Organization for Refugees and Immigrants (WORI) is one of the organizations across Canada to run a Private Sponsorship Program (PSRP) for refugees under the auspice of Immigration, Refugees and Citizenship Canada (IRCC).',
     sections: [
       {
-        title: 'Sponsorship Group Formation',
+        title: 'About Our PSR Program',
         description:
-          'We help individuals form or join Groups of Five (G5) or Community Sponsorship Groups. Our compliance team ensures all IRB requirements, financial obligations, and settlement planning documents are correctly prepared.',
+          'Our Private Sponsorship Program for Refugees objective is to sponsor refugees from many parts of the world and resettle them in Canada. The beneficiaries of this program are refugees and individuals in refugee-like situations (Convention Refugees) from all over the globe. Upon their arrival in Canada, our organization provides them with the necessary settlement support for at least one year.',
       },
       {
-        title: 'Financial Planning & Compliance',
+        title: 'How Sponsorship Works',
         description:
-          'We provide transparent financial planning tools showing exactly how much funding is required, how to structure fundraising, and how to document every dollar for IRCC compliance.',
+          'When sponsoring refugees, WORI enters into a formal agreement with co-sponsors — individuals willing and able to help sponsor refugees. Co-sponsors may be relatives, friends, or any Canadian citizen, registered Indians, or permanent resident qualified to become a co-sponsor. Our main countries of resettlement include Afghanistan, Sudan, Chad, Eritrea, Ethiopia, Somalia, Congo, Nicaragua, South Africa, Iraq, and Syria.',
       },
       {
-        title: 'Pre-Arrival & Post-Arrival Support',
+        title: 'Family Sponsorship & Other Immigration Classes',
         description:
-          'From securing housing before arrival to the first year of settlement support, our team walks alongside sponsors every step of the way. Includes cultural orientation training for sponsor groups.',
+          'WORI\'s settlement counsellors assist in completing applicable immigration forms for eligible individuals who would like to sponsor their family members — spouses, children, and other family members who do not fall under the refugee sponsorship program. Although Refugee and Family sponsorship programs are essential parts of our sponsorship program, we also provide information and referral services in all forms of immigration classes such as the Provincial Nominee Program and Federal skilled worker program.',
+      },
+      {
+        title: 'Important Note',
+        description:
+          'The Wadi-Kaja Organization does not work with refugees directly; rather we work with the Co-Sponsors only. If you are a refugee seeking resettlement in Canada, you must have or find a co-sponsor in Canada to contact our organization on your behalf. For Canadian citizens, registered Indians, or permanent residents willing to sponsor a family member, relative, or friend, we are here to assist throughout the process.',
       },
     ],
-    stats: [
-      { value: '145', label: 'Families Sponsored in 2024' },
-      { value: '38', label: 'Active Sponsor Groups' },
-      { value: '100%', label: 'Compliance Audit Pass Rate' },
-    ],
+    stats: [],
     cta: { label: 'Start a Sponsorship Group', path: '/contact' },
   },
   'language-services': {
@@ -583,7 +595,7 @@ export const newsArticles = [
     excerpt:
       'Recognized for our groundbreaking multilingual digital platform that has served over 12,000 families across six languages in its first year of operation.',
     image:
-      'https://readdy.ai/api/search-image?query=Prestigious%20award%20ceremony%20stage%20with%20golden%20trophy%2C%20warm%20ambient%20lighting%2C%20elegant%20emerald%20green%20and%20gold%20decor%2C%20audience%20applauding%2C%20professional%20event%20photography%2C%20high-end%20quality&width=600&height=400&seq=news1&orientation=landscape',
+      `${CLD}/v1784298457/wori-awards-15-2048x1365_yuxxwk.jpg`,
   },
   {
     id: '2',
@@ -593,7 +605,7 @@ export const newsArticles = [
     excerpt:
       'Our crisis response team has activated emergency protocols to support Sudanese refugees, with fast-track resettlement and immediate housing assistance.',
     image:
-      'https://readdy.ai/api/search-image?query=Humanitarian%20aid%20workers%20coordinating%20emergency%20response%20in%20a%20modern%20command%20center%2C%20serious%20focused%20atmosphere%2C%20maps%20and%20screens%20on%20walls%2C%20warm%20professional%20lighting%2C%20documentary%20photography%20style&width=600&height=400&seq=news2&orientation=landscape',
+      `${CLD}/v1784649813/sudan-img_d04jwo.png`,
   },
   {
     id: '3',
@@ -603,7 +615,7 @@ export const newsArticles = [
     excerpt:
       'WORI and TCH have signed a three-year agreement prioritizing refugee family housing placements in 14 buildings across Toronto\'s priority neighborhoods.',
     image:
-      'https://readdy.ai/api/search-image?query=Professional%20handshake%20signing%20ceremony%20in%20a%20modern%20office%20with%20city%20skyline%20visible%20through%20windows%2C%20warm%20natural%20lighting%2C%20prestigious%20corporate%20partnership%20moment%2C%20editorial%20photography&width=600&height=400&seq=news3&orientation=landscape',
+      `${CLD}/v1784649560/Arrived-Refugee-Photos-page-012_ocnovf.jpg`,
   },
   {
     id: '4',
@@ -613,7 +625,7 @@ export const newsArticles = [
     excerpt:
       'Our new digital infrastructure has enabled unprecedented reach, connecting vulnerable newcomers with settlement services faster and more efficiently than ever.',
     image:
-      'https://readdy.ai/api/search-image?query=Modern%20digital%20technology%20center%20with%20diverse%20young%20professionals%20working%20on%20laptops%20and%20tablets%2C%20bright%20modern%20office%20space%2C%20warm%20cream%20and%20green%20tones%2C%20collaborative%20tech%20atmosphere%2C%20editorial%20photography&width=600&height=400&seq=news4&orientation=landscape',
+      `${CLD}/v1784649666/Day23_img41_qwxabt.jpg`,
   },
   {
     id: '5',
@@ -623,7 +635,7 @@ export const newsArticles = [
     excerpt:
       'Our annual gala raised $485,000 and honored 34 volunteers, 12 donors, and 8 corporate partners whose contributions transformed thousands of lives.',
     image:
-      'https://readdy.ai/api/search-image?query=Elegant%20charity%20gala%20event%20with%20guests%20seated%20at%20round%20tables%20with%20gold%20and%20emerald%20green%20decor%2C%20warm%20candlelight%20atmosphere%2C%20formal%20evening%20wear%2C%20celebratory%20mood%2C%20high-end%20event%20photography&width=600&height=400&seq=news5&orientation=landscape',
+      `${CLD}/v1784298421/wori-awards-10-2048x1365_zzvzlm.jpg`,
   },
   {
     id: '6',
@@ -633,44 +645,44 @@ export const newsArticles = [
     excerpt:
       'Record-breaking employment outcomes for newcomer clients, with 1,850 individuals securing meaningful work within six months of program enrollment.',
     image:
-      'https://readdy.ai/api/search-image?query=Diverse%20group%20of%20professionals%20in%20a%20modern%20office%20meeting%2C%20warm%20collaborative%20atmosphere%2C%20people%20of%20different%20ethnicities%20smiling%20and%20discussing%2C%20contemporary%20workspace%20with%20natural%20light%2C%20editorial%20photography&width=600&height=400&seq=news6&orientation=landscape',
+      `${CLD}/v1784295067/IMG-20201006-WA0161_g4vz3n.jpg`,
   },
 ];
 
 export const partnersData = {
   government: [
-    { name: 'Immigration, Refugees and Citizenship Canada', level: 'Federal', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784299259/canada-logo_hpp9nk.png', url: 'https://www.canada.ca/en/immigration-refugees-citizenship.html' },
-    { name: 'Ontario Ministry of Children, Community and Social Services', level: 'Provincial', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.ontario.ca/page/ministry-children-community-and-social-services' },
-    { name: 'City of Toronto Newcomer Office', level: 'Municipal', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784299259/canada-logo_hpp9nk.png', url: 'https://www.toronto.ca/community-people/moving-to-toronto/newcomer-services/' },
-    { name: 'Canada Revenue Agency', level: 'Federal', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784299259/canada-logo_hpp9nk.png', url: 'https://www.canada.ca/en/revenue-agency.html' },
+    { name: 'Immigration, Refugees and Citizenship Canada', level: 'Federal', logo: `${LOGO}/v1784299259/canada-logo_hpp9nk.png`, url: 'https://www.canada.ca/en/immigration-refugees-citizenship.html' },
+    { name: 'Ontario Ministry of Children, Community and Social Services', level: 'Provincial', logo: `${LOGO}/v1784648708/OTF-logo_fmnmld.png`, url: 'https://www.ontario.ca/page/ministry-children-community-and-social-services' },
+    { name: 'City of Toronto Newcomer Office', level: 'Municipal', logo: `${LOGO}/v1784299259/canada-logo_hpp9nk.png`, url: 'https://www.toronto.ca/community-people/moving-to-toronto/newcomer-services/' },
+    { name: 'Canada Revenue Agency', level: 'Federal', logo: `${LOGO}/v1784299259/canada-logo_hpp9nk.png`, url: 'https://www.canada.ca/en/revenue-agency.html' },
   ],
   foundations: [
-    { name: 'The Azrieli Foundation', focus: 'Education & Inclusion', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784299273/cathcrosscultural-logo_cvczv0.jpg', url: 'https://azrielifoundation.org/' },
-    { name: 'The Laidlaw Foundation', focus: 'Youth & Social Justice', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://laidlawfoundation.ca/' },
-    { name: 'The Sprott Foundation', focus: 'Poverty Alleviation', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://sprottfoundation.ca/' },
-    { name: 'The Muttart Foundation', focus: 'Community Capacity', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.muttart.org/' },
-    { name: 'The Inspirit Foundation', focus: 'Pluralism & Belonging', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://inspiritfoundation.org/' },
+    { name: 'The Azrieli Foundation', focus: 'Education & Inclusion', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784299273/cathcrosscultural-logo_cvczv0.jpg', url: 'https://azrielifoundation.org/' },
+    { name: 'The Laidlaw Foundation', focus: 'Youth & Social Justice', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://laidlawfoundation.ca/' },
+    { name: 'The Sprott Foundation', focus: 'Poverty Alleviation', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://sprottfoundation.ca/' },
+    { name: 'The Muttart Foundation', focus: 'Community Capacity', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.muttart.org/' },
+    { name: 'The Inspirit Foundation', focus: 'Pluralism & Belonging', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://inspiritfoundation.org/' },
   ],
   corporate: [
-    { name: 'Scotiabank', category: 'Banking & Financial Services', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.scotiabank.com/' },
-    { name: 'TD Bank Group', category: 'Banking & Financial Services', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.td.com/' },
-    { name: 'RBC Foundation', category: 'Banking & Philanthropy', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.rbc.com/community-social-impact/' },
-    { name: 'Deloitte Canada', category: 'Professional Services', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www2.deloitte.com/ca/' },
-    { name: 'Bell Canada', category: 'Telecommunications', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.bell.ca/' },
-    { name: 'Air Canada Foundation', category: 'Aviation & Community', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.aircanada.com/ca/en/aco/home/about/corporate-responsibility/foundation.html' },
-    { name: 'Loblaw Companies Limited', category: 'Retail & Food Security', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.loblaw.ca/' },
-    { name: 'Toronto-Dominion Centre', category: 'Real Estate & Community', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.tdcentre.com/' },
+    { name: 'Scotiabank', category: 'Banking & Financial Services', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.scotiabank.com/' },
+    { name: 'TD Bank Group', category: 'Banking & Financial Services', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.td.com/' },
+    { name: 'RBC Foundation', category: 'Banking & Philanthropy', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.rbc.com/community-social-impact/' },
+    { name: 'Deloitte Canada', category: 'Professional Services', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www2.deloitte.com/ca/' },
+    { name: 'Bell Canada', category: 'Telecommunications', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.bell.ca/' },
+    { name: 'Air Canada Foundation', category: 'Aviation & Community', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.aircanada.com/ca/en/aco/home/about/corporate-responsibility/foundation.html' },
+    { name: 'Loblaw Companies Limited', category: 'Retail & Food Security', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.loblaw.ca/' },
+    { name: 'Toronto-Dominion Centre', category: 'Real Estate & Community', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.tdcentre.com/' },
   ],
   community: [
-    { name: 'Daily Bread Food Bank', type: 'Food Security', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.dailybread.ca/' },
-    { name: 'North York Harvest', type: 'Food Security', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://northyorkharvest.com/' },
-    { name: 'COSTI Immigrant Services', type: 'Settlement', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://costi.org/' },
-    { name: 'Catholic Crosscultural Services', type: 'Settlement', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784299273/cathcrosscultural-logo_cvczv0.jpg', url: 'https://www.ccsyr.org/' },
-    { name: 'Toronto Community Housing', type: 'Housing', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.torontohousing.ca/' },
-    { name: 'CAMH', type: 'Mental Health', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.camh.ca/' },
-    { name: 'WoodGreen Community Services', type: 'Social Services', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.woodgreen.org/' },
-    { name: 'YMCA of Greater Toronto', type: 'Youth & Community', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784299318/ymcagta-logo_hipljy.jpg', url: 'https://ymcagta.org/' },
-    { name: 'Tropicana Community Services', type: 'Youth & Community', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784296206/cropped-TCS-logo_2x-300x92_xe61cd.webp', url: 'https://tropicanacommunity.org/' },
+    { name: 'Daily Bread Food Bank', type: 'Food Security', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.dailybread.ca/' },
+    { name: 'North York Harvest', type: 'Food Security', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://northyorkharvest.com/' },
+    { name: 'COSTI Immigrant Services', type: 'Settlement', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://costi.org/' },
+    { name: 'Catholic Crosscultural Services', type: 'Settlement', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784299273/cathcrosscultural-logo_cvczv0.jpg', url: 'https://www.ccsyr.org/' },
+    { name: 'Toronto Community Housing', type: 'Housing', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.torontohousing.ca/' },
+    { name: 'CAMH', type: 'Mental Health', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.camh.ca/' },
+    { name: 'WoodGreen Community Services', type: 'Social Services', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648708/OTF-logo_fmnmld.png', url: 'https://www.woodgreen.org/' },
+    { name: 'YMCA of Greater Toronto', type: 'Youth & Community', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784299318/ymcagta-logo_hipljy.jpg', url: 'https://ymcagta.org/' },
+    { name: 'Tropicana Community Services', type: 'Youth & Community', logo: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784296206/cropped-TCS-logo_2x-300x92_xe61cd.webp', url: 'https://tropicanacommunity.org/' },
   ],
 };
 
@@ -691,7 +703,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2026-09-20',
       location: 'Toronto Convention Centre',
       description: 'Celebrating community champions, volunteers, and partners at our flagship annual gala evening with dinner, awards, and live performances.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784649688/Day23_img28_jqixge.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784649688/Day23_img28_jqixge.jpg',
     },
     {
       id: 'evt-2',
@@ -699,7 +711,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2026-10-05',
       location: 'Scarborough Civic Centre',
       description: 'Connecting newcomers with 45+ Canadian employers offering immediate job placements, internships, and mentorship opportunities.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784295067/IMG-20201006-WA0161_g4vz3n.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784295067/IMG-20201006-WA0161_g4vz3n.jpg',
     },
     {
       id: 'evt-3',
@@ -707,7 +719,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2026-11-15',
       location: 'WORI Community Hall',
       description: 'A full-day retreat focused on gentle yoga, meditation, and community connection for senior newcomers and their families.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648610/yoga-session-img20_l4w0jx.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648610/yoga-session-img20_l4w0jx.jpg',
     },
     {
       id: 'evt-4',
@@ -715,7 +727,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2026-12-10',
       location: 'WORI Head Office, Scarborough',
       description: 'Annual holiday drive distributing culturally appropriate food hampers and gifts to over 800 newcomer families across the GTA.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784295207/IMG_20200424_121918_579__1_b6fl1z.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784295207/IMG_20200424_121918_579__1_b6fl1z.jpg',
     },
     {
       id: 'evt-ramadan-2027',
@@ -723,7 +735,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2027-02-27',
       location: 'WORI Community Hall, Scarborough',
       description: 'Join us for a blessed evening of community iftar during the holy month of Ramadan. Breaking fast together, sharing traditional meals, and strengthening bonds of unity and compassion.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784296628/1366-by-501-300dpi-2000x1200_irq4ge.png',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784296628/1366-by-501-300dpi-2000x1200_irq4ge.png',
     },
     {
       id: 'evt-5',
@@ -731,7 +743,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2027-03-08',
       location: 'Metro Toronto Convention Centre',
       description: 'International Women\'s Day summit featuring workshops on entrepreneurship, leadership, and financial independence for immigrant women.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784298529/wori-awards-14-1536x1024_axrgst.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784298529/wori-awards-14-1536x1024_axrgst.jpg',
     },
     {
       id: 'evt-canada-2027',
@@ -739,7 +751,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2027-07-01',
       location: 'Milliken Park, Scarborough',
       description: 'A vibrant celebration of Canadian identity with multicultural food, live music, face painting, and citizenship oath ceremony for new Canadians.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1785062749/Wadi-Kaja-canada-day-2026_bwe3qt.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1785062749/Wadi-Kaja-canada-day-2026_bwe3qt.jpg',
     },
     {
       id: 'evt-6',
@@ -747,7 +759,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2027-04-22',
       location: 'Online via Zoom',
       description: 'Learn how Canadian citizens and permanent residents can privately sponsor refugee families through the IRCC Private Sponsorship of Refugees program.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784649535/Arrived-Refugee-Photos-page-001_grvjts.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784649535/Arrived-Refugee-Photos-page-001_grvjts.jpg',
     },
   ],
   past: [
@@ -757,7 +769,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2026-07-01',
       location: 'Milliken Park, Scarborough',
       description: 'A vibrant celebration of Canadian identity with multicultural food, live music, face painting, and citizenship oath ceremony for new Canadians.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1785062749/Wadi-Kaja-canada-day-2026_bwe3qt.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1785062749/Wadi-Kaja-canada-day-2026_bwe3qt.jpg',
     },
     {
       id: 'evt-p2',
@@ -765,7 +777,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2026-06-15',
       location: 'WORI Community Hall',
       description: 'Workshop for newly arrived refugee families covering housing, healthcare enrolment, school registration, and community orientation.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784649543/Arrived-Refugee-Photos-page-004_orwibh.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784649543/Arrived-Refugee-Photos-page-004_orwibh.jpg',
     },
     {
       id: 'evt-p3',
@@ -773,7 +785,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2026-05-20',
       location: 'Scarborough Civic Centre',
       description: 'Trauma-informed mental health workshop for newcomer families, with one-on-one counseling sessions and support group matching.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784648651/yoga-session-img40_etdqql.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784648651/yoga-session-img40_etdqql.jpg',
     },
     {
       id: 'evt-p4',
@@ -781,7 +793,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2026-04-10',
       location: 'WORI Community Kitchen',
       description: 'Hands-on cooking workshop teaching budget-friendly Canadian meal preparation while preserving cultural food traditions.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784295206/IMG_20200424_121918_572_rlpdxm.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784295206/IMG_20200424_121918_572_rlpdxm.jpg',
     },
     {
       id: 'evt-p5',
@@ -789,7 +801,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2026-03-25',
       location: 'Camp Tamarack, Ontario',
       description: 'Weekend retreat for newcomer youth aged 14-21 focusing on leadership development, cultural exchange, and community building.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784649622/Day23_img22_moiseg.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784649622/Day23_img22_moiseg.jpg',
     },
     {
       id: 'evt-ramadan-2026',
@@ -797,7 +809,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2026-03-18',
       location: 'WORI Community Hall, Scarborough',
       description: 'A blessed evening of community iftar bringing together families, neighbors, and friends to break fast, share traditional meals, and strengthen bonds of unity during the holy month of Ramadan.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784296628/1366-by-501-300dpi-2000x1200_irq4ge.png',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784296628/1366-by-501-300dpi-2000x1200_irq4ge.png',
     },
     {
       id: 'evt-p6',
@@ -805,7 +817,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2026-02-18',
       location: 'WORI Head Office, Scarborough',
       description: 'Educational session on Ontario tenant rights, rental agreements, and housing navigation for newcomer families.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784649560/Arrived-Refugee-Photos-page-012_ocnovf.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784649560/Arrived-Refugee-Photos-page-012_ocnovf.jpg',
     },
     {
       id: 'evt-p7',
@@ -813,7 +825,7 @@ export const eventsData: { upcoming: WoriEvent[]; past: WoriEvent[] } = {
       date: '2025-11-10',
       location: 'Toronto Convention Centre',
       description: 'Our annual flagship gala celebrating community excellence with 400+ attendees, raising $485,000 for refugee programs.',
-      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784298421/wori-awards-10-2048x1365_zzvzlm.jpg',
+      flyer: 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_pad,b_white,ar_16:9/v1784298421/wori-awards-10-2048x1365_zzvzlm.jpg',
     },
   ],
 };

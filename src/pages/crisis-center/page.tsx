@@ -7,7 +7,7 @@ export default function CrisisCenterPage() {
     <PageLayout
       title="Crisis Center"
       subtitle="Immediate resources, emergency contacts, and crisis response information for affected communities and those seeking to help."
-      bgImage="https://readdy.ai/api/search-image?query=Humanitarian%20emergency%20response%20coordination%20center%20with%20maps%20and%20screens%20on%20walls%2C%20diverse%20professionals%20working%20urgently%20but%20calmly%2C%20warm%20focused%20lighting%2C%20serious%20compassionate%20atmosphere%2C%20cream%20and%20emerald%20green%20tones%2C%20documentary%20photography&width=1920&height=600&seq=crisishero1&orientation=landscape"
+      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649813/sudan-img_d04jwo.png"
       breadcrumb={[
         { label: 'Home', path: '/' },
         { label: 'Crisis Center' },
@@ -50,7 +50,7 @@ export default function CrisisCenterPage() {
               </div>
               <div className="w-full lg:w-2/5 relative min-h-[200px] lg:min-h-0">
                 <img
-                  src="https://readdy.ai/api/search-image?query=Humanitarian%20aid%20workers%20distributing%20supplies%20to%20displaced%20families%20at%20a%20refugee%20support%20center%2C%20warm%20compassionate%20lighting%2C%20urgent%20but%20organized%20atmosphere%2C%20cream%20and%20emerald%20green%20tones%2C%20documentary%20photography%20style&width=700&height=500&seq=crisisimg1&orientation=landscape"
+                  src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649543/Arrived-Refugee-Photos-page-004_orwibh.jpg"
                   alt="Crisis response"
                   className="absolute inset-0 w-full h-full object-cover object-center opacity-40 lg:opacity-60"
                 />

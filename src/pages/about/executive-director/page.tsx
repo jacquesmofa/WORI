@@ -9,7 +9,7 @@ export default function ExecutiveDirectorPage() {
     <PageLayout
       title="Executive Director's Desk"
       subtitle="Annual letters, public announcements, and reflections from the leadership of WORI."
-      bgImage="https://readdy.ai/api/search-image?query=Elegant%20executive%20office%20with%20floor-to-ceiling%20windows%20overlooking%20a%20green%20cityscape%2C%20polished%20wood%20desk%20with%20books%20and%20papers%2C%20warm%20afternoon%20light%2C%20prestigious%20institutional%20atmosphere%2C%20cream%20and%20emerald%20green%20tones%2C%20editorial%20photography%20style&width=1920&height=600&seq=exechero1&orientation=landscape"
+      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },
         { label: 'About & Governance', path: '/about' },
@@ -37,25 +37,36 @@ export default function ExecutiveDirectorPage() {
               <div className="space-y-2 text-sm text-charcoal-600/60">
                 <p>
                   <i className="ri-mail-line mr-2 text-emerald-800" />
-                  director@wori.org
+                  nasser@wadikajaorganization.org
                 </p>
                 <p>
                   <i className="ri-phone-line mr-2 text-emerald-800" />
-                  +1 (416) 555-0140
+                  647 777 8322 Ext. 8322
+                </p>
+                <p>
+                  <i className="ri-printer-line mr-2 text-emerald-800" />
+                  Fax: 647 777 8301
+                </p>
+                <p>
+                  <i className="ri-map-pin-line mr-2 text-emerald-800" />
+                  300 - 10 Milner Business Court, Scarborough, Ontario M1B 3C6
                 </p>
                 <p>
                   <i className="ri-calendar-line mr-2 text-emerald-800" />
-                  Serving since 2008
+                  <a
+                    href="https://bookings.cloud.microsoft/book/WadiKajaOrganizationforRefugeesandImmigrantscopy@wadikajaorganization.org/?ismsaljsauthenabled=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-800 hover:text-emerald-700 underline transition-colors"
+                  >
+                    Book Online: Book Now
+                  </a>
                 </p>
               </div>
             </div>
 
             {/* Letter */}
             <div className="flex-1">
-              <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-5">
-                Annual Letter — 2026
-              </span>
-
               <div className="space-y-5">
                 {paragraphs.map((para, idx) => (
                   <p
@@ -72,19 +83,26 @@ export default function ExecutiveDirectorPage() {
               <div className="mt-10 pt-8 border-t border-cream-300/50">
                 <h3 className="font-serif text-lg text-charcoal-700 mb-4">More from the Director's Desk</h3>
                 <div className="space-y-3">
-                  {[
-                    { label: '2025 Annual Letter', date: 'January 2025' },
-                    { label: 'WORI Awards 2025 Opening Remarks', date: 'November 2025' },
-                    { label: 'Response to Sudan Crisis', date: 'February 2026' },
-                  ].map((item) => (
-                    <div
-                      key={item.label}
-                      className="flex items-center justify-between py-3 px-4 rounded-xl bg-cream-200/30 hover:bg-cream-200/50 transition-colors cursor-pointer"
-                    >
-                      <span className="text-sm font-medium text-charcoal-700">{item.label}</span>
-                      <span className="text-xs text-charcoal-600/50">{item.date}</span>
-                    </div>
-                  ))}
+                  <div className="flex items-center justify-between py-3 px-4 rounded-xl bg-cream-200/30 hover:bg-cream-200/50 transition-colors cursor-pointer">
+                    <span className="text-sm font-medium text-charcoal-700">2025 Annual Letter</span>
+                    <span className="text-xs text-charcoal-600/50">January 2025</span>
+                  </div>
+
+                  <Link
+                    to="/news"
+                    className="flex items-center justify-between py-3 px-4 rounded-xl bg-cream-200/30 hover:bg-cream-200/50 transition-colors cursor-pointer"
+                  >
+                    <span className="text-sm font-medium text-charcoal-700">WORI Awards 2025 Opening Remarks</span>
+                    <span className="text-xs text-charcoal-600/50">November 2025</span>
+                  </Link>
+
+                  <Link
+                    to="/crisis-center"
+                    className="flex items-center justify-between py-3 px-4 rounded-xl bg-cream-200/30 hover:bg-cream-200/50 transition-colors cursor-pointer"
+                  >
+                    <span className="text-sm font-medium text-charcoal-700">Response to Sudan Crisis</span>
+                    <span className="text-xs text-charcoal-600/50">February 2026</span>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -92,8 +110,34 @@ export default function ExecutiveDirectorPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Annual Report PDF */}
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-cream-200/30">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
+              Annual Report
+            </span>
+            <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-2">
+              WORI Report 2020-2022
+            </h2>
+            <p className="text-sm text-charcoal-600/60 max-w-xl mx-auto">
+              View our comprehensive report covering organizational activities, financial statements, and impact from 2020 through 2022.
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden border border-cream-300/50" style={{ height: '700px' }}>
+            <iframe
+              src="https://res.cloudinary.com/oqdvximy/image/upload/fl_attachment/v1785376663/Wori_-_Repport_2020-2022_rsp0or.pdf#toolbar=0&navpanes=0&scrollbar=1"
+              title="WORI Report 2020-2022"
+              width="100%"
+              height="100%"
+              style={{ border: 'none' }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 lg:px-10 py-14 md:py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-4">
             Connect with Leadership

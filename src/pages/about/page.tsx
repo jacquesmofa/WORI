@@ -10,7 +10,7 @@ export default function AboutPage() {
     <PageLayout
       title="About WORI"
       subtitle="A Canadian charity committed to empowering refugees and immigrants with dignity, services, and belonging since 2008."
-      bgImage="https://readdy.ai/api/search-image?query=Elegant%20corporate%20governance%20boardroom%20with%20diverse%20professionals%20in%20formal%20attire%20sitting%20around%20a%20polished%20mahogany%20conference%20table%2C%20warm%20natural%20lighting%20through%20large%20windows%2C%20soft%20cream%20and%20emerald%20green%20tones%2C%20prestigious%20institutional%20atmosphere%2C%20high-end%20photography%20style&width=1920&height=600&seq=abouthero1&orientation=landscape"
+      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },
         { label: 'About & Governance' },

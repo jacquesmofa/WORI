@@ -8,7 +8,7 @@ export default function BookingPage() {
     <PageLayout
       title={t('pages.booking.title')}
       subtitle={t('pages.booking.subtitle')}
-      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784649679/gallery_img2-1024x768-640x480_iq3j0a.jpg"
+      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649679/gallery_img2-1024x768-640x480_iq3j0a.jpg"
       breadcrumb={[
         { label: t('nav.home'), path: '/' },
         { label: t('pages.booking.title') },

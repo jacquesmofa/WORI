@@ -136,7 +136,7 @@ export default function Navbar({ transparent: forceTransparent }: NavbarProps = 
             >
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg overflow-hidden bg-cream-100 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784294788/WORI-logo2_j6w6nu.jpg"
+                  src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784294788/WORI-logo2_j6w6nu.jpg"
                   alt="WORI Logo"
                   width="48"
                   height="48"

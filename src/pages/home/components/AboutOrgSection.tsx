@@ -41,11 +41,8 @@ export default function AboutOrgSection() {
 
   const aboutImage = getImage(
     'about.image',
-    'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784649547/Arrived-Refugee-Photos-page-006_jqrq1l.jpg'
+    'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649547/Arrived-Refugee-Photos-page-006_jqrq1l.jpg'
   );
-
-  const aboutDesc = getContent('about.description') ||
-    'Wadi-Kaja Organization for Refugees and Immigrants (WORI) is a non-profit organization in Toronto, Canada. The organization helps with refugees, and new immigrants in GTA. The organization also provides settlement services, translation and interpretation for new immigrants to Canada.';
 
   return (
     <section className="py-14 md:py-20 bg-cream-100">
@@ -85,25 +82,9 @@ export default function AboutOrgSection() {
                 Wadi-Kaja Organization for Refugee and Immigrant
               </h2>
 
-              <p className="text-base text-charcoal-600/75 leading-relaxed mb-6">
-                {aboutDesc}
+              <p className="text-base text-charcoal-600/75 leading-relaxed mb-5">
+                Wadi-Kaja Organization for Refugees and Immigrants (WORI) is a non-profit organization in Toronto, Canada. The organization helps with refugees, and new immigrants in GTA. The organization also provides settlement services, translation and interpretation for new immigrants to Canada. Our mission is to improve the quality of life of Refugees and Immigrants, through programs and services to promote their social and economic inclusion to enable them to become contributing members of Canadian society and to live in dignity.
               </p>
-
-              {/* Stats row */}
-              <div className="grid grid-cols-3 gap-4 mb-7">
-                <div className="text-center py-4 px-3 bg-white rounded-xl border border-cream-200">
-                  <div className="font-serif text-2xl font-bold text-emerald-800 mb-0.5">12K+</div>
-                  <div className="text-xs text-charcoal-600/60 font-medium">Families Served</div>
-                </div>
-                <div className="text-center py-4 px-3 bg-white rounded-xl border border-cream-200">
-                  <div className="font-serif text-2xl font-bold text-emerald-800 mb-0.5">6</div>
-                  <div className="text-xs text-charcoal-600/60 font-medium">Languages</div>
-                </div>
-                <div className="text-center py-4 px-3 bg-white rounded-xl border border-cream-200">
-                  <div className="font-serif text-2xl font-bold text-emerald-800 mb-0.5">18</div>
-                  <div className="text-xs text-charcoal-600/60 font-medium">Years Active</div>
-                </div>
-              </div>
 
               <Link
                 to="/about/mission"

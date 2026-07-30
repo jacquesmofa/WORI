@@ -49,7 +49,7 @@ export default function Footer() {
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-10 h-10 rounded-lg overflow-hidden bg-cream-100 flex items-center justify-center">
                 <img
-                  src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784294788/WORI-logo2_j6w6nu.jpg"
+                  src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784294788/WORI-logo2_j6w6nu.jpg"
                   alt="WORI Logo"
                   width="40"
                   height="40"
@@ -180,19 +180,19 @@ export default function Footer() {
               to="/privacy"
               className="text-xs text-cream-200/35 hover:text-cream-200/70 transition-colors"
             >
-              {t('footer.privacy')}
+              Your Privacy
             </Link>
             <Link
               to="/terms"
               className="text-xs text-cream-200/35 hover:text-cream-200/70 transition-colors"
             >
-              {t('footer.terms')}
+              Terms
             </Link>
             <Link
               to="/accessibility"
               className="text-xs text-cream-200/35 hover:text-cream-200/70 transition-colors"
             >
-              {t('footer.accessibility')}
+              Accessibility
             </Link>
           </div>
         </div>

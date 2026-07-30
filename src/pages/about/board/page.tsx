@@ -2,12 +2,58 @@ import PageLayout from '@/components/feature/PageLayout';
 import { boardMembers } from '@/mocks/pagesData';
 import { Link } from 'react-router-dom';
 
+const CLD = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve';
+
+const managementTeam = [
+  {
+    name: 'Nasseradin Bahar Abdullah',
+    role: 'Executive Director',
+    image: `${CLD}/v1784647735/nasseradin-bahar-abdullah_nlj0th.jpg`,
+    email: 'nasser@wadikajaorganization.org',
+    phone: '647-656-7436',
+  },
+  {
+    name: 'Suher Moussa',
+    role: 'General Manager',
+    image: `${CLD}/v1784647719/suher-moussa_t1s1lg.jpg`,
+    email: 'suher@wadikajaorganization.org',
+    phone: '647-777-8352',
+  },
+  {
+    name: 'Besma Ali',
+    role: 'Program Manager',
+    image: `${CLD}/v1784647729/besma-ali_q3mmcb.jpg`,
+    email: 'besma@wadikajaorganization.org',
+    phone: '647-777-8322',
+  },
+  {
+    name: 'Mohammed Hanif Ayubzada',
+    role: 'Volunteer Coordinator',
+    image: `${CLD}/v1784647731/mohammed-hanif-ayubzada_lqx0s5.jpg`,
+    email: 'hanif@wadikajaorganization.org',
+    phone: '647-777-8352',
+  },
+];
+
+const volunteers = [
+  'Sara Abdullah',
+  'Abdulsalam Khojali',
+  'Samuel Tesfaye',
+  'Sadia Mohammed Ali',
+  'Morsat Malik',
+  'Marhawe Mathhew',
+  'John Majok',
+  'Shadia Issa Saeed',
+  'Jihan Mohammed',
+  'Nasir Mohammed',
+];
+
 export default function BoardPage() {
   return (
     <PageLayout
       title="Board & Management"
       subtitle="Meet the diverse team of leaders, professionals, and community advocates who govern WORI with integrity and vision."
-      bgImage="https://readdy.ai/api/search-image?query=Diverse%20professional%20board%20members%20in%20a%20prestigious%20meeting%20room%20with%20warm%20natural%20lighting%2C%20collaborative%20discussion%20around%20a%20polished%20table%2C%20cream%20and%20emerald%20green%20tones%2C%20high-end%20corporate%20editorial%20photography&width=1920&height=600&seq=boardhero1&orientation=landscape"
+      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784298421/wori-awards-10-2048x1365_zzvzlm.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },
         { label: 'About & Governance', path: '/about' },
@@ -34,12 +80,12 @@ export default function BoardPage() {
             </div>
             <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
               {[
-                { label: 'Board Members', value: '6' },
-                { label: 'Average Tenure', value: '5.2 Years' },
+                { label: 'Board Members', value: '8' },
                 { label: 'Diverse Backgrounds', value: '4 Continents' },
-                { label: 'Annual Reviews', value: '100%' },
                 { label: 'Independent', value: 'Non-Profit' },
                 { label: 'CRA Compliant', value: 'Since 2012' },
+                { label: 'Charity Reg.', value: '748873338RR0001' },
+                { label: 'Toronto Based', value: 'Scarborough, ON' },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -61,23 +107,22 @@ export default function BoardPage() {
             Board of Directors
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {boardMembers.map((member) => (
               <div
                 key={member.name}
                 className="group bg-cream-100 rounded-2xl overflow-hidden border border-cream-300/50 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-900/5"
               >
-                <div className="h-64 overflow-hidden">
+                <div className="h-56 overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-5 md:p-6">
-                  <h3 className="font-serif text-lg font-medium text-charcoal-700 mb-0.5">{member.name}</h3>
-                  <p className="text-xs text-gold-600 font-semibold uppercase tracking-wider mb-3">{member.role}</p>
-                  <p className="text-sm text-charcoal-600/60 leading-relaxed">{member.bio}</p>
+                <div className="p-5">
+                  <h3 className="font-serif text-base font-medium text-charcoal-700 mb-0.5">{member.name}</h3>
+                  <p className="text-xs text-gold-600 font-semibold uppercase tracking-wider">{member.role}</p>
                 </div>
               </div>
             ))}
@@ -85,33 +130,32 @@ export default function BoardPage() {
         </div>
       </section>
 
-      {/* Management Team Placeholder */}
+      {/* Management Team */}
       <section className="px-6 lg:px-10 py-14 md:py-20">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-8">
-            Senior Management Team
+            Management Team
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
-              { name: 'Dr. Layla Mahmoud', role: 'Executive Director' },
-              { name: 'Tariq Hassan', role: 'Director of Settlement Services' },
-              { name: 'Dr. Priya Nair', role: 'Director of Wellbeing Programs' },
-              { name: 'Marcus Johnson', role: 'Director of Development & Partnerships' },
-              { name: 'Amira Khalil', role: 'Director of Communications & Advocacy' },
-              { name: 'Robert Chen', role: 'Director of Finance & Operations' },
-            ].map((person) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {managementTeam.map((person) => (
               <div
                 key={person.name}
-                className="flex items-center gap-4 p-4 rounded-xl bg-cream-200/30 border border-cream-300/40"
+                className="flex items-start gap-4 p-5 rounded-xl bg-cream-200/30 border border-cream-300/40"
               >
-                <div className="w-12 h-12 rounded-full bg-emerald-800/8 flex items-center justify-center shrink-0">
-                  <span className="font-serif text-emerald-800 font-semibold text-sm">
-                    {person.name.split(' ').map((n) => n[0]).join('')}
-                  </span>
+                <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0">
+                  <img
+                    src={person.image}
+                    alt={person.name}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-charcoal-700">{person.name}</h4>
-                  <p className="text-xs text-charcoal-600/50">{person.role}</p>
+                  <p className="text-xs text-gold-600 font-medium mb-2">{person.role}</p>
+                  <div className="space-y-0.5 text-xs text-charcoal-600/50">
+                    <p><i className="ri-mail-line mr-1 text-emerald-800" /> {person.email}</p>
+                    <p><i className="ri-phone-line mr-1 text-emerald-800" /> {person.phone}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -119,21 +163,41 @@ export default function BoardPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Volunteers */}
+      <section className="px-6 lg:px-10 py-14 md:py-20 bg-cream-100">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-8">
+            Volunteers
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            {volunteers.map((name) => (
+              <div
+                key={name}
+                className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-cream-200/40 border border-cream-300/30"
+              >
+                <i className="ri-user-smile-line text-emerald-700 text-sm" />
+                <span className="text-sm text-charcoal-700 font-medium">{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA — Governance Documents */}
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-emerald-900">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-cream-100 mb-4">
             Governance Documents
           </h2>
           <p className="text-sm text-cream-100/60 mb-8 max-w-xl mx-auto">
-            WORI maintains full transparency. Access our by-laws, governance policies, and board meeting minutes.
+            WORI maintains full transparency. Access our annual report covering organizational activities from 2020 through 2022.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
-              to="/about/annual-reports"
+              to="/about/executive-director"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-gold-500 hover:bg-gold-400 text-emerald-900 text-sm font-semibold rounded-full transition-all"
             >
-              Annual Reports
+              View Annual Report
               <i className="ri-arrow-right-line" />
             </Link>
             <Link

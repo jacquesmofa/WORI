@@ -10,7 +10,7 @@ export default function DonateSection() {
         {/* Left: Image Side */}
         <div className="w-full lg:w-1/2 relative min-h-[250px] lg:min-h-full">
           <img
-            src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784649626/Day23_img23_o2ph1n.jpg"
+            src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649626/Day23_img23_o2ph1n.jpg"
             alt="WORI community support and impact"
             className="absolute inset-0 w-full h-full object-cover object-top"
           />

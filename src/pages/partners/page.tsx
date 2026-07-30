@@ -7,7 +7,7 @@ export default function PartnersPage() {
     <PageLayout
       title="Partners & Funders"
       subtitle="WORI's work is made possible by the generous support of government partners, foundations, corporate sponsors, and community organizations."
-      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784649639/Day23_img30_qdnr0n.jpg"
+      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649639/Day23_img30_qdnr0n.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },
         { label: 'Partners & Funders' },

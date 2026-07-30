@@ -110,7 +110,7 @@ export default function EventsPage() {
     <PageLayout
       title={t('pages.events.title')}
       subtitle={t('pages.events.subtitle')}
-      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784298489/wori-awards-20-1536x1024_uqyztr.jpg"
+      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784298489/wori-awards-20-1536x1024_uqyztr.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },
         { label: t('newsMenu.eventsGallery') },

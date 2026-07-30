@@ -9,7 +9,7 @@ export default function ActionCTASection() {
         style={{ minHeight: '220px' }}
       >
         <img
-          src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784299336/event-img_k9xxzv.jpg"
+          src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784299336/event-img_k9xxzv.jpg"
           alt="Book a consultation at WORI"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -34,7 +34,7 @@ export default function ActionCTASection() {
         style={{ minHeight: '220px' }}
       >
         <img
-          src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto/v1784650812/23_e4w8zr.jpg"
+          src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784650812/23_e4w8zr.jpg"
           alt="Volunteer with WORI"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />

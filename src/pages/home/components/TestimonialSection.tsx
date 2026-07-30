@@ -13,7 +13,7 @@ export default function TestimonialSection() {
             <div className="w-full md:w-2/5 lg:w-1/3 relative z-10 md:-ml-6 lg:-ml-10 my-8 md:my-10">
               <div className="w-full h-64 md:h-full md:min-h-[400px] rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://readdy.ai/api/search-image?query=Portrait%20of%20a%20confident%20refugee%20woman%20in%20her%2030s%20wearing%20elegant%20modest%20clothing%2C%20warm%20natural%20light%2C%20soft%20cream%20background%2C%20genuine%20smile%20of%20hope%20and%20strength%2C%20editorial%20portrait%20photography%2C%20high-end%20magazine%20style%2C%20shallow%20depth%20of%20field%2C%20emerald%20and%20warm%20tones&width=500&height=700&seq=portrait1&orientation=portrait"
+                  src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649560/Arrived-Refugee-Photos-page-012_ocnovf.jpg"
                   alt="Amina H., WORI settlement client"
                   className="w-full h-full object-cover object-top"
                 />

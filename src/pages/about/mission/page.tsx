@@ -7,7 +7,7 @@ export default function MissionPage() {
     <PageLayout
       title="Mission, Vision & Values"
       subtitle="The foundational principles that guide every service, every partnership, and every decision at WORI."
-      bgImage="https://readdy.ai/api/search-image?query=Abstract%20artistic%20composition%20of%20hands%20reaching%20toward%20light%20representing%20hope%20and%20human%20connection%2C%20warm%20golden%20and%20emerald%20green%20tones%2C%20soft%20bokeh%20background%2C%20inspirational%20symbolic%20photography%2C%20high-end%20editorial%20quality&width=1920&height=600&seq=missionhero1&orientation=landscape"
+      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649543/Arrived-Refugee-Photos-page-004_orwibh.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },
         { label: 'About & Governance', path: '/about' },

@@ -8,7 +8,7 @@ export default function HeroSection() {
 
   const heroImage = getImage(
     'hero.image',
-    'https://readdy.ai/api/search-image?query=Aerial%20drone%20photograph%20of%20a%20welcoming%20Canadian%20landscape%20at%20golden%20hour%2C%20showing%20vast%20green%20forests%20meeting%20a%20calm%20lake%2C%20with%20a%20small%20diverse%20community%20gathering%20visible%20on%20the%20shore%2C%20warm%20golden%20light%2C%20cinematic%20composition%2C%20rich%20emerald%20green%20and%20gold%20tones%2C%20prestigious%20documentary%20photography%20style%2C%20no%20text%2C%20no%20watermarks&width=1920&height=1080&seq=hero1&orientation=landscape'
+    'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1785062749/Wadi-Kaja-canada-day-2026_bwe3qt.jpg'
   );
 
   return (

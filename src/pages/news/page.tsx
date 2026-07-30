@@ -17,7 +17,7 @@ export default function NewsPage() {
     <PageLayout
       title="News & Community Updates"
       subtitle="Press releases, award announcements, program launches, and emergency community alerts from WORI."
-      bgImage="https://readdy.ai/api/search-image?query=Modern%20newsroom%20or%20community%20media%20center%20with%20diverse%20journalists%20working%20at%20desks%2C%20warm%20natural%20lighting%20through%20large%20windows%2C%20professional%20editorial%20atmosphere%2C%20cream%20and%20emerald%20green%20tones%2C%20high-end%20photography&width=1920&height=600&seq=newshero1&orientation=landscape"
+      bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784298421/wori-awards-10-2048x1365_zzvzlm.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },
         { label: 'News & Updates' },
