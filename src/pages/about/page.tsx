@@ -3,6 +3,13 @@ import { useTranslation } from 'react-i18next';
 import PageLayout from '@/components/feature/PageLayout';
 import { aboutTimeline, missionVision } from '@/mocks/pagesData';
 
+const ABOUT_SEO = {
+  title: 'About Us | Wadi-Kaja Organization for Refugee & Immigrant Services',
+  description: 'Learn about the mission, history, core values, and commitment of WORI to supporting newcomers and refugees across Canada since 2008. Meet our leadership team and explore our impact.',
+  keywords: 'about WORI, refugee charity Canada, immigrant services organization, Wadi-Kaja mission, newcomer support history, settlement charity Toronto',
+  canonicalPath: '/about',
+};
+
 export default function AboutPage() {
   const { t } = useTranslation();
 
@@ -16,6 +23,7 @@ export default function AboutPage() {
         { label: 'About & Governance' },
         { label: 'About WORI' },
       ]}
+      seo={ABOUT_SEO}
     >
       {/* Mission Preview */}
       <section className="px-6 lg:px-10 py-14 md:py-20">

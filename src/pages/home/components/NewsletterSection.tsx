@@ -88,7 +88,7 @@ export default function NewsletterSection() {
               <i className="ri-check-line text-gold-400 text-lg" />
             </div>
             <p className="text-cream-100 font-medium">
-              {t('common.success')} You&apos;re now subscribed.
+              {t('success')} You&apos;re now subscribed.
             </p>
           </div>
         ) : (

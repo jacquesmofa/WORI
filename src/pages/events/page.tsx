@@ -115,6 +115,12 @@ export default function EventsPage() {
         { label: 'Home', path: '/' },
         { label: t('newsMenu.eventsGallery') },
       ]}
+      seo={{
+        title: 'Events & Photo Gallery | WORI Community Celebrations',
+        description: 'Browse photo galleries from WORI events, award ceremonies, community celebrations, Canada Day gatherings, wellness sessions, and settlement workshops. See our impact in action.',
+        keywords: 'WORI events, refugee community events, immigrant celebration photos, Wadi-Kaja gallery, settlement workshops Toronto',
+        canonicalPath: '/events',
+      }}
     >
       {/* ── CATEGORY VIEW (main pool) ── */}
       {!selectedCategory && (

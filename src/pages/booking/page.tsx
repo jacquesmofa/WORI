@@ -13,6 +13,12 @@ export default function BookingPage() {
         { label: t('nav.home'), path: '/' },
         { label: t('pages.booking.title') },
       ]}
+      seo={{
+        title: 'Book a Consultation | WORI Settlement & Services Appointment',
+        description: 'Schedule a consultation with WORI for settlement support, resume writing, job search, SIN & OHIP applications, and other newcomer services. Free, confidential, multilingual.',
+        keywords: 'book WORI consultation, settlement appointment Toronto, newcomer services booking, immigrant support schedule, refugee services appointment',
+        canonicalPath: '/booking',
+      }}
     >
       <section className="px-6 lg:px-10 py-14 md:py-20">
         <div className="max-w-2xl mx-auto text-center">

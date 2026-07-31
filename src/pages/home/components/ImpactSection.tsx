@@ -47,10 +47,10 @@ export default function ImpactSection() {
                   AODA Compliant
                 </span>
                 <span className="px-3 py-1.5 rounded-lg bg-white/15 backdrop-blur-md border border-white/20 text-xs font-medium text-cream-100">
-                  CRA Registered
+                  {t('impact.craRegistered')}
                 </span>
                 <span className="px-3 py-1.5 rounded-lg bg-white/15 backdrop-blur-md border border-white/20 text-xs font-medium text-cream-100">
-                  Since 2008
+                  {t('impact.since2008')}
                 </span>
               </div>
             </div>
@@ -88,13 +88,13 @@ export default function ImpactSection() {
             <div className="bg-emerald-800 rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-start gap-6">
               <div className="flex-1">
                 <span className="text-xs font-medium text-gold-400 uppercase tracking-wider mb-2 block">
-                  WORI Awards 2025
+                  {t('impact.awardsTitle')}
                 </span>
                 <h3 className="font-serif text-xl md:text-2xl text-cream-100 mb-2">
-                  Celebrating Community Excellence
+                  {t('impact.awardsSubtitle')}
                 </h3>
                 <p className="text-sm text-cream-100/60 leading-relaxed">
-                  Our annual gala recognizes the extraordinary contributions of volunteers, donors, and community partners who make our mission possible.
+                  {t('impact.awardsDesc')}
                 </p>
               </div>
               <div className="shrink-0 w-full sm:w-32 h-32 rounded-xl overflow-hidden">
@@ -111,7 +111,7 @@ export default function ImpactSection() {
         {/* Lower: CTA Bar */}
         <div className="flex items-center justify-between py-5 px-6 md:px-8 bg-cream-200/60 rounded-xl">
           <p className="text-sm text-charcoal-600/70 font-medium">
-            Serving communities across Toronto, Ottawa, and beyond
+            {t('impact.servingCommunities')}
           </p>
           <Link
             to="/about"

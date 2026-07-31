@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { eventsData, type WoriEvent } from '@/mocks/pagesData';
 import { Link } from 'react-router-dom';
 
@@ -14,6 +15,7 @@ const VISIBLE_COUNT = 3;
 const PEEK_WIDTH = 60;
 
 export default function EventsSection() {
+  const { t } = useTranslation();
   const now = new Date();
   const todayStr = now.toISOString().split('T')[0];
 
@@ -110,13 +112,13 @@ export default function EventsSection() {
       <div className="px-6 lg:px-12 max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <span className="inline-block px-3 py-1 rounded-full bg-emerald-800/10 border border-emerald-800/20 text-xs font-semibold text-emerald-800 uppercase tracking-widest mb-3">
-            Events
+            {t('events.badge')}
           </span>
           <h2 className="font-serif text-3xl md:text-4xl font-semibold text-charcoal-700">
-            Past &amp; Upcoming Events
+            {t('events.title')}
           </h2>
           <p className="text-sm text-charcoal-600/50 mt-2 max-w-lg mx-auto">
-            Join us at our community events — from fundraisers to settlement workshops, every gathering strengthens our mission.
+            {t('events.description')}
           </p>
         </div>
 
@@ -125,10 +127,10 @@ export default function EventsSection() {
           <div className="flex items-center justify-between mb-5">
             <div>
               <h3 className="font-serif text-xl md:text-2xl font-semibold text-charcoal-700">
-                Upcoming Events
+                {t('events.upcomingTitle')}
               </h3>
               <p className="text-xs text-charcoal-600/50 mt-0.5">
-                Mark your calendar — join us at our next community gathering
+                {t('events.upcomingDesc')}
               </p>
             </div>
             <div className="flex items-center gap-2">
@@ -152,7 +154,7 @@ export default function EventsSection() {
           {upcoming.length === 0 ? (
             <div className="text-center py-10 bg-white rounded-2xl border border-cream-300/40">
               <i className="ri-calendar-event-line text-charcoal-600/30 text-3xl mb-2 block" />
-              <p className="text-sm text-charcoal-600/50">No upcoming events at this time. Check back soon!</p>
+              <p className="text-sm text-charcoal-600/50">{t('events.noUpcoming')}</p>
             </div>
           ) : (
             <div
@@ -215,10 +217,10 @@ export default function EventsSection() {
           <div className="flex items-center justify-between mb-5">
             <div>
               <h3 className="font-serif text-xl md:text-2xl font-semibold text-charcoal-700">
-                Past Events
+                {t('events.pastTitle')}
               </h3>
               <p className="text-xs text-charcoal-600/50 mt-0.5">
-                Relive the moments and milestones from our recent gatherings
+                {t('events.pastDesc')}
               </p>
             </div>
             <div className="flex items-center gap-2">
@@ -242,7 +244,7 @@ export default function EventsSection() {
           {past.length === 0 ? (
             <div className="text-center py-10 bg-white rounded-2xl border border-cream-300/40">
               <i className="ri-history-line text-charcoal-600/30 text-3xl mb-2 block" />
-              <p className="text-sm text-charcoal-600/50">No past events to display yet.</p>
+              <p className="text-sm text-charcoal-600/50">{t('events.noPast')}</p>
             </div>
           ) : (
             <div
@@ -304,7 +306,7 @@ export default function EventsSection() {
             to="/events"
             className="inline-flex items-center gap-2 px-6 py-2.5 border-2 border-emerald-800 text-emerald-800 hover:bg-emerald-800 hover:text-cream-100 text-sm font-semibold rounded-full transition-all whitespace-nowrap cursor-pointer"
           >
-            View All Events
+            {t('events.viewAll')}
             <i className="ri-arrow-right-line" />
           </Link>
         </div>

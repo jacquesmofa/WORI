@@ -41,6 +41,9 @@ export default {
     womenEmpowerment: 'Women\'s Empowerment Programs',
     seniors: 'Seniors\' Recreational Program',
     foodSecurity: 'Food Security Initiative',
+    youth: 'Youth Program',
+    communityEngagement: 'Community Engagement',
+    eventCelebrations: 'Event Celebrations',
   },
   // News submenu
   newsMenu: {
@@ -56,6 +59,25 @@ export default {
     subtitle: 'Since 2008, WORI has been a beacon of hope for refugees and immigrants across Canada — providing settlement services, language mentorship, and dignified pathways to belonging.',
     ctaPrimary: 'Explore Our Programs',
     ctaSecondary: 'Donate Today',
+    slider: {
+      slides: [
+        { id: 1, label: 'WORI Awards 2025', sublabel: 'Celebrating Resilience, Leadership & Community Across Canada', cta: 'View Gallery' },
+        { id: 2, label: 'Welcoming Refugees', sublabel: 'Supporting displaced families and newcomers arriving in Canada', cta: 'Learn More' },
+        { id: 3, label: 'Community Outreach', sublabel: 'Providing essential services to vulnerable families across Toronto', cta: 'Get Involved' },
+        { id: 4, label: 'Seniors Wellness', sublabel: 'Weekly yoga and wellness sessions promoting health and connection', cta: 'View Events' },
+        { id: 5, label: 'Community Excellence', sublabel: 'Honoring outstanding contributions from volunteers and partners', cta: 'View Gallery' },
+        { id: 6, label: 'Senior Entertainment', sublabel: 'Bringing joy, music, and dance to seniors across the GTA', cta: 'Learn More' },
+        { id: 7, label: 'New Beginnings', sublabel: 'Refugee families finding hope and home in our community', cta: 'Learn More' },
+        { id: 8, label: 'Canada Day Celebration', sublabel: 'Celebrating together as Canadians — new and old', cta: 'See Events' },
+        { id: 9, label: 'Award Ceremony', sublabel: 'Recognizing the extraordinary dedication that transforms lives', cta: 'View Gallery' },
+        { id: 10, label: 'Sharing For Orphans', sublabel: 'Bringing nourishment and hope to orphans and families in need', cta: 'Donate Now' },
+        { id: 11, label: 'Warm Welcome', sublabel: 'Every refugee deserves a dignified and compassionate arrival', cta: 'Learn More' },
+        { id: 12, label: 'Wellness Programs', sublabel: 'Free fitness and wellness sessions for newcomer seniors', cta: 'View Events' },
+        { id: 13, label: 'Food Security', sublabel: 'Ensuring no family goes hungry in our community', cta: 'Donate Now' },
+        { id: 14, label: 'Senior Programs', sublabel: 'Music, dance, and community connection for our elders', cta: 'Get Involved' },
+        { id: 15, label: 'WORI Gala', sublabel: 'An evening of celebration, gratitude, and community impact', cta: 'View Gallery' },
+      ],
+    },
   },
   // Stats
   stats: {
@@ -70,6 +92,13 @@ export default {
     title: 'Every life we touch strengthens the fabric of our communities',
     description: 'From emergency housing to career mentorship, WORI delivers comprehensive settlement and wellbeing services tailored to the unique journeys of refugees and immigrants in Canada.',
     cta: 'Discover Our Story',
+    aodaCompliant: 'AODA Compliant',
+    craRegistered: 'CRA Registered',
+    since2008: 'Since 2008',
+    awardsTitle: 'WORI Awards 2025',
+    awardsSubtitle: 'Celebrating Community Excellence',
+    awardsDesc: 'Our annual gala recognizes the extraordinary contributions of volunteers, donors, and community partners who make our mission possible.',
+    servingCommunities: 'Serving communities across Toronto, Ottawa, and beyond',
   },
   // Programs
   programs: {
@@ -85,6 +114,18 @@ export default {
     directory4: 'News & Partnerships',
     directory4Desc: 'Crisis response, community updates, and recognition of our generous partners.',
     cta: 'View All Programs',
+    sectionTitle: 'Our Programs',
+    sectionDesc: 'Fourteen interconnected programs spanning settlement, language, youth, employment, wellbeing, and community empowerment — each designed to walk alongside newcomers toward belonging and self-determination.',
+    badgeCount: '14 Programs',
+    catSettlement: 'Settlement & Resources',
+    catWellbeing: 'Wellbeing & Empowerment',
+    catCommunity: 'Community & Events',
+    viewAll: 'View All Programs',
+    orgName: 'Wadi-Kaja Organization for Refugee and Immigrant',
+    orgDesc: 'Wadi-Kaja Organization for Refugees and Immigrants (WORI) is a non-profit organization in Toronto, Canada. The organization helps with refugees, and new immigrants in GTA. The organization also provides settlement services, translation and interpretation for new immigrants to Canada. Our mission is to improve the quality of life of Refugees and Immigrants, through programs and services to promote their social and economic inclusion to enable them to become contributing members of Canadian society and to live in dignity.',
+    viewVision: 'View Our Vision and Mission',
+    craRegistered: 'CRA Registered',
+    charityNo: 'Charity No. 748873338RR0001',
   },
   // Testimonial
   testimonial: {
@@ -122,6 +163,12 @@ export default {
     stripeDesc: 'Credit card, Apple Pay, Google Pay.',
     secure: 'Secure payment.',
     cta: 'Donate Now',
+    makeImpact: 'Make an Impact',
+    everyGift: 'Every Gift',
+    buildsFutures: 'Builds Futures',
+    impact50: 'Provides one week of temporary housing support',
+    impact150: 'Funds a month of language mentorship for one newcomer',
+    impact500: 'Sponsors a full settlement package including housing, employment coaching, and mental health check-ins',
   },
   // Newsletter
   newsletter: {
@@ -150,11 +197,17 @@ export default {
   // Language selector
   lang: {
     en: 'English',
-    ar: 'Arabic',
-    am: 'Amharic',
-    so: 'Somali',
-    fr: 'French',
-    ti: 'Tigrinya',
+    fr: 'Français',
+    ar: 'العربية',
+    fa: 'فارسی',
+    he: 'עברית',
+    ur: 'اردو',
+    am: 'አማርኛ',
+    ti: 'ትግርኛ',
+    so: 'Soomaali',
+    sw: 'Kiswahili',
+    om: 'Afaan Oromoo',
+    ha: 'Harshen Hausa',
     label: 'Language',
   },
   // Common
@@ -168,6 +221,34 @@ export default {
     loading: 'Loading...',
     error: 'Something went wrong. Please try again.',
     success: 'Success!',
+  },
+  // Partners
+  partners: {
+    title: 'Our Partners',
+    subtitle: 'Trusted By Leading Organizations',
+    description: 'Proudly collaborating with organizations that share our commitment to community service.',
+    becomePartner: 'Become a Partner',
+  },
+  // Events
+  events: {
+    badge: 'Events',
+    title: 'Past & Upcoming Events',
+    description: 'Join us at our community events — from fundraisers to settlement workshops, every gathering strengthens our mission.',
+    upcomingTitle: 'Upcoming Events',
+    upcomingDesc: 'Mark your calendar — join us at our next community gathering',
+    pastTitle: 'Past Events',
+    pastDesc: 'Relive the moments and milestones from our recent gatherings',
+    noUpcoming: 'No upcoming events at this time. Check back soon!',
+    noPast: 'No past events to display yet.',
+    viewAll: 'View All Events',
+  },
+  // Booking CTA
+  booking: {
+    bookConsultation: 'Book a Consultation',
+    vision: {
+      text: 'Refugees and immigrants, especially those who have experienced wars and persecution, leading self-sufficient and dignified lives in a socially inclusive society.',
+      mission: 'To improve the quality of life of Refugees and Immigrants, through programs and services to promote their social and economic inclusion to enable them to become contributing members of Canadian society and to live in dignity.',
+    },
   },
   pages: {
     about: {
@@ -340,6 +421,58 @@ export default {
         connect: 'Connect with Us',
         ctaExplore: 'Explore Our Programs',
         ctaDonate: 'Donate Today',
+        settlement: {
+          heroTitle: 'Immigration Settlement Services In Toronto',
+          heroSubtitle: 'The goal of our Immigrant Settlement Program (ISP) is to facilitate smooth social and economic integration of newcomers to Canada.',
+        },
+        ircc: {
+          heroTitle: 'IRCC Resource Center',
+          heroSubtitle: 'Your authoritative guide to Immigration, Refugees and Citizenship Canada processes, forms, and compliance requirements.',
+        },
+        'language-mentorship': {
+          heroTitle: 'Newcomer Language Mentorship',
+          heroSubtitle: 'Helping newcomers build confidence, communication skills, and meaningful community connections.',
+        },
+        'private-sponsorship': {
+          heroTitle: 'Private Sponsorship Of Refugees (PSR) Program',
+          heroSubtitle: 'Wadi-Kaja Organization for Refugees and Immigrants (WORI) is one of the organizations across Canada to run a Private Sponsorship Program (PSRP) for refugees under the auspice of Immigration, Refugees and Citizenship Canada (IRCC).',
+        },
+        'language-services': {
+          heroTitle: 'Language Services',
+          heroSubtitle: 'Enhanced Language Training, English Conversation Circles, and Citizenship Classes for newcomers building communication skills and confidence in Canada.',
+        },
+        'mental-health': {
+          heroTitle: 'Mental Health And Wellbeing Awareness',
+          heroSubtitle: 'As more than 80% of our core clients are refugees who have experienced a lot of challenges including mental and well-being, we partner with the Centre for Addiction and Mental Health (CAMH) and the Canadian Mental Health Association (CMHA).',
+        },
+        employment: {
+          heroTitle: 'Employment Support Services',
+          heroSubtitle: 'Finding employment in a new country can be challenging, but settlement services offer a range of support to help newcomers find work in their respective fields.',
+        },
+        housing: {
+          heroTitle: 'Housing Support Services',
+          heroSubtitle: 'The objective of our housing support is to assist low-income individuals and families who face obstacles in accessing and maintaining appropriate and affordable housing.',
+        },
+        'women-empowerment': {
+          heroTitle: "Women's Empowerment Programs",
+          heroSubtitle: "The women's empowerment program is made up of three main areas: Violence Against Women, Women's Employment and Life Skills, and Women-specific Employment.",
+        },
+        seniors: {
+          heroTitle: "Seniors' Recreational Program",
+          heroSubtitle: "The seniors' recreational program is dedicated to providing programs and services to seniors that promote empowerment, community involvement, public education, socialization, physical activity, and wellness.",
+        },
+        'food-security': {
+          heroTitle: 'Food Relief Program',
+          heroSubtitle: 'Initially developed as relief for orphans and elderly people, our food program has evolved exponentially as the COVID-19 pandemic and restrictions on movement have only amplified the struggle that many families face in getting enough to eat each day.',
+        },
+        youth: {
+          heroTitle: 'Youth Program',
+          heroSubtitle: 'Empowering newcomer youth through mentorship, leadership development, educational support, and community engagement — building the next generation of confident, connected leaders.',
+        },
+        'community-engagement': {
+          heroTitle: 'Community Engagement',
+          heroSubtitle: 'Building bridges between newcomers and the wider Canadian community through outreach, cultural exchange, volunteerism, and collaborative partnerships that strengthen the social fabric for everyone.',
+        },
         howToAccess: 'How to Access This Service',
         howToAccessDesc: 'WORI services are available to all refugees, immigrants, and newcomers in the Greater Toronto Area. Our intake process is designed to be simple, dignified, and culturally sensitive.',
         eligibility: 'Who Is Eligible',

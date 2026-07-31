@@ -2,8 +2,10 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { galleryCategories } from '@/mocks/galleryData';
 
-// Show specific categories on home page — excluding Board of Directors and Banner Images
+// Show specific categories on home page — including Past Events and Upcoming Events
 const HOME_CATEGORY_IDS = [
+  'past-events',
+  'upcoming-events',
   'award-ceremony',
   'outreach-activities',
   'outreach-activity',
@@ -203,7 +205,7 @@ export default function GallerySection() {
             to="/events"
             className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-bold rounded-full transition-all"
           >
-            Explore All 11 Categories
+            Explore All 13 Categories
             <i className="ri-image-2-line" />
           </Link>
         </div>

@@ -46,8 +46,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 rounded-lg overflow-hidden bg-cream-100 flex items-center justify-center">
+            <Link to="/" className="flex items-center gap-2.5 mb-4 group cursor-pointer">
+              <div className="w-10 h-10 rounded-lg overflow-hidden bg-cream-100 flex items-center justify-center group-hover:scale-105 transition-transform">
                 <img
                   src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784294788/WORI-logo2_j6w6nu.jpg"
                   alt="WORI Logo"
@@ -56,10 +56,10 @@ export default function Footer() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="font-serif font-semibold text-lg text-cream-100">
+              <span className="font-serif font-semibold text-lg text-cream-100 group-hover:text-gold-400 transition-colors">
                 WORI
               </span>
-            </div>
+            </Link>
             <p className="text-sm text-cream-200/70 leading-relaxed mb-3 max-w-xs">
               {t('footer.description')}
             </p>

@@ -13,6 +13,12 @@ export default function MissionPage() {
         { label: 'About & Governance', path: '/about' },
         { label: 'Mission, Vision & Values' },
       ]}
+      seo={{
+        title: 'Mission, Vision & Values | Wadi-Kaja Organization',
+        description: 'Explore WORI\'s founding mission, vision for newcomer empowerment, and the six core values — dignity, inclusivity, accountability, collaboration, innovation, and compassion — guiding every program.',
+        keywords: 'WORI mission, refugee charity values, immigrant empowerment vision, Wadi-Kaja principles, newcomer dignity Canada',
+        canonicalPath: '/about/mission',
+      }}
     >
       {/* Mission & Vision */}
       <section className="px-6 lg:px-10 py-14 md:py-20">

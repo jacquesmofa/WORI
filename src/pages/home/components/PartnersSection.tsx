@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const CLD = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto';
 
@@ -102,6 +103,7 @@ const PARTNERS: Partner[] = [
 ];
 
 export default function PartnersSection() {
+  const { t } = useTranslation();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
   const animationRef = useRef<number | null>(null);
@@ -145,12 +147,12 @@ export default function PartnersSection() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-end justify-between flex-wrap gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-gold-600 mb-2">Our Partners</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-gold-600 mb-2">{t('partners.title')}</p>
               <h2 className="font-serif text-2xl md:text-3xl font-semibold text-charcoal-700">
-                Trusted By Leading Organizations
+                {t('partners.subtitle')}
               </h2>
               <p className="text-sm text-charcoal-600/50 mt-1 max-w-md">
-                Proudly collaborating with organizations that share our commitment to community service.
+                {t('partners.description')}
               </p>
             </div>
           </div>
@@ -190,7 +192,6 @@ export default function PartnersSection() {
           </div>
         </div>
 
-        {/* Fade edges */}
         <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
         <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white pointer-events-none z-10" />
       </div>
@@ -200,7 +201,7 @@ export default function PartnersSection() {
           href="/partners"
           className="inline-flex items-center gap-2 px-6 py-2.5 border-2 border-emerald-800 text-emerald-800 hover:bg-emerald-800 hover:text-cream-100 text-sm font-semibold rounded-full transition-all whitespace-nowrap cursor-pointer"
         >
-          Become a Partner
+          {t('partners.becomePartner')}
           <i className="ri-arrow-right-line" />
         </a>
       </div>

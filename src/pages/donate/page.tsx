@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import PageLayout from '@/components/feature/PageLayout';
 
 /* =============================================================================
-   PREMIUM DONATION PAGE — Zeffy Embed + Black & Gold Theme
+   PREMIUM DONATION PAGE — Zeffy Embed + Clean Seamless Checkout
    ============================================================================= */
 
 const ZEFFY_IFRAME_SRC = 'https://www.zeffy.com/embed/donation-form/support-our-mission-197';
@@ -12,12 +12,10 @@ const ZEFFY_SCRIPT_SRC = 'https://www.zeffy.com/embed/v2/zeffy-embed.js';
 
 export default function DonatePage() {
   const { t } = useTranslation();
-  const [iframeLoaded, setIframeLoaded] = useState(false);
-  const [iframeError, setIframeError] = useState(false);
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const zeffyContainerRef = useRef<HTMLDivElement>(null);
 
-  /* Load Zeffy embed script for non-iframe fallback */
+  /* Load Zeffy embed script */
   useEffect(() => {
     const existing = document.querySelector('script[data-zeffy-script]');
     if (existing) return;
@@ -27,20 +25,12 @@ export default function DonatePage() {
     script.async = true;
     script.dataset.zeffyScript = 'true';
     script.onload = () => setScriptLoaded(true);
-    script.onerror = () => {
-      /* If script fails, iframe fallback already rendered */
-    };
     document.body.appendChild(script);
 
     return () => {
-      /* Do NOT remove — Zeffy may need it after unmount */
+      // Do NOT remove — Zeffy may need it after unmount
     };
   }, []);
-
-  const handleIframeError = () => {
-    setIframeError(true);
-    setIframeLoaded(true);
-  };
 
   const socialLinks = [
     {
@@ -76,6 +66,12 @@ export default function DonatePage() {
         { label: 'Home', path: '/' },
         { label: t('nav.donate') },
       ]}
+      seo={{
+        title: 'Donate to WORI | Support Refugee & Immigrant Services in Canada',
+        description: 'Make a tax-deductible donation to Wadi-Kaja Organization. Every gift funds settlement support, housing assistance, language mentorship, and emergency relief for refugees and newcomers.',
+        keywords: 'donate WORI, refugee charity donation, immigrant support Canada, tax-deductible charity, Wadi-Kaja donation, newcomer settlement fund',
+        canonicalPath: '/donate',
+      }}
     >
       {/* ── Premium Hero Trust Bar ── */}
       <section className="bg-emerald-950 border-y border-emerald-900">
@@ -165,6 +161,15 @@ export default function DonatePage() {
                 </p>
               </div>
 
+              {/* Donation Card Image */}
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src="https://res.cloudinary.com/oqdvximy/image/upload/v1784655794/card-img_lsnedk.png"
+                  alt="WORI donation card"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+
               {/* Social Links */}
               <div className="flex items-center gap-3">
                 <span className="text-xs font-semibold text-charcoal-600 uppercase tracking-wider">
@@ -187,24 +192,15 @@ export default function DonatePage() {
 
             {/* ── Right Column — Zeffy Donation Card ── */}
             <div className="lg:col-span-7 space-y-6">
-              {/* Zeffy Embed Container */}
+              {/* Zeffy Embed Container — clean, no loading spinner */}
               <div className="rounded-2xl overflow-hidden border border-cream-300/60 bg-white">
-                {/* Loading State */}
-                {!iframeLoaded && (
-                  <div className="flex flex-col items-center justify-center h-64 gap-3">
-                    <div className="w-10 h-10 rounded-full border-2 border-gold-400 border-t-transparent animate-spin" />
-                    <span className="text-sm text-charcoal-600/40">Loading secure donation form…</span>
-                  </div>
-                )}
-
-                {/* Zeffy Iframe */}
                 <div
                   ref={zeffyContainerRef}
                   data-zeffy-embed=""
                   data-form-url="/embed/donation-form/support-our-mission-197"
                 >
                   <div
-                    style={{ display: iframeError || !scriptLoaded ? 'block' : 'none' }}
+                    style={{ display: scriptLoaded ? 'none' : 'block' }}
                     data-zeffy-embed-fallback=""
                   >
                     <div className="relative overflow-hidden" style={{ height: '680px' }}>
@@ -213,8 +209,6 @@ export default function DonatePage() {
                         title="Donate to WORI via Zeffy"
                         className="absolute inset-0 w-full h-full border-0"
                         allow="payment"
-                        onLoad={() => setIframeLoaded(true)}
-                        onError={handleIframeError}
                       />
                     </div>
                   </div>
@@ -331,33 +325,6 @@ export default function DonatePage() {
                 Secure payment processing powered by Zeffy. Tax receipts issued via email within 48 hours.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Impact Numbers ── */}
-      <section className="px-6 lg:px-10 py-14 md:py-20 bg-emerald-950">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="font-serif text-2xl md:text-3xl font-medium text-cream-100 mb-3">
-              Where Your Donation Goes
-            </h2>
-            <p className="text-sm text-cream-100/50 max-w-xl mx-auto">
-              86% of every dollar goes directly to programs. 14% covers essential administration and fundraising.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {[
-              { value: '86%', label: 'Direct Program Spending' },
-              { value: '12,480', label: 'Families Served (2024)' },
-              { value: '$2.3M', label: 'Annual Program Budget' },
-              { value: '100%', label: 'CRA Compliance' },
-            ].map((stat) => (
-              <div key={stat.label} className="bg-emerald-900/60 rounded-xl p-5 text-center border border-emerald-800/40">
-                <div className="font-serif text-2xl md:text-3xl font-semibold text-gold-400 mb-1">{stat.value}</div>
-                <div className="text-xs text-cream-100/50">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

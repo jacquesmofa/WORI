@@ -180,6 +180,12 @@ export default function VolunteerPage() {
         { label: t('nav.home'), path: '/' },
         { label: t('nav.volunteer') },
       ]}
+      seo={{
+        title: 'Volunteer with WORI | Join Refugee & Immigrant Community Support',
+        description: 'Apply to volunteer with Wadi-Kaja Organization. Join 340+ volunteers supporting settlement, language mentorship, food security, mental health, and crisis response for newcomers.',
+        keywords: 'volunteer WORI, refugee volunteer Toronto, immigrant support volunteer, community service Canada, settlement volunteer opportunity',
+        canonicalPath: '/volunteer',
+      }}
     >
       {/* Stats */}
       <section className="px-6 lg:px-10 py-14 md:py-20">

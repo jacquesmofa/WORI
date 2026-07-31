@@ -12,6 +12,12 @@ export default function CrisisCenterPage() {
         { label: 'Home', path: '/' },
         { label: 'Crisis Center' },
       ]}
+      seo={{
+        title: 'Crisis Response Center | WORI Emergency Relief & Resources',
+        description: 'Immediate crisis resources, emergency contacts, and humanitarian response for affected refugee communities. Get help, donate to crisis relief, or volunteer for emergency response.',
+        keywords: 'crisis response, refugee emergency, Sudan crisis relief, humanitarian aid Canada, WORI emergency, community crisis support',
+        canonicalPath: '/crisis-center',
+      }}
     >
       {/* Active Crisis Banner */}
       <section className="px-6 lg:px-10 py-14 md:py-20">

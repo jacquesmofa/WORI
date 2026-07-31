@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function ActionCTASection() {
+  const { t } = useTranslation();
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-2">
       {/* Consultation */}
@@ -16,13 +19,13 @@ export default function ActionCTASection() {
         <div className="absolute inset-0 bg-emerald-900/70" />
         <div className="relative z-10">
           <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-5">
-            Need Consultation
+            {t('pages.contact.getInTouch')}
           </h2>
           <Link
             to="/booking"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-white hover:bg-cream-100 text-emerald-900 text-sm font-bold rounded-full transition-all whitespace-nowrap"
           >
-            Book Now
+            {t('booking.bookConsultation')}
             <i className="ri-calendar-line" />
           </Link>
         </div>
@@ -41,13 +44,13 @@ export default function ActionCTASection() {
         <div className="absolute inset-0 bg-charcoal-800/65" />
         <div className="relative z-10">
           <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-5">
-            Volunteer Application
+            {t('nav.volunteer')}
           </h2>
           <Link
             to="/volunteer"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-gold-500 hover:bg-gold-400 text-emerald-900 text-sm font-bold rounded-full transition-all whitespace-nowrap"
           >
-            Click Here
+            {t('form.submitApplication')}
             <i className="ri-hand-heart-line" />
           </Link>
         </div>

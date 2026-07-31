@@ -12,6 +12,12 @@ export default function PartnersPage() {
         { label: 'Home', path: '/' },
         { label: 'Partners & Funders' },
       ]}
+      seo={{
+        title: 'Partners & Funders | WORI Refugee & Immigrant Services',
+        description: 'WORI partners with government agencies, foundations, corporations, and community organizations to deliver settlement, wellbeing, and empowerment services to newcomers across Canada.',
+        keywords: 'WORI partners, refugee charity partners, immigrant services funders, Wadi-Kaja sponsors, community organization partners Toronto',
+        canonicalPath: '/partners',
+      }}
     >
       {/* Government Partners */}
       <section className="px-6 lg:px-10 py-14 md:py-20">

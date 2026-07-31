@@ -1,9 +1,12 @@
 import Navbar from '@/components/feature/Navbar';
 import Footer from '@/components/feature/Footer';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import SEOMeta from '@/components/feature/SEOMeta';
+import StructuredData from '@/components/feature/StructuredData';
 import HeroSlider from './components/HeroSlider';
 import VisionSection from './components/VisionSection';
-import AboutOrgSection from './components/AboutOrgSection';
+import ProgramsSection from './components/ProgramsSection';
 import ActionCTASection from './components/ActionCTASection';
 import PartnersSection from './components/PartnersSection';
 import GallerySection from './components/GallerySection';
@@ -12,9 +15,19 @@ import SudanCrisisSection from './components/SudanCrisisSection';
 import EventsSection from './components/EventsSection';
 import NewsletterSection from './components/NewsletterSection';
 
+const HOME_SEO = {
+  title: 'Wadi-Kaja Organization (WORI) | Refugee & Immigrant Services in Toronto',
+  description: 'Empowering refugees, newcomers, and immigrants in Canada through settlement support, housing assistance, language mentorship, IRCC guidance, and emergency relief services. CRA Registered Charity #74887 3338 RR0001.',
+  keywords: 'WORI, Wadi-Kaja, refugee services Toronto, immigrant settlement Canada, newcomer support Scarborough, IRCC assistance, language mentorship, housing help, refugee sponsorship, charity Toronto',
+  canonicalPath: '/',
+};
+
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-cream-100">
+      <SEOMeta {...HOME_SEO} />
+      <StructuredData type="NGO" />
       <Navbar transparent />
 
       {/* Top Contact Bar — sits below fixed navbar, always clickable */}
@@ -30,19 +43,21 @@ export default function Home() {
               <span className="hidden md:inline">info@wadikajaorganization.org</span>
             </a>
           </div>
-          <Link
-            to="/contact"
+          <a
+            href="https://bookings.cloud.microsoft/book/WadiKajaOrganizationforRefugeesandImmigrantscopy@wadikajaorganization.org/?ismsaljsauthenabled=true"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-xs font-semibold px-4 py-1.5 bg-gold-500 hover:bg-gold-400 text-emerald-900 rounded-full transition-colors whitespace-nowrap cursor-pointer"
           >
-            Book a Consultation
-          </Link>
+            {t('booking.bookConsultation')}
+          </a>
         </div>
       </div>
 
       <main>
         <HeroSlider />
         <VisionSection />
-        <AboutOrgSection />
+        <ProgramsSection />
         <ActionCTASection />
         <PartnersSection />
         <GallerySection />

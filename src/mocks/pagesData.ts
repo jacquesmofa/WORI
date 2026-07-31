@@ -234,22 +234,27 @@ export const servicePages = {
   settlement: {
     heroTitle: 'Immigration Settlement Services In Toronto',
     heroSubtitle:
-      'Wadi-Kaja Organization for Refugees and Immigrants (WORI) is a non-profit organization in Toronto, Canada. The organization helps with refugees, and new immigrants in GTA. The organization also provides settlement services, translation and interpretation for new immigrants to Canada.',
+      'The goal of our Immigrant Settlement Program (ISP) is to facilitate smooth social and economic integration of newcomers to Canada.',
     sections: [
       {
-        title: 'Arrival & Welcome Services',
+        title: 'Settlement Services Overview',
         description:
-          'From airport pickup to first-night accommodation, our arrival team ensures no newcomer faces their first Canadian hours alone. We provide emergency housing, essential supplies kits, and immediate needs assessment within 24 hours of arrival.',
+          'The goal of our Immigrant Settlement Program (ISP) is to facilitate smooth social and economic integration of newcomers to Canada. The ultimate outcome of the program is to help newcomers become fully engaged in all aspects of Canadian life — social, political, and economic. To do this, we provide cross-cutting settlement services that include: intake and needs assessment; development of settlement and resettlement plans; referrals and follow-up to services out of our scope; information and orientation; community connections; and support services such as respite childcare and non-clinical counselling.',
       },
       {
-        title: 'Physical Settlement Guidance',
+        title: 'Who We Serve',
         description:
-          'Our settlement workers guide newcomers through every practical step: obtaining Social Insurance Numbers (SIN), health card registration, school enrollment for children, opening bank accounts, and navigating public transit systems.',
+          'Settlement services are accessible to all permanent residents — including resettled refugees — up to the point of citizenship. Services are delivered by over 550 service provider organizations abroad and domestically, including immigrant-serving organizations, school boards and educational institutions, and other community-based organizations. As more than 80% of our core clients are refugees who have experienced a lot of challenges, we use the case management approach which allows for developing a tailored individual plan of action for our target populations, including women, youth, racialized individuals, seniors, people with a disability, and 2SLGBTQI+ individuals, who often face additional integration barriers.',
       },
       {
-        title: 'Community Integration',
+        title: 'What Our Counsellors Provide',
         description:
-          'We organize community dinners, cultural exchange events, and mentorship pairings that help newcomers build social networks and feel genuine belonging in their new Canadian communities.',
+          'Our settlement counsellors assist clients with housing, translation of documents, employment assistance, filling out various immigration forms, escorting to social services and other appointments, interpretation, referrals to other mainstream service providers, and more. They also deliver needs-driven workshops to address financial literacy, health issues, education matters, employment, sponsorship, and other relevant areas of interest to our new immigrant community. Since our establishment in 2020, this essential programming has always been a place of diversity, an exciting mix of recently arrived immigrants and refugees, long-established generations of immigrants and their families, and naturalized citizens, all coming from different parts of the world. To cope with the changing dynamic of the community we serve, we provide services in more than 10 languages, including Amharic, Arabic, English, French, Tigrinya, and more.',
+      },
+      {
+        title: 'Contact Us',
+        description:
+          'Are you a newcomer to Canada and interested in our Immigrant Settlement Program? Please feel free to contact us using one of the following means: Email info@wadikajaorganization.org, Telephone 647 777 8322, or Book Online through our appointment system.',
       },
     ],
     stats: [],
@@ -318,29 +323,49 @@ export const servicePages = {
     cta: { label: 'Become a Language Mentor', path: '/volunteer' },
   },
   'private-sponsorship': {
-    heroTitle: 'Private Sponsorship of Refugees (PSR) Program',
+    heroTitle: 'Private Sponsorship Of Refugees (PSR) Program',
     heroSubtitle:
       'Wadi-Kaja Organization for Refugees and Immigrants (WORI) is one of the organizations across Canada to run a Private Sponsorship Program (PSRP) for refugees under the auspice of Immigration, Refugees and Citizenship Canada (IRCC).',
     sections: [
       {
         title: 'About Our PSR Program',
         description:
-          'Our Private Sponsorship Program for Refugees objective is to sponsor refugees from many parts of the world and resettle them in Canada. The beneficiaries of this program are refugees and individuals in refugee-like situations (Convention Refugees) from all over the globe. Upon their arrival in Canada, our organization provides them with the necessary settlement support for at least one year.',
-      },
-      {
-        title: 'How Sponsorship Works',
-        description:
-          'When sponsoring refugees, WORI enters into a formal agreement with co-sponsors — individuals willing and able to help sponsor refugees. Co-sponsors may be relatives, friends, or any Canadian citizen, registered Indians, or permanent resident qualified to become a co-sponsor. Our main countries of resettlement include Afghanistan, Sudan, Chad, Eritrea, Ethiopia, Somalia, Congo, Nicaragua, South Africa, Iraq, and Syria.',
+          'Our Private Sponsorship Program for Refugees objective is to sponsor refugees from many parts of the world and resettle them in Canada. The beneficiaries of this program are refugees and individuals in refugee-like situations (Convention Refugees) from all over the globe. Upon their arrival in Canada, our organization provides them with the necessary settlement support for at least one year. When sponsoring refugees, WORI enters into a formal agreement with co-sponsors — individuals willing and able to help sponsor refugees. Co-sponsors may be relatives, friends, or any Canadian citizen, registered Indians, or permanent resident qualified to become a co-sponsor. Our main countries of resettlement include Afghanistan, Sudan, Chad, Eritrea, Ethiopia, Somalia, Congo, Nicaragua, South Africa, Iraq, and Syria.',
       },
       {
         title: 'Family Sponsorship & Other Immigration Classes',
         description:
-          'WORI\'s settlement counsellors assist in completing applicable immigration forms for eligible individuals who would like to sponsor their family members — spouses, children, and other family members who do not fall under the refugee sponsorship program. Although Refugee and Family sponsorship programs are essential parts of our sponsorship program, we also provide information and referral services in all forms of immigration classes such as the Provincial Nominee Program and Federal skilled worker program.',
+          'WORI\'s settlement counsellors assist in completing applicable immigration forms for eligible individuals who would like to sponsor their family members — spouses, children, and other family members who do not fall under the refugee sponsorship program. Although Refugee and Family sponsorship programs are essential parts of our sponsorship program, we also provide information and referral services in all forms of immigration classes such as the Provincial Nominee Program and Federal skilled worker program for individuals interested in exploring other ways of coming to Canada. Working closely with co-sponsors, we facilitate the process of sponsoring refugees, ensuring a smooth journey towards a better life.',
       },
       {
-        title: 'Important Note',
+        title: 'Important Note for Refugees & Co-Sponsors',
         description:
-          'The Wadi-Kaja Organization does not work with refugees directly; rather we work with the Co-Sponsors only. If you are a refugee seeking resettlement in Canada, you must have or find a co-sponsor in Canada to contact our organization on your behalf. For Canadian citizens, registered Indians, or permanent residents willing to sponsor a family member, relative, or friend, we are here to assist throughout the process.',
+          'The Wadi-Kaja Organization does not work with refugees directly; rather we work with the Co-Sponsors only. If you are a refugee seeking resettlement in Canada, you must have or find a co-sponsor in Canada to contact our organization on your behalf. For Canadian citizens, registered Indians, or permanent residents willing to sponsor a family member, relative, or friend, we are here to assist throughout the process, adhering to guidelines set by Immigration, Refugees, and Citizenship Canada.',
+      },
+      {
+        title: 'Requirements For Co-Sponsors',
+        description:
+          'To be eligible as a co-sponsor, individuals must: be 18 years of age or older; hold Canadian citizenship, be a Registered Indian, or possess permanent residency status in Canada; reside in the intended community of resettlement; provide two government-issued photo identifications; share contact information, including phone number and email address; present a police clearance letter issued within the last six months; submit an employment letter along with the 2023 Notice of Assessment; complete the Sponsor Assessment form IMM 5492; complete the Financial Profile form IMM 5373B if contributing from personal income; and pay a non-refundable office administration fee of $250 to Wadi Kaja Organization via cheque or money order only.',
+      },
+      {
+        title: 'Sponsorship Cost Guidelines',
+        description:
+          'To sponsor refugees, the Co-sponsors are required to demonstrate sufficient financial means to meet the obligations set forth by IRCC. Relatives of refugees who intend to sponsor through the Wadi Kaja Organization need to provide substantial evidence of funds availability and source of funds. It is always recommended that the financial support exceeds the minimum requirements. Funds should not come from the refugees. It is the requirement for the Co-Sponsors to provide documentation that verifies the sponsorship funds are not coming from the refugee. There are three available approaches for sponsoring your family member via Wadi Kaja: deposit the complete sponsorship amount into our shared trust account and provide documentation tracing the fund source; collaborate with a minimum of three family members to contribute from personal incomes; or create a combination of funds and personal income contributions.',
+      },
+      {
+        title: 'Utilization Of Trust Account Funds',
+        description:
+          'Funds deposited or held in the trust account will be allocated to the sponsored refugee family\'s or individual\'s resettlement. Upon their arrival in Canada, these funds are disbursed monthly, calculated at (total cost/12) per month. In scenarios where the sponsored refugee application is rejected or the funds are not needed during the sponsorship period, the money will be refunded to donors or co-sponsors. If the sponsorship is cancelled or withdrawn by either the refugee, Wadi-Kaja organization, or CIC, funds will be returned to the donors or co-sponsors, pending confirmation of withdrawal.',
+      },
+      {
+        title: 'Financial & Non-Financial Support',
+        description:
+          'More specifically, the structure of our financial support to the refugees we welcome is as follows: a one-time start-up allowance whose amount depends on the family size, and monthly income support provided for up to one year. As for non-financial support, they include: reception services at the port of entry; temporary accommodation and assistance with locating permanent accommodation; information and orientation on financial and non-financial information as well as adapting to life in Canada support; linkages to essential federal and provincial programs; and other mainstream service providers, including immigrant-serving organizations, schools, educational and financial institutions, and other community-based organizations. Needs assessment and referrals to other settlement programs (including case management) and community-based services. Non-clinical supports focused on prevention, mental health, and well-being promotion, capacity building, and trauma-informed approaches; providing tailored information to reduce mental health stigma; providing early outreach and interventions; coordinated resources and referrals for victims of trauma.',
+      },
+      {
+        title: 'Government Resources & Contact',
+        description:
+          'For additional details, please refer to the government website provided below: canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/guide-sponsor-refugee-community.html and rstp.ca/en/infosheet/sponsorship-cost-table-2/. In case you are interested in our Private Sponsorship Program, please do not hesitate to contact us using one of the following means: Email info@wadikajaorganization.org, Telephone 647 777 8322, or Book Online through our appointment system. At Wadi-Kaja, we firmly believe in providing refuge and assistance to displaced individuals, empowering them with resources to rebuild their lives in a new homeland. Join us in creating a more compassionate and inclusive world. Rest assured, we are committed to guiding you through the sponsorship journey, fostering stronger family bonds, and offering hope for a brighter future in Canada.',
       },
     ],
     stats: [],
@@ -349,198 +374,233 @@ export const servicePages = {
   'language-services': {
     heroTitle: 'Language Services',
     heroSubtitle:
-      'Professional translation, interpretation, and language assessment services for newcomers navigating Canadian systems.',
+      'Enhanced Language Training, English Conversation Circles, and Citizenship Classes for newcomers building communication skills and confidence in Canada.',
     sections: [
       {
-        title: 'Certified Translation',
+        title: 'Enhanced Language Training (ELT)',
         description:
-          'Certified translation of birth certificates, marriage licenses, academic transcripts, medical records, and legal documents accepted by IRCC, provincial authorities, and educational institutions.',
+          'The Enhanced Language Training (ELT) program is ideal for internationally trained professionals. Services are available to individuals who have acquired professional qualifications and experience outside of Canada and who have been unable to access employment in their field of expertise. Individuals must be able to communicate at an advanced level of English and have occupational training and experience in the respective profession or trade. Participants must be permanent residents, convention refugees, or individuals on a Canadian temporary resident permit holder. Services provided in ELT include: online sector-specific terminology modules; workplace communication training; job preparation workshops including resume preparation, interview techniques, workplace culture, ethics, employment standards, goal setting, labour market information, cold calling and networking; exposure to Canadian workplace; and job search support.',
       },
       {
-        title: 'Interpretation Services',
+        title: 'English Conversation Circle',
         description:
-          'On-site and remote interpretation for medical appointments, legal proceedings, parent-teacher conferences, job interviews, and settlement interviews. Available in Arabic, Amharic, Somali, Tigrinya, French, and English.',
+          'The English Conversation Circle program offers a safe environment where immigrants and refugees come together and practice their English speaking, writing, and comprehension. The Circle takes place once a week with a maximum of 20 to 25 participants. Beneficiaries have to register for the Circle in advance and the applicant vets the eligible beneficiaries before they can attend the session. The Circle is led by the community engagement worker and approximately 4 to 5 volunteers assist with the Circle as well. Volunteers are vetted by the applicants to ensure that they have had previous experience with ESL speakers before they assist with the conversation circle. Each week there is a set topic of discussion that encourages beneficiaries to practice the English language on various topics. Beneficiaries are also able to converse on various issues they face with settling in Canada and the barriers that they encounter. Referrals to language assessment centres are also carried out to allow our eligible clients to access Language Instruction for Newcomers to Canada (LINC) classes where they can learn the language more comprehensively.',
       },
       {
-        title: 'Language Assessment (CLB)',
+        title: 'Citizenship Classes',
         description:
-          'Canadian Language Benchmark (CLB) assessments to determine language proficiency levels and inform settlement planning, employment readiness, and citizenship preparation pathways.',
+          'Citizenship classes are provided to immigrants, refugees, and newcomers who are taking the Canadian citizenship test. The classes cover the knowledge requirements for citizenship including Canada\'s history, geography, political system, national symbols, identity and values and the rights and responsibilities of citizenship. This program is offered once a week over 7 months, with groups of approximately 25 people per class. In case you are interested in our Language Program, please do not hesitate to contact us using one of the following means: Email info@wadikajaorganization.org, Telephone 647 777 8322, or Book Online through our appointment system.',
       },
     ],
-    stats: [
-      { value: '2,400', label: 'Documents Translated in 2024' },
-      { value: '6', label: 'Languages Available' },
-      { value: '48hrs', label: 'Standard Turnaround' },
-    ],
+    stats: [],
     cta: { label: 'Request Language Services', path: '/contact' },
   },
   'mental-health': {
-    heroTitle: 'Mental Health & Wellbeing Support',
+    heroTitle: 'Mental Health And Wellbeing Awareness',
     heroSubtitle:
-      'Trauma-informed, culturally responsive mental health services that honor the resilience and dignity of every client.',
+      'As more than 80% of our core clients are refugees who have experienced a lot of challenges including mental and well-being, we partner with the Centre for Addiction and Mental Health (CAMH) and the Canadian Mental Health Association (CMHA).',
     sections: [
       {
-        title: 'Individual Counseling',
+        title: 'Partnership for Holistic Wellness',
         description:
-          'One-on-one counseling with therapists trained in trauma, grief, displacement, and acculturation stress. Sessions available in all six service languages, with both male and female counselors offered.',
+          'We partner with the Centre for Addiction and Mental Health (CAMH) and the Canadian Mental Health Association (CMHA), two mainstream mental health and wellness service providers, who by integrating health and social care, provide services that aid in long-term wellness including housing, employment, community connections and so much more. We also partner with community-based organizations who use cultural and linguistic approaches to support our clients in all aspects of their well-being: mental, physical, emotional, and spiritual.',
       },
       {
-        title: 'Group Therapy & Support Circles',
+        title: 'Comprehensive Support Services',
         description:
-          'Facilitated support groups organized by shared experience: survivors of war trauma, single mothers, LGBTQ+ newcomers, and unaccompanied minors. Provides peer connection and reduces isolation.',
+          'Our partners play a crucial role in helping our clients develop coping skills, access community resources, and maintain stability. They also provide support to people facing complex mental and physical health challenges, addictions, dementia, homelessness, or risk of homelessness. Services include mental health counselling, case management, crisis support, psycho-geriatric support, and housing for youth, adults, and seniors.',
       },
       {
-        title: 'Youth & Family Counseling',
+        title: 'Contact Us',
         description:
-          'Specialized services for children and adolescents experiencing school adjustment difficulties, family separation, identity challenges, and intergenerational cultural conflict.',
+          'At Wadi-Kaja Organization for Refugees and Immigrants, we strongly believe that good mental health is essential to realize one\'s full potential and feel safe and secure. If you are interested in our Mental Health and Well-being Awareness Program, please do not hesitate to contact us using one of the following means: Email info@wadikajaorganization.org, Telephone 647 777 8322, or Book Online through our appointment system.',
       },
     ],
-    stats: [
-      { value: '3,100', label: 'Counseling Sessions in 2024' },
-      { value: '92%', label: 'Clients Reporting Reduced Distress' },
-      { value: '14', label: 'Licensed Therapists on Staff' },
-    ],
+    stats: [],
     cta: { label: 'Request Mental Health Support', path: '/contact' },
   },
   employment: {
-    heroTitle: 'Employment Support Desk',
+    heroTitle: 'Employment Support Services',
     heroSubtitle:
-      'Bridging the gap between newcomer talent and Canadian employers through skills assessment, coaching, and direct placement partnerships.',
+      'Finding employment in a new country can be challenging, but settlement services offer a range of support to help newcomers find work in their respective fields.',
     sections: [
       {
-        title: 'Skills Assessment & Credential Recognition',
+        title: 'Job Search & Career Support',
         description:
-          'We assess professional credentials, identify Canadian equivalencies, and guide newcomers through credential recognition processes with regulatory bodies and professional associations.',
+          'Wadi-Kaja Organization for Refugees and Immigrants provides job search workshops, resume writing, interview preparation, job market information, employment laws, workplace health and safety, and networking opportunities, including linkages with employers. The approaches our employment counsellors use to equip newcomers with skills and abilities to find sustainable jobs include: individual assessment of skills, interests and abilities; job search strategies and support, including resume development and interview preparation; information about careers and occupations, local labour market, and employment opportunities; help in maintaining employment; and information and referral to other employment and community services.',
       },
       {
-        title: 'Resume, Interview & Networking Coaching',
+        title: 'Who Can Access Employment Services',
         description:
-          'Canadian-style resume workshops, mock interview sessions, LinkedIn optimization, and networking strategy training tailored to each newcomer\'s professional background and career goals.',
+          'Our employment support services are open to all newcomers regardless of immigration status, country of origin, or length of time in Canada. Priority is given to government-assisted refugees, privately sponsored refugees, and asylum claimants. Services include individual assessment of skills and interests, resume development, interview preparation, career and labour market information, job search strategies, and referrals to other employment and community services.',
       },
       {
-        title: 'Employer Partnerships',
+        title: 'Get In Touch',
         description:
-          'Direct partnerships with 120+ Canadian employers who value newcomer talent. Includes pre-screened job placements, internship opportunities, and employer cultural competency training.',
+          'Are you a newcomer to Canada and interested in our Employment Program? Please do not hesitate to contact us using one of the following means: Email info@wadikajaorganization.org, Telephone 647 777 8322, or Book Online through our appointment system.',
       },
     ],
-    stats: [
-      { value: '76%', label: 'Placement Rate Within 6 Months' },
-      { value: '120+', label: 'Employer Partners' },
-      { value: '1,850', label: 'Clients Employed in 2024' },
-    ],
+    stats: [],
     cta: { label: 'Access Employment Support', path: '/contact' },
   },
   housing: {
     heroTitle: 'Housing Support Services',
     heroSubtitle:
-      'From emergency shelter to permanent homes — safe, dignified housing is the foundation of successful settlement.',
+      'The objective of our housing support is to assist low-income individuals and families who face obstacles in accessing and maintaining appropriate and affordable housing.',
     sections: [
       {
-        title: 'Emergency Housing Placement',
+        title: 'Housing Information & Support',
         description:
-          'Immediate placement into safe temporary accommodation for refugee families arriving without pre-arranged housing. Average placement time: under 24 hours.',
+          'We assist low-income individuals and families who face obstacles in accessing and maintaining appropriate and affordable housing by providing information designed to assist individuals and families in finding housing and preventing homelessness. Services include tenants\' rights and responsibilities, eviction prevention, housing stabilization and counseling, referrals to community Legal clinics and other resources, and client empowerment and peer-support groups.',
       },
       {
-        title: 'Rental Assistance & Housing Navigation',
+        title: 'Who Can Access Housing Services',
         description:
-          'We help newcomers understand the Ontario rental market, prepare rental applications, negotiate leases, and access rent subsidies and housing benefit programs.',
+          'Our housing support services are open to all newcomers regardless of immigration status, country of origin, or length of time in Canada. If you are a newcomer to Canada and willing to secure a dwelling, please do not hesitate to contact us using one of the following means: Email info@wadikajaorganization.org, Telephone 647 777 8322, or Book Online through our appointment system.',
       },
       {
-        title: 'Landlord Mediation & Tenant Rights',
+        title: 'Get In Touch',
         description:
-          'Advocacy and mediation support for housing disputes. We educate newcomers on their rights under the Residential Tenancies Act and connect them with free legal clinics when needed.',
+          'Services are accessible to all permanent residents including resettled refugees up to the point of citizenship. Services are delivered by over 550 service provider organizations abroad and domestically, including immigrant-serving organizations, school boards and educational institutions, and other community-based organizations.',
       },
     ],
-    stats: [
-      { value: '2,100', label: 'Families Housed in 2024' },
-      { value: '<24hrs', label: 'Emergency Placement Time' },
-      { value: '94%', label: 'Stable Housing at 12 Months' },
-    ],
+    stats: [],
     cta: { label: 'Request Housing Support', path: '/contact' },
   },
   'women-empowerment': {
     heroTitle: "Women's Empowerment Programs",
     heroSubtitle:
-      'Creating spaces where refugee and immigrant women reclaim agency, build skills, and lead within their communities.',
+      "The women's empowerment program is made up of three main areas: Violence Against Women, Women's Employment and Life Skills, and Women-specific Employment.",
     sections: [
       {
-        title: 'Skills Training & Entrepreneurship',
+        title: 'Empowerment Through Skills & Advocacy',
         description:
-          'Vocational training in high-demand fields, small business startup workshops, micro-loan connections, and mentorship from successful immigrant women entrepreneurs.',
+          'The objective of our initiative is to address the roots of gender-based violence through personal development and empowerment of women through activities that provide coaching and support for the victims to enable them to rise above their past challenges and forge ahead to achieve success and take on leadership roles. These activities include group peer support opportunities, one-on-one and group mentoring sessions, life coaching, and financial literacy. We are anticipating adding training on Third Party Risk Management, a fast-growing field in Information Technology, to increase the women\'s skill set and expose them to opportunities for jobs in IT due to the high in-demand roles.',
       },
       {
-        title: 'Safety & Rights Education',
+        title: 'Economic Independence & IT Skills',
         description:
-          'Workshops on Canadian legal rights, family law, domestic violence resources, and safety planning delivered in culturally sensitive formats by women counselors.',
+          'We are committed to investing in empowering women in building their skills, economic development, and advocacy, promoting cultural diversity, and gender equality, aiding families to overcome poverty, and improving community accessibility through programs and services. Our program seeks to empower women to become financially and economically independent as experience has taught us that victims with the best outcomes are those who eventually become economically independent. Our endeavours help women acquire skills that equip them with the knowledge to develop income-generating activities to sustain themselves and their families and thus allow moving from abusive situations to self-sufficiency. It also opens avenues to knowledge in Information technology (IT) for these women and thus offers them additional ways to well-paid employment in a fast-growing field.',
       },
       {
-        title: 'Leadership & Advocacy',
+        title: 'Community-Driven Solutions',
         description:
-          'Leadership development programs that train women to become community advocates, settlement workers, and peer mentors. Our alumni network includes elected officials and nonprofit founders.',
+          'Emphasis is placed on supporting vulnerable and disadvantaged women to participate socially and economically through local community-driven solutions that build self-reliance and resilience. Other areas of empowering women include arts and crafts groups, lunch and learn, technical and cognitive skills training, stress coping mechanism training, financial literacy, office skills training, and communication skills. If you are a newcomer woman interested in our program, please do not hesitate to contact us using one of the following means: Email info@wadikajaorganization.org, Telephone 647 777 8322, or Book Online through our appointment system.',
       },
     ],
-    stats: [
-      { value: '1,680', label: 'Women Served in 2024' },
-      { value: '340', label: 'Entrepreneurship Graduates' },
-      { value: '89%', label: 'Employment or Education Uptake' },
-    ],
+    stats: [],
     cta: { label: 'Join Women\'s Empowerment', path: '/contact' },
   },
   seniors: {
     heroTitle: "Seniors' Recreational Program",
     heroSubtitle:
-      'Combating isolation and celebrating the wisdom of elder newcomers through community, recreation, and intergenerational connection.',
+      "The seniors' recreational program is dedicated to providing programs and services to seniors that promote empowerment, community involvement, public education, socialization, physical activity, and wellness.",
     sections: [
       {
-        title: 'Social & Recreational Activities',
+        title: 'Health, Wellness & Hot Meals',
         description:
-          'Weekly gatherings featuring traditional music, arts and crafts, board games, communal meals, and gentle exercise classes. Activities are designed to honor cultural traditions while building new friendships.',
+          'We work to maintain and enhance a state of physical, mental, and social well-being for all of our seniors. They are provided with freshly made, hot meals weekly. Additionally, we organize and present workshops to address crucial issues that help seniors to access community resources and health care. Most importantly, we mentor and encourage seniors to take on leadership and volunteer roles within their communities to enable them to gain confidence, build social networks, and feel a sense of accomplishment in their lives.',
       },
       {
-        title: 'Intergenerational Programming',
+        title: 'Activities & Social Connection',
         description:
-          'Programs that connect senior newcomers with youth volunteers and school groups. Storytelling circles, technology tutoring exchanges, and cultural heritage preservation projects.',
+          'The program includes a wide range of social, recreational, and wellness activities designed to keep seniors engaged, active, and connected to their community. From arts and crafts to fitness classes, music, dance, and group outings, our seniors program creates a welcoming space where older adults can build friendships, share experiences, and enjoy their golden years with dignity and joy.',
       },
       {
-        title: 'Health & Wellness Support',
+        title: 'Get Involved',
         description:
-          'Health education workshops, medication management guidance, gentle fitness programs, and connections to geriatric health services and home care resources.',
+          'Are you a senior or willing to support seniors? Please do not hesitate to contact us to get involved using one of the following means: Email info@wadikajaorganization.org, Telephone 647 777 8322, or Book Online through our appointment system. We welcome seniors from all backgrounds to join our community.',
       },
     ],
-    stats: [
-      { value: '520', label: 'Seniors Enrolled in 2024' },
-      { value: '32', label: 'Weekly Activities' },
-      { value: '85%', label: 'Reduced Loneliness Scores' },
-    ],
+    stats: [],
     cta: { label: 'Enroll a Senior', path: '/contact' },
   },
   'food-security': {
-    heroTitle: 'Food Security Initiative',
+    heroTitle: 'Food Relief Program',
     heroSubtitle:
-      'No newcomer family should face hunger. Our food security programs provide immediate relief and long-term nutritional independence.',
+      'Initially developed as relief for orphans and elderly people, our food program has evolved exponentially as the COVID-19 pandemic and restrictions on movement have only amplified the struggle that many families face in getting enough to eat each day.',
     sections: [
       {
-        title: 'Emergency Food Hampers',
+        title: 'Emergency Food Distribution',
         description:
-          'Culturally appropriate emergency food hampers delivered within 24 hours of request. Hampers include staple ingredients familiar to Middle Eastern, East African, and South Asian cuisines.',
+          'Our initiative offers vulnerable community members consistent and reliable access to safe, nutritious food using four determinant components: ensure adequate and stable supply of safe and nutritious food; enhance the purchasing power of vulnerable community members for increased food accessibility; guarantee adequate nutrition for all, especially women and children; and promote community food production and distribution networks.',
       },
       {
-        title: 'Community Kitchen & Cooking Classes',
+        title: 'Food Pantry & Overseas Support',
         description:
-          'Weekly community kitchen sessions where newcomers learn budget-friendly Canadian cooking while sharing their own culinary traditions. Includes nutrition education and food budgeting workshops.',
+          'Based on results achieved during the emergency response phase of our current food distribution, households are provided with emergency food or vouchers they can redeem at local markets, and at least 600 families and individuals access our food pantry each month. Wadi Kaja organization also extends its distribution of food supplies and other humanitarian assistance to orphans, refugees, and elderly people overseas: a refugee camp in Sidoarjo, Jemundo, Indonesia.',
       },
       {
-        title: 'Food Bank Partnerships',
+        title: 'Get In Touch',
         description:
-          'Partnerships with Daily Bread Food Bank, North York Harvest, and 12 other food security organizations to ensure consistent access to nutritious food for WORI client families.',
+          'If you or someone you know is facing food insecurity, please contact us for support. Services are open to all newcomers regardless of immigration status. Email info@wadikajaorganization.org, Telephone 647 777 8322, or Book Online through our appointment system.',
       },
     ],
-    stats: [
-      { value: '8,400', label: 'Food Hampers Distributed in 2024' },
-      { value: '48', label: 'Community Kitchen Sessions' },
-      { value: '14', label: 'Partner Food Banks' },
-    ],
+    stats: [],
     cta: { label: 'Support Food Security', path: '/donate' },
+  },
+  youth: {
+    heroTitle: 'Youth Program',
+    heroSubtitle:
+      'Empowering newcomer youth through mentorship, leadership development, educational support, and community engagement — building the next generation of confident, connected leaders.',
+    sections: [
+      {
+        title: 'Youth Mentorship & Leadership',
+        description:
+          'The WORI Youth Program is designed to support newcomer youth aged 14–24 as they navigate the challenges of settling in a new country. Our youth mentorship initiative pairs young newcomers with trained mentors who provide guidance, encouragement, and practical support in areas such as academic planning, career exploration, language development, and social integration. Through one-on-one mentoring relationships, group workshops, and youth-led community projects, participants build confidence, develop leadership skills, and form lasting friendships.',
+      },
+      {
+        title: 'Educational & Recreational Activities',
+        description:
+          'We offer a vibrant mix of educational and recreational programming including after-school homework clubs, STEM workshops, arts and culture sessions, sports leagues, and weekend field trips across the GTA. These activities are designed to keep youth engaged, foster a sense of belonging, and provide safe spaces where young newcomers can express themselves, explore their interests, and have fun while building essential life skills.',
+      },
+      {
+        title: 'Career & Post-Secondary Pathways',
+        description:
+          'Our youth program includes dedicated career exploration and post-secondary preparation support. Youth participants receive guidance on course selection, university and college applications, scholarship and bursary opportunities, resume writing, interview skills, and internship placements. We work closely with local educational institutions and employers to create pathways that connect young newcomers to meaningful academic and career opportunities in Canada.',
+      },
+      {
+        title: 'Get Involved',
+        description:
+          'Are you a newcomer youth looking to join our program, or a community member interested in volunteering as a youth mentor? Please contact us using one of the following means: Email info@wadikajaorganization.org, Telephone 647 777 8322, or Book Online through our appointment system.',
+      },
+    ],
+    stats: [],
+    cta: { label: 'Join Youth Program', path: '/contact' },
+  },
+  'community-engagement': {
+    heroTitle: 'Community Engagement',
+    heroSubtitle:
+      'Building bridges between newcomers and the wider Canadian community through outreach, cultural exchange, volunteerism, and collaborative partnerships that strengthen the social fabric for everyone.',
+    sections: [
+      {
+        title: 'Community Outreach & Integration',
+        description:
+          'WORI\'s Community Engagement program serves as a bridge between newcomer communities and the broader Canadian society. We organize community forums, cultural exchange events, neighbourhood welcome parties, and interfaith dialogues that foster mutual understanding, break down barriers, and create opportunities for meaningful connection. Our outreach team actively engages with community leaders, faith groups, local businesses, and residents to build a welcoming and inclusive environment where diversity is celebrated.',
+      },
+      {
+        title: 'Volunteer Mobilization & Civic Participation',
+        description:
+          'We believe that active citizenship is a cornerstone of successful integration. Our program encourages newcomers to participate in civic life through voting registration drives, community clean-up initiatives, public consultation meetings, and volunteer placements with local organizations. We also connect long-time residents and established Canadians with volunteer opportunities within WORI, creating reciprocal relationships where everyone contributes and everyone benefits.',
+      },
+      {
+        title: 'Cultural Celebrations & Awareness',
+        description:
+          'Throughout the year, WORI hosts and participates in a wide range of cultural celebrations — from Black History Month and Asian Heritage Month to Refugee Week, Canada Day, and multicultural festivals. These events showcase the rich cultural heritage of our community members, promote cross-cultural awareness, and provide platforms for newcomer artists, performers, and entrepreneurs to share their talents with the wider public.',
+      },
+      {
+        title: 'Partnerships & Collaborative Action',
+        description:
+          'Our community engagement work is strengthened through strategic partnerships with neighbourhood associations, school boards, places of worship, libraries, community health centres, and other grassroots organizations. Together, we coordinate resources, share knowledge, and address systemic barriers that affect newcomer communities — from transportation access to language barriers in public services.',
+      },
+      {
+        title: 'Get In Touch',
+        description:
+          'Interested in partnering with WORI for community engagement, volunteering at our events, or inviting us to your community gathering? Please contact us using one of the following means: Email info@wadikajaorganization.org, Telephone 647 777 8322, or Book Online through our appointment system. We would love to connect with you.',
+      },
+    ],
+    stats: [],
+    cta: { label: 'Engage with Community', path: '/contact' },
   },
 };
 

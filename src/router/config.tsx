@@ -24,6 +24,8 @@ import HousingPage from "../pages/services/housing/page";
 import WomenEmpowermentPage from "../pages/services/women-empowerment/page";
 import SeniorsPage from "../pages/services/seniors/page";
 import FoodSecurityPage from "../pages/services/food-security/page";
+import YouthPage from "../pages/services/youth/page";
+import CommunityEngagementPage from "../pages/services/community-engagement/page";
 
 // Action & Information
 import DonatePage from "../pages/donate/page";
@@ -35,6 +37,11 @@ import VolunteerPage from "../pages/volunteer/page";
 import EventsPage from "../pages/events/page";
 import ProgramsServicesPage from "../pages/services/page";
 import BookingPage from "../pages/booking/page";
+
+// Legal
+import PrivacyPage from "../pages/privacy/page";
+import TermsPage from "../pages/terms/page";
+import AccessibilityPage from "../pages/accessibility/page";
 
 const routes: RouteObject[] = [
   { path: "/", element: <Home /> },
@@ -61,6 +68,8 @@ const routes: RouteObject[] = [
   { path: "/services/women-empowerment", element: <WomenEmpowermentPage /> },
   { path: "/services/seniors", element: <SeniorsPage /> },
   { path: "/services/food-security", element: <FoodSecurityPage /> },
+  { path: "/services/youth", element: <YouthPage /> },
+  { path: "/services/community-engagement", element: <CommunityEngagementPage /> },
 
   // Action & Information
   { path: "/donate", element: <DonatePage /> },
@@ -72,6 +81,11 @@ const routes: RouteObject[] = [
   { path: "/volunteer", element: <VolunteerPage /> },
   { path: "/booking", element: <BookingPage /> },
   { path: "/services", element: <ProgramsServicesPage /> },
+
+  // Legal
+  { path: "/privacy", element: <PrivacyPage /> },
+  { path: "/terms", element: <TermsPage /> },
+  { path: "/accessibility", element: <AccessibilityPage /> },
 
   { path: "*", element: <NotFound /> },
 ];

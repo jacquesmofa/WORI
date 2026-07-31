@@ -22,6 +22,12 @@ export default function NewsPage() {
         { label: 'Home', path: '/' },
         { label: 'News & Updates' },
       ]}
+      seo={{
+        title: 'News & Community Updates | Wadi-Kaja Organization',
+        description: 'Press releases, award announcements, program launches, and emergency community alerts from WORI. Stay informed about refugee and immigrant services in Canada.',
+        keywords: 'WORI news, refugee services updates, immigrant community news, Wadi-Kaja announcements, settlement program updates',
+        canonicalPath: '/news',
+      }}
     >
       {/* Categories */}
       <section className="px-6 lg:px-10 pt-10 pb-6">

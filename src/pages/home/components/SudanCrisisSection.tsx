@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const CLD = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto';
 
 export default function SudanCrisisSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="py-12 md:py-16 bg-white">
       <div className="px-6 lg:px-12 max-w-3xl mx-auto text-center">
@@ -10,7 +13,7 @@ export default function SudanCrisisSection() {
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-200 mb-6">
           <i className="ri-alert-line text-red-600 text-sm" />
           <span className="text-sm font-semibold text-red-700 uppercase tracking-wide">
-            Active Crisis Response
+            {t('pages.crisis.activeCrisis')}
           </span>
         </div>
 
@@ -35,7 +38,7 @@ export default function SudanCrisisSection() {
         </div>
 
         <h2 className="font-serif text-2xl md:text-3xl font-semibold text-charcoal-700 mb-4">
-          Stand With Sudan
+          {t('pages.crisis.howToHelp')}
         </h2>
 
         <p className="text-base text-charcoal-600/70 leading-relaxed max-w-xl mx-auto mb-8">
@@ -46,7 +49,7 @@ export default function SudanCrisisSection() {
           to="/crisis-center"
           className="inline-flex items-center gap-2 px-8 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-bold rounded-full transition-all whitespace-nowrap"
         >
-          Read More
+          {t('common.readMore')}
           <i className="ri-arrow-right-line" />
         </Link>
       </div>

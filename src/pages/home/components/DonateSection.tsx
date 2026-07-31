@@ -14,7 +14,6 @@ export default function DonateSection() {
             alt="WORI community support and impact"
             className="absolute inset-0 w-full h-full object-cover object-top"
           />
-          {/* Gradient overlay: fades gently near text area at bottom, disappears completely above */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -23,12 +22,12 @@ export default function DonateSection() {
           />
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 z-10">
             <span className="text-xs font-medium text-cream-100/85 uppercase tracking-wider mb-2 block drop-shadow-sm">
-              Make an Impact
+              {t('donate.makeImpact')}
             </span>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-cream-100 leading-tight drop-shadow-md">
-              Every Gift
+              {t('donate.everyGift')}
               <br />
-              <span className="text-gold-400">Builds Futures</span>
+              <span className="text-gold-400">{t('donate.buildsFutures')}</span>
             </h2>
           </div>
         </div>
@@ -43,14 +42,14 @@ export default function DonateSection() {
               {t('donate.description')}
             </p>
 
-            {/* Simple impact text instead of tier selector */}
+            {/* Simple impact text */}
             <div className="space-y-2 mb-8 text-left">
               <div className="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-white border border-cream-200">
                 <div className="w-5 h-5 flex items-center justify-center rounded-full bg-gold-500/20 text-gold-600 shrink-0">
                   <i className="ri-check-line text-xs" />
                 </div>
                 <p className="text-sm text-charcoal-700">
-                  <strong>$50</strong> — Provides one week of temporary housing support
+                  <strong>$50</strong> — {t('donate.impact50')}
                 </p>
               </div>
               <div className="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-white border border-cream-200">
@@ -58,7 +57,7 @@ export default function DonateSection() {
                   <i className="ri-check-line text-xs" />
                 </div>
                 <p className="text-sm text-charcoal-700">
-                  <strong>$150</strong> — Funds a month of language mentorship for one newcomer
+                  <strong>$150</strong> — {t('donate.impact150')}
                 </p>
               </div>
               <div className="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-white border border-cream-200">
@@ -66,12 +65,11 @@ export default function DonateSection() {
                   <i className="ri-check-line text-xs" />
                 </div>
                 <p className="text-sm text-charcoal-700">
-                  <strong>$500</strong> — Sponsors a full settlement package including housing, employment coaching, and mental health check-ins
+                  <strong>$500</strong> — {t('donate.impact500')}
                 </p>
               </div>
             </div>
 
-            {/* Primary CTA — links to full /donate page with Zeffy as primary */}
             <Link
               to="/donate"
               className="flex items-center justify-center gap-2 w-full px-7 py-4 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-bold rounded-full transition-all mb-4 whitespace-nowrap"

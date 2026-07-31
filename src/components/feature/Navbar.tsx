@@ -12,13 +12,18 @@ const LANGUAGE_META: Record<string, { flag: string; native: string; code: string
   en: { flag: '🇬🇧', native: 'English', code: 'EN' },
   fr: { flag: '🇫🇷', native: 'Français', code: 'FR' },
   ar: { flag: '🇸🇦', native: 'العربية', code: 'AR' },
+  fa: { flag: '🇮🇷', native: 'فارسی', code: 'FA' },
+  he: { flag: '🇮🇱', native: 'עברית', code: 'HE' },
+  ur: { flag: '🇵🇰', native: 'اردو', code: 'UR' },
   am: { flag: '🇪🇹', native: 'አማርኛ', code: 'AM' },
-  so: { flag: '🇸🇴', native: 'Soomaali', code: 'SO' },
   ti: { flag: '🇪🇷', native: 'ትግርኛ', code: 'TI' },
+  so: { flag: '🇸🇴', native: 'Soomaali', code: 'SO' },
   sw: { flag: '🇹🇿', native: 'Kiswahili', code: 'SW' },
   om: { flag: '🇪🇹', native: 'Afaan Oromoo', code: 'OM' },
   ha: { flag: '🇳🇬', native: 'Harshen Hausa', code: 'HA' },
 };
+
+const RTL_LANGUAGES = new Set(['ar', 'fa', 'he', 'ur']);
 
 interface NavbarProps {
   transparent?: boolean;
@@ -50,7 +55,7 @@ export default function Navbar({ transparent: forceTransparent }: NavbarProps = 
     (lng: string) => {
       i18n.changeLanguage(lng);
       setLangOpen(false);
-      document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.dir = RTL_LANGUAGES.has(lng) ? 'rtl' : 'ltr';
       document.documentElement.lang = lng;
     },
     [i18n]
@@ -99,11 +104,12 @@ export default function Navbar({ transparent: forceTransparent }: NavbarProps = 
         { label: t('newsMenu.newsUpdates'), path: '/news' },
         { label: t('newsMenu.eventsGallery'), path: '/events' },
         { label: t('newsMenu.partners'), path: '/partners' },
+        { label: t('nav.contact'), path: '/contact' },
       ],
     },
   ];
 
-  const isRtl = i18n.language === 'ar';
+  const isRtl = RTL_LANGUAGES.has(i18n.language);
   const currentLang = LANGUAGE_META[i18n.language] || LANGUAGE_META.en;
 
   // Transparency: ONLY on home page, at top, not scrolled. Otherwise solid.

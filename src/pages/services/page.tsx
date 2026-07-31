@@ -189,6 +189,12 @@ export default function ProgramsServicesPage() {
         { label: t('nav.home'), path: '/' },
         { label: 'Programs & Services' },
       ]}
+      seo={{
+        title: 'Programs & Services | WORI Settlement & Wellbeing Programs',
+        description: 'Eleven interconnected programs across two strategic directories — Settlement & Resources and Wellbeing & Empowerment — for refugees, newcomers, and immigrants in Canada.',
+        keywords: 'WORI services, refugee settlement programs, immigrant wellbeing services, newcomer support Canada, IRCC help, language mentorship, mental health refugees',
+        canonicalPath: '/services',
+      }}
     >
       {/* Two Directories Overview */}
       <section className="px-6 lg:px-10 py-14 md:py-20">

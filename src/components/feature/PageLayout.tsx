@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import SEOMeta, { type SEOProps } from './SEOMeta';
+import StructuredData from './StructuredData';
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -10,6 +12,8 @@ interface PageLayoutProps {
   bgImage?: string;
   bgOverlay?: string;
   breadcrumb?: { label: string; path?: string }[];
+  seo?: SEOProps;
+  structuredData?: Record<string, unknown>;
 }
 
 export default function PageLayout({
@@ -19,12 +23,19 @@ export default function PageLayout({
   bgImage,
   bgOverlay = 'from-emerald-900/90 via-emerald-800/70 to-emerald-900/50',
   breadcrumb,
+  seo,
+  structuredData,
 }: PageLayoutProps) {
   const { i18n } = useTranslation();
-  const isRtl = i18n.language === 'ar';
+  const RTL_LANGUAGES = new Set(['ar', 'fa', 'he', 'ur']);
+  const isRtl = RTL_LANGUAGES.has(i18n.language);
 
   return (
     <div className="min-h-screen bg-cream-100 flex flex-col" dir={isRtl ? 'rtl' : 'ltr'}>
+      {seo && <SEOMeta {...seo} />}
+      {!seo && <SEOMeta title={title} description={subtitle || title} />}
+      <StructuredData type="NGO" />
+
       <Navbar />
 
       {/* Page Hero Header */}

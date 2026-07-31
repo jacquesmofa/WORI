@@ -2,135 +2,45 @@ import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-const CLD = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto';
+const CLD = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve';
 
-const HERO_SLIDES = [
-  {
-    id: 1,
-    image: `${CLD}/v1784298489/wori-awards-20-1536x1024_uqyztr.jpg`,
-    label: 'WORI Awards 2025',
-    sublabel: 'Celebrating Resilience, Leadership & Community Across Canada',
-    cta: 'View Gallery',
-    ctaPath: '/events',
-  },
-  {
-    id: 2,
-    image: `${CLD}/v1784649535/Arrived-Refugee-Photos-page-001_grvjts.jpg`,
-    label: 'Welcoming Refugees',
-    sublabel: 'Supporting displaced families and newcomers arriving in Canada',
-    cta: 'Learn More',
-    ctaPath: '/services/settlement',
-  },
-  {
-    id: 3,
-    image: `${CLD}/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg`,
-    label: 'Community Outreach',
-    sublabel: 'Providing essential services to vulnerable families across Toronto',
-    cta: 'Get Involved',
-    ctaPath: '/volunteer',
-  },
-  {
-    id: 4,
-    image: `${CLD}/v1784648568/yoga-session-img1_vnjmwh.jpg`,
-    label: 'Seniors Wellness',
-    sublabel: 'Weekly yoga and wellness sessions promoting health and connection',
-    cta: 'View Events',
-    ctaPath: '/events',
-  },
-  {
-    id: 5,
-    image: `${CLD}/v1784298487/wori-awards-19-2048x1365_dba7yz.jpg`,
-    label: 'Community Excellence',
-    sublabel: 'Honoring outstanding contributions from volunteers and partners',
-    cta: 'View Gallery',
-    ctaPath: '/events',
-  },
-  {
-    id: 6,
-    image: `${CLD}/v1784646872/Photo-1_idgega.jpg`,
-    label: 'Senior Entertainment',
-    sublabel: 'Bringing joy, music, and dance to seniors across the GTA',
-    cta: 'Learn More',
-    ctaPath: '/services/seniors',
-  },
-  {
-    id: 7,
-    image: `${CLD}/v1784649688/Day23_img28_jqixge.jpg`,
-    label: 'New Beginnings',
-    sublabel: 'Refugee families finding hope and home in our community',
-    cta: 'Learn More',
-    ctaPath: '/services/settlement',
-  },
-  {
-    id: 8,
-    image: `${CLD}/v1784650837/Canada-Day-2022_uvumg9.jpg`,
-    label: 'Canada Day Celebration',
-    sublabel: 'Celebrating together as Canadians — new and old',
-    cta: 'See Events',
-    ctaPath: '/events',
-  },
-  {
-    id: 9,
-    image: `${CLD}/v1784298464/wori-awards-16-2048x1585_aklmvs.jpg`,
-    label: 'Award Ceremony',
-    sublabel: 'Recognizing the extraordinary dedication that transforms lives',
-    cta: 'View Gallery',
-    ctaPath: '/events',
-  },
-  {
-    id: 10,
-    image: `${CLD}/v1784295210/IMG_20200424_121422_452_hunip7.jpg`,
-    label: 'Sharing For Orphans',
-    sublabel: 'Bringing nourishment and hope to orphans and families in need',
-    cta: 'Donate Now',
-    ctaPath: '/donate',
-  },
-  {
-    id: 11,
-    image: `${CLD}/v1784649567/Arrived-Refugee-Photos-page-011_rtygf7.jpg`,
-    label: 'Warm Welcome',
-    sublabel: 'Every refugee deserves a dignified and compassionate arrival',
-    cta: 'Learn More',
-    ctaPath: '/services/settlement',
-  },
-  {
-    id: 12,
-    image: `${CLD}/v1784648638/yoga-session-img33_azsblr.jpg`,
-    label: 'Wellness Programs',
-    sublabel: 'Free fitness and wellness sessions for newcomer seniors',
-    cta: 'View Events',
-    ctaPath: '/events',
-  },
-  {
-    id: 13,
-    image: `${CLD}/v1784295065/IMG-20201006-WA0158_zszvac.jpg`,
-    label: 'Food Security',
-    sublabel: 'Ensuring no family goes hungry in our community',
-    cta: 'Donate Now',
-    ctaPath: '/donate',
-  },
-  {
-    id: 14,
-    image: `${CLD}/v1784295063/IMG-20201006-WA0121_ekdr3z.jpg`,
-    label: 'Senior Programs',
-    sublabel: 'Music, dance, and community connection for our elders',
-    cta: 'Get Involved',
-    ctaPath: '/volunteer',
-  },
-  {
-    id: 15,
-    image: `${CLD}/v1784298377/wori-awards-1-2048x1365_m59hir.jpg`,
-    label: 'WORI Gala',
-    sublabel: 'An evening of celebration, gratitude, and community impact',
-    cta: 'View Gallery',
-    ctaPath: '/events',
-  },
-];
+interface SlideI18n {
+  id: number;
+  label: string;
+  sublabel: string;
+  cta: string;
+}
+
+interface SlideStatic {
+  image: string;
+  ctaPath: string;
+}
+
+const SLIDE_STATIC: Record<number, SlideStatic> = {
+  1: { image: `${CLD}/v1784298489/wori-awards-20-1536x1024_uqyztr.jpg`, ctaPath: '/events' },
+  2: { image: `${CLD}/v1784649535/Arrived-Refugee-Photos-page-001_grvjts.jpg`, ctaPath: '/services/settlement' },
+  3: { image: `${CLD}/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg`, ctaPath: '/volunteer' },
+  4: { image: `${CLD}/v1784648568/yoga-session-img1_vnjmwh.jpg`, ctaPath: '/events' },
+  5: { image: `${CLD}/v1784298487/wori-awards-19-2048x1365_dba7yz.jpg`, ctaPath: '/events' },
+  6: { image: `${CLD}/v1784646872/Photo-1_idgega.jpg`, ctaPath: '/services/seniors' },
+  7: { image: `${CLD}/v1784649688/Day23_img28_jqixge.jpg`, ctaPath: '/services/settlement' },
+  8: { image: `${CLD}/v1784650837/Canada-Day-2022_uvumg9.jpg`, ctaPath: '/events' },
+  9: { image: `${CLD}/v1784298464/wori-awards-16-2048x1585_aklmvs.jpg`, ctaPath: '/events' },
+  10: { image: `${CLD}/v1784295210/IMG_20200424_121422_452_hunip7.jpg`, ctaPath: '/donate' },
+  11: { image: `${CLD}/v1784649567/Arrived-Refugee-Photos-page-011_rtygf7.jpg`, ctaPath: '/services/settlement' },
+  12: { image: `${CLD}/v1784648638/yoga-session-img33_azsblr.jpg`, ctaPath: '/events' },
+  13: { image: `${CLD}/v1784295065/IMG-20201006-WA0158_zszvac.jpg`, ctaPath: '/donate' },
+  14: { image: `${CLD}/v1784295063/IMG-20201006-WA0121_ekdr3z.jpg`, ctaPath: '/volunteer' },
+  15: { image: `${CLD}/v1784298377/wori-awards-1-2048x1365_m59hir.jpg`, ctaPath: '/events' },
+};
 
 export default function HeroSlider() {
   const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
+
+  const slides = (t('hero.slider.slides', { returnObjects: true }) as SlideI18n[]) || [];
+  const totalSlides = slides.length || 15;
 
   const goTo = useCallback((index: number) => {
     if (animating) return;
@@ -142,12 +52,12 @@ export default function HeroSlider() {
   }, [animating]);
 
   const prev = useCallback(() => {
-    goTo((current - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
-  }, [current, goTo]);
+    goTo((current - 1 + totalSlides) % totalSlides);
+  }, [current, goTo, totalSlides]);
 
   const next = useCallback(() => {
-    goTo((current + 1) % HERO_SLIDES.length);
-  }, [current, goTo]);
+    goTo((current + 1) % totalSlides);
+  }, [current, goTo, totalSlides]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -156,16 +66,23 @@ export default function HeroSlider() {
     return () => clearInterval(timer);
   }, [next]);
 
-  const slide = HERO_SLIDES[current];
+  const currentSlide = slides[current];
+  const currentStatic = currentSlide ? SLIDE_STATIC[currentSlide.id] : SLIDE_STATIC[1];
+
+  const label = currentSlide?.label || '';
+  const sublabel = currentSlide?.sublabel || '';
+  const cta = currentSlide?.cta || '';
+  const image = currentStatic?.image || SLIDE_STATIC[1].image;
+  const ctaPath = currentStatic?.ctaPath || '/events';
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ height: '600px', minHeight: '480px' }}>
-      {/* Slide Image with crossfade */}
+    <section className="relative w-full overflow-hidden min-h-[100dvh]">
+      {/* Slide Image with crossfade and Ken Burns parallax */}
       <div className={`absolute inset-0 transition-opacity duration-700 ${animating ? 'opacity-0' : 'opacity-100'}`}>
         <img
-          src={slide.image}
-          alt={slide.label}
-          className="w-full h-full object-cover object-top"
+          src={image}
+          alt={label}
+          className="w-full h-full object-cover object-center animate-ken-burns"
           loading={current === 0 ? 'eager' : 'lazy'}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
@@ -179,22 +96,22 @@ export default function HeroSlider() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500 mb-5">
               <span className="text-xs font-bold text-emerald-900 uppercase tracking-wider">
-                {slide.label}
+                {label}
               </span>
             </div>
 
             {/* Title */}
             <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-2xl mb-5 text-balance">
-              {slide.sublabel}
+              {sublabel}
             </h1>
 
             {/* CTA */}
             <div className="flex items-center gap-3 flex-wrap">
               <Link
-                to={slide.ctaPath}
+                to={ctaPath}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-cream-100 text-emerald-900 text-sm font-bold rounded-full transition-all whitespace-nowrap"
               >
-                {slide.cta}
+                {cta}
                 <i className="ri-arrow-right-line" />
               </Link>
               <Link
@@ -226,9 +143,9 @@ export default function HeroSlider() {
 
       {/* Dot Indicators */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
-        {HERO_SLIDES.map((_, i) => (
+        {slides.map((s, i) => (
           <button
-            key={i}
+            key={s.id}
             onClick={() => goTo(i)}
             aria-label={`Go to slide ${i + 1}`}
             className={`transition-all rounded-full ${
@@ -243,7 +160,7 @@ export default function HeroSlider() {
       {/* Slide counter */}
       <div className="absolute bottom-6 right-6 md:right-10">
         <span className="text-xs font-medium text-white/50">
-          {String(current + 1).padStart(2, '0')} / {String(HERO_SLIDES.length).padStart(2, '0')}
+          {String(current + 1).padStart(2, '0')} / {String(totalSlides).padStart(2, '0')}
         </span>
       </div>
     </section>

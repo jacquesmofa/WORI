@@ -15,6 +15,12 @@ export default function ExecutiveDirectorPage() {
         { label: 'About & Governance', path: '/about' },
         { label: "Executive Director's Desk" },
       ]}
+      seo={{
+        title: 'Executive Director\'s Desk | Wadi-Kaja Organization',
+        description: 'Read annual letters, public announcements, and reflections from Nasseradin Bahar Abdullah, Executive Director of WORI, on refugee settlement, community impact, and organizational vision.',
+        keywords: 'WORI executive director, Nasseradin Abdullah, refugee charity leadership, immigrant services director, Wadi-Kaja leadership message',
+        canonicalPath: '/about/executive-director',
+      }}
     >
       <section className="px-6 lg:px-10 py-14 md:py-20">
         <div className="max-w-5xl mx-auto">

@@ -2,6 +2,13 @@ import PageLayout from '@/components/feature/PageLayout';
 import { boardMembers } from '@/mocks/pagesData';
 import { Link } from 'react-router-dom';
 
+const BOARD_SEO = {
+  title: 'Leadership, Board & Team | Wadi-Kaja Organization',
+  description: 'Meet the dedicated executive leadership, board members, management team, and grassroots volunteers driving refugee support and community empowerment at WORI.',
+  keywords: 'WORI board, refugee charity leadership, immigrant services management, Wadi-Kaja team, non-profit governance Toronto',
+  canonicalPath: '/about/board',
+};
+
 const CLD = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve';
 
 const managementTeam = [
@@ -59,6 +66,7 @@ export default function BoardPage() {
         { label: 'About & Governance', path: '/about' },
         { label: 'Board & Management' },
       ]}
+      seo={BOARD_SEO}
     >
       {/* Governance Overview */}
       <section className="px-6 lg:px-10 py-14 md:py-20">

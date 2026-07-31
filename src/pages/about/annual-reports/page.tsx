@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import PageLayout from '@/components/feature/PageLayout';
 
 export default function AnnualReportsPage() {
+  const pdfUrl = 'https://drive.google.com/uc?export=download&id=1rktOxTQlT8KGbzesyAr_47MYROihlUOJ';
+  const googleViewerUrl = 'https://drive.google.com/uc?export=view&id=1rktOxTQlT8KGbzesyAr_47MYROihlUOJ';
+
   return (
     <PageLayout
       title="Annual Reports & Financials"
@@ -12,6 +15,12 @@ export default function AnnualReportsPage() {
         { label: 'About & Governance', path: '/about' },
         { label: 'Annual Reports & Financials' },
       ]}
+      seo={{
+        title: 'Annual Reports & Financials | WORI Transparency',
+        description: 'View WORI\'s audited financial reports, annual impact summaries, and T3010 filings. Full transparency on program spending, charitable activities, and organizational accountability.',
+        keywords: 'WORI annual report, refugee charity financials, immigrant services transparency, Wadi-Kaja T3010, charity accountability Canada',
+        canonicalPath: '/about/annual-reports',
+      }}
     >
       {/* Financial Transparency */}
       <section className="px-6 lg:px-10 py-14 md:py-20">
@@ -47,7 +56,7 @@ export default function AnnualReportsPage() {
         </div>
       </section>
 
-      {/* PDF Report */}
+      {/* PDF Report — Google Docs Viewer (seamless, cross-browser, zoom enabled) */}
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-cream-200/30">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
@@ -58,14 +67,47 @@ export default function AnnualReportsPage() {
               Our comprehensive report covering organizational activities, financial statements, and impact from 2020 through 2022.
             </p>
           </div>
-          <div className="rounded-2xl overflow-hidden border border-cream-300/50" style={{ height: '700px' }}>
-            <iframe
-              src="https://res.cloudinary.com/oqdvximy/image/upload/fl_attachment/v1785376663/Wori_-_Repport_2020-2022_rsp0or.pdf#toolbar=0&navpanes=0&scrollbar=1"
-              title="WORI Report 2020-2022"
-              width="100%"
-              height="100%"
-              style={{ border: 'none' }}
-            />
+
+          {/* Zoom Controls */}
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div className="flex items-center gap-3">
+              <a
+                href={pdfUrl}
+                download
+                className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-xs font-semibold rounded-full transition-all whitespace-nowrap cursor-pointer"
+              >
+                <i className="ri-download-line" />
+                Download PDF
+              </a>
+              <span className="text-xs text-charcoal-600/50">
+                Use browser controls (Ctrl + / Ctrl -) to zoom in and out of the document
+              </span>
+            </div>
+          </div>
+
+          {/* PDF Viewer — Google Docs Viewer proxy for seamless cross-browser display */}
+          <div className="rounded-2xl overflow-hidden border border-cream-300/50 bg-white">
+            <div className="relative" style={{ height: '850px' }}>
+              <iframe
+                src={googleViewerUrl}
+                title="WORI Report 2020-2022"
+                width="100%"
+                height="100%"
+                style={{ border: 'none' }}
+                allowFullScreen
+              />
+            </div>
+          </div>
+
+          {/* Request copy CTA */}
+          <div className="mt-6 text-center">
+            <a
+              href="mailto:info@wadikajaorganization.org?subject=Request%20for%20WORI%20Report%202020-2022"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all whitespace-nowrap"
+            >
+              <i className="ri-mail-line" />
+              Request a Copy by Email
+            </a>
           </div>
         </div>
       </section>
@@ -81,7 +123,7 @@ export default function AnnualReportsPage() {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all whitespace-nowrap"
           >
             Contact Us
             <i className="ri-arrow-right-line" />
