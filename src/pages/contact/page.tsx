@@ -17,7 +17,7 @@ export default function ContactPage() {
   return (
     <PageLayout
       title={t('pages.contact.getInTouch')}
-      subtitle="Connect with WORI for services, partnerships, media inquiries, or to schedule a consultation with our settlement team."
+      subtitle={t('pages.contact.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg"
       breadcrumb={[
         { label: t('nav.home'), path: '/' },

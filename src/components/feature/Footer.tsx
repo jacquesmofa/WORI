@@ -180,19 +180,19 @@ export default function Footer() {
               to="/privacy"
               className="text-xs text-cream-200/35 hover:text-cream-200/70 transition-colors"
             >
-              Your Privacy
+              {t('footer.yourPrivacy')}
             </Link>
             <Link
               to="/terms"
               className="text-xs text-cream-200/35 hover:text-cream-200/70 transition-colors"
             >
-              Terms
+              {t('footer.terms')}
             </Link>
             <Link
               to="/accessibility"
               className="text-xs text-cream-200/35 hover:text-cream-200/70 transition-colors"
             >
-              Accessibility
+              {t('footer.accessibility')}
             </Link>
           </div>
         </div>

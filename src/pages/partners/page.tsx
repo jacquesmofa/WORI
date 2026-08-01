@@ -1,12 +1,15 @@
 import PageLayout from '@/components/feature/PageLayout';
 import { partnersData } from '@/mocks/pagesData';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function PartnersPage() {
+  const { t } = useTranslation();
+
   return (
     <PageLayout
-      title="Partners & Funders"
-      subtitle="WORI's work is made possible by the generous support of government partners, foundations, corporate sponsors, and community organizations."
+      title={t('pages.partners.title')}
+      subtitle={t('pages.partners.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649639/Day23_img30_qdnr0n.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },
@@ -26,7 +29,7 @@ export default function PartnersPage() {
             Government
           </span>
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-8">
-            Government Partners
+            {t('pages.partners.governmentPartners')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {partnersData.government.map((p) => (
@@ -63,7 +66,7 @@ export default function PartnersPage() {
             Foundations
           </span>
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-8">
-            Foundation Supporters
+            {t('pages.partners.foundationSupporters')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {partnersData.foundations.map((p) => (
@@ -97,7 +100,7 @@ export default function PartnersPage() {
             Corporate
           </span>
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-8">
-            Corporate Sponsors
+            {t('pages.partners.corporateSponsors')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {partnersData.corporate.map((p) => (
@@ -131,7 +134,7 @@ export default function PartnersPage() {
             Community
           </span>
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-8">
-            Community Partners
+            {t('pages.partners.communityPartners')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {partnersData.community.map((p) => (
@@ -165,24 +168,24 @@ export default function PartnersPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-4">
-            Become a Partner
+            {t('pages.partners.becomePartner')}
           </h2>
           <p className="text-sm text-charcoal-600/60 mb-6 max-w-xl mx-auto leading-relaxed">
-            Whether you represent a corporation, foundation, government body, or community organization, we would be honored to explore partnership opportunities with you.
+            {t('pages.partners.becomePartnerDesc')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all whitespace-nowrap"
             >
-              Contact Partnerships Team
+              {t('pages.partners.contactPartnerships')}
               <i className="ri-arrow-right-line" />
             </Link>
             <Link
               to="/donate"
               className="inline-flex items-center gap-2 px-7 py-3.5 border border-charcoal-700/15 hover:border-charcoal-700/40 text-charcoal-700 text-sm font-medium rounded-full transition-all whitespace-nowrap"
             >
-              Make a Donation
+              {t('pages.partners.makeDonation')}
             </Link>
           </div>
         </div>

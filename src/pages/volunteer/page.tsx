@@ -7,7 +7,8 @@ import PageLayout from '@/components/feature/PageLayout';
    VOLUNTEER PAGE — Real Form Submission via Readdy Form API
    ============================================================================= */
 
-const FORM_SUBMIT_URL = 'https://readdy.ai/api/form/d9l7508h9dsfbuoi6nkg';
+const FORM_SUBMIT_URL = 'https://api.web3forms.com/submit';
+const WEB3FORMS_KEY = '383b7ca6-d26f-4508-87d5-99a05e4d1282';
 
 interface VolunteerForm {
   fullName: string;
@@ -93,6 +94,9 @@ export default function VolunteerPage() {
 
     try {
       const payload = new URLSearchParams();
+      payload.append('access_key', WEB3FORMS_KEY);
+      payload.append('subject', `Volunteer Application — ${formData.fullName.trim()}`);
+      payload.append('from_name', 'WORI Volunteer Form');
       payload.append('fullName', formData.fullName.trim());
       payload.append('email', formData.email.trim());
       payload.append('phone', formData.phone.trim());
@@ -107,17 +111,15 @@ export default function VolunteerPage() {
       });
 
       const responseText = await response.text();
-      let parsed: { code?: string; meta?: { message?: string; detail?: string } } | null = null;
+      let parsed: { success?: boolean; message?: string } | null = null;
       try {
         parsed = JSON.parse(responseText);
       } catch {
         /* raw text */
       }
 
-      const serverMsg = parsed?.meta?.message || parsed?.meta?.detail || responseText || '';
-
-      if (!response.ok || parsed?.code !== 'OK' || serverMsg.toLowerCase().includes('spam')) {
-        setErrorMsg(serverMsg || 'Submission failed. Please try again or contact us directly.');
+      if (!response.ok || !parsed?.success) {
+        setErrorMsg(parsed?.message || 'Submission failed. Please try again or contact us directly.');
         setStatus('error');
         return;
       }
@@ -133,7 +135,7 @@ export default function VolunteerPage() {
     return (
       <PageLayout
         title={t('nav.volunteer')}
-        subtitle={t('pages.volunteer.applicationDesc')}
+        subtitle={t('pages.volunteer.subtitle')}
         breadcrumb={[
           { label: t('nav.home'), path: '/' },
           { label: t('nav.volunteer') },
@@ -174,7 +176,7 @@ export default function VolunteerPage() {
   return (
     <PageLayout
       title={t('nav.volunteer')}
-      subtitle="Join 340+ active volunteers who make settlement, wellbeing, and empowerment possible for thousands of newcomer families."
+      subtitle={t('pages.volunteer.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg"
       breadcrumb={[
         { label: t('nav.home'), path: '/' },

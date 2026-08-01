@@ -15,13 +15,13 @@ export default function AboutPage() {
 
   return (
     <PageLayout
-      title="About WORI"
-      subtitle="A Canadian charity committed to empowering refugees and immigrants with dignity, services, and belonging since 2008."
+      title={t('pages.about.title')}
+      subtitle={t('pages.about.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg"
       breadcrumb={[
-        { label: 'Home', path: '/' },
-        { label: 'About & Governance' },
-        { label: 'About WORI' },
+        { label: t('nav.home'), path: '/' },
+        { label: t('pages.about.breadcrumb1') },
+        { label: t('pages.about.breadcrumb2') },
       ]}
       seo={ABOUT_SEO}
     >
@@ -31,10 +31,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             <div>
               <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
-                Our Purpose
+                {t('pages.about.ourPurpose')}
               </span>
               <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-medium text-charcoal-700 leading-tight mb-5">
-                Mission, Vision & Values
+                {t('pages.about.missionVision')}
               </h2>
               <p className="text-base text-charcoal-600/70 leading-relaxed mb-4">
                 {missionVision.mission}
@@ -46,12 +46,12 @@ export default function AboutPage() {
                 to="/about/mission"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all"
               >
-                Explore Our Values
+                {t('pages.about.exploreValues')}
                 <i className="ri-arrow-right-line" />
               </Link>
             </div>
             <div className="bg-cream-200/40 rounded-2xl p-6 md:p-8">
-              <h3 className="font-serif text-lg text-charcoal-700 mb-4">Our Core Values</h3>
+              <h3 className="font-serif text-lg text-charcoal-700 mb-4">{t('pages.about.ourCoreValues')}</h3>
               <div className="space-y-4">
                 {missionVision.values.slice(0, 4).map((v) => (
                   <div key={v.title} className="flex items-start gap-3">
@@ -69,7 +69,7 @@ export default function AboutPage() {
                 to="/about/mission"
                 className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-emerald-800 hover:text-emerald-700 transition-colors"
               >
-                View all six values <i className="ri-arrow-right-line text-xs" />
+                {t('pages.about.viewAll')} <i className="ri-arrow-right-line text-xs" />
               </Link>
             </div>
           </div>
@@ -80,34 +80,14 @@ export default function AboutPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-cream-200/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 text-center mb-10">
-            Institutional Trust & Transparency
+            {t('pages.about.institutionalTrust')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              {
-                title: 'Mission, Vision & Values',
-                desc: 'The principles that guide every service we deliver.',
-                path: '/about/mission',
-                icon: 'ri-compass-3-line',
-              },
-              {
-                title: "Executive Director's Desk",
-                desc: 'Annual letters, announcements, and public communications.',
-                path: '/about/executive-director',
-                icon: 'ri-user-star-line',
-              },
-              {
-                title: 'Board & Management',
-                desc: 'Meet the governance team stewarding our mission.',
-                path: '/about/board',
-                icon: 'ri-team-line',
-              },
-              {
-                title: 'Annual Reports & Financials',
-                desc: 'Full transparency on impact, finances, and accountability.',
-                path: '/about/annual-reports',
-                icon: 'ri-file-chart-line',
-              },
+              { title: t('pages.about.quickLink1'), desc: t('pages.about.quickLink1Desc'), path: '/about/mission', icon: 'ri-compass-3-line' },
+              { title: t('pages.about.quickLink2'), desc: t('pages.about.quickLink2Desc'), path: '/about/executive-director', icon: 'ri-user-star-line' },
+              { title: t('pages.about.quickLink3'), desc: t('pages.about.quickLink3Desc'), path: '/about/board', icon: 'ri-team-line' },
+              { title: t('pages.about.quickLink4'), desc: t('pages.about.quickLink4Desc'), path: '/about/annual-reports', icon: 'ri-file-chart-line' },
             ].map((card) => (
               <Link
                 key={card.path}
@@ -132,17 +112,15 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
-              Since 2008
+              {t('pages.about.since')}
             </span>
             <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-medium text-charcoal-700">
-              Our Journey of Impact
+              {t('pages.about.journey')}
             </h2>
           </div>
 
           <div className="relative">
-            {/* Center line */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-emerald-800/15 md:-translate-x-px" />
-
             <div className="space-y-10 md:space-y-14">
               {aboutTimeline.map((item, idx) => (
                 <div
@@ -151,24 +129,19 @@ export default function AboutPage() {
                     idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}
                 >
-                  {/* Dot */}
                   <div className="absolute left-4 md:left-1/2 top-1 w-3 h-3 rounded-full bg-gold-500 border-2 border-cream-100 md:-translate-x-1.5 z-10" />
-
-                  {/* Content */}
                   <div className={`pl-10 md:pl-0 md:w-1/2 ${idx % 2 === 0 ? 'md:pr-10 md:text-right' : 'md:pl-10'}`}>
                     <div className={`inline-flex items-center gap-2 mb-2 ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                       <span className="font-serif text-xl font-semibold text-emerald-800">{item.year}</span>
                       {item.milestone && (
                         <span className="px-2 py-0.5 rounded-full bg-gold-500/15 text-gold-600 text-[10px] font-semibold uppercase tracking-wider">
-                          Milestone
+                          {t('pages.about.milestone')}
                         </span>
                       )}
                     </div>
                     <h3 className="font-serif text-lg font-medium text-charcoal-700 mb-2">{item.title}</h3>
                     <p className="text-sm text-charcoal-600/60 leading-relaxed">{item.description}</p>
                   </div>
-
-                  {/* Spacer for other side */}
                   <div className="hidden md:block md:w-1/2" />
                 </div>
               ))}
@@ -181,10 +154,10 @@ export default function AboutPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-emerald-900">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-cream-100 mb-4">
-            Join the WORI Community
+            {t('pages.about.ctaTitle')}
           </h2>
           <p className="text-sm md:text-base text-cream-100/60 mb-8 leading-relaxed">
-            Whether you donate, volunteer, partner, or seek services — you are part of building a more welcoming Canada.
+            {t('pages.about.ctaDesc')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link

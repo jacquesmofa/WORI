@@ -16,7 +16,7 @@ export interface SEOProps {
 
 const SITE_NAME = 'Wadi-Kaja Organization (WORI)';
 const BASE_URL = 'https://wadikajaorganization.org';
-const DEFAULT_OG_IMAGE = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve,c_fill,w_1200,h_630/v1785062749/Wadi-Kaja-canada-day-2026_bwe3qt.jpg';
+const DEFAULT_OG_IMAGE = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,c_fill,w_1200,h_630/v1784294788/WORI-logo2_j6w6nu.jpg';
 
 const SUPPORTED_LANGS = ['en', 'ar', 'am', 'fa', 'fr', 'he', 'ti', 'ur', 'so', 'sw', 'om', 'ha'];
 

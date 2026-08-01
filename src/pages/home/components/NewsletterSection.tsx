@@ -12,7 +12,6 @@ export default function NewsletterSection() {
     const formEl = e.currentTarget;
     const data = new FormData(formEl);
 
-    // Honeypot check
     const honeypot = (data.get('website_alt') as string || '').trim();
     if (honeypot) {
       setStatus('success');
@@ -26,6 +25,9 @@ export default function NewsletterSection() {
     setErrorMsg('');
 
     const params = new URLSearchParams();
+    params.append('access_key', '383b7ca6-d26f-4508-87d5-99a05e4d1282');
+    params.append('subject', 'New Newsletter Subscription');
+    params.append('from_name', 'WORI Newsletter');
     data.forEach((val, key) => {
       if (key !== 'website_alt' && typeof val === 'string') {
         params.append(key, val);
@@ -33,35 +35,30 @@ export default function NewsletterSection() {
     });
 
     try {
-      const response = await fetch('https://readdy.ai/api/form/d9cf26t64bc39gr2pk0g', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: params.toString(),
       });
 
       const responseText = await response.text();
-      let parsed: { code?: string; meta?: { message?: string; detail?: string } } = {};
+      let parsed: { success?: boolean; message?: string } = {};
       try {
         parsed = JSON.parse(responseText);
       } catch {
         parsed = {};
       }
 
-      const serverMsg = parsed?.meta?.message || parsed?.meta?.detail || responseText;
-
-      if (response.ok && parsed?.code === 'OK') {
+      if (response.ok && parsed?.success) {
         setStatus('success');
         formRef.current?.reset();
-      } else if (typeof serverMsg === 'string' && serverMsg.toLowerCase().includes('spam')) {
-        setStatus('error');
-        setErrorMsg(serverMsg);
       } else {
         setStatus('error');
-        setErrorMsg(serverMsg || 'Something went wrong. Please try again.');
+        setErrorMsg(parsed?.message || t('newsletter.somethingWrong'));
       }
     } catch {
       setStatus('error');
-      setErrorMsg('Network error. Please try again.');
+      setErrorMsg(t('newsletter.networkError'));
     }
   };
 
@@ -70,7 +67,7 @@ export default function NewsletterSection() {
       <div className="px-6 lg:px-12 max-w-3xl mx-auto text-center">
         <div className="mb-2">
           <span className="inline-block px-3 py-1 rounded-full bg-gold-500/20 border border-gold-500/30 text-xs font-semibold text-gold-400 uppercase tracking-widest">
-            Newsletter
+            {t('newsletter.badge')}
           </span>
         </div>
 
@@ -88,7 +85,7 @@ export default function NewsletterSection() {
               <i className="ri-check-line text-gold-400 text-lg" />
             </div>
             <p className="text-cream-100 font-medium">
-              {t('success')} You&apos;re now subscribed.
+              {t('newsletter.subscribed')}
             </p>
           </div>
         ) : (
@@ -98,7 +95,6 @@ export default function NewsletterSection() {
             data-readdy-form
             className="flex flex-col sm:flex-row items-stretch gap-3 max-w-md mx-auto"
           >
-            {/* Honeypot */}
             <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }}>
               <input
                 type="text"
@@ -123,7 +119,7 @@ export default function NewsletterSection() {
               disabled={status === 'loading'}
               className="px-6 py-3 bg-gold-500 hover:bg-gold-400 text-emerald-900 text-sm font-bold rounded-full transition-all whitespace-nowrap disabled:opacity-60"
             >
-              {status === 'loading' ? 'Subscribing...' : t('newsletter.button')}
+              {status === 'loading' ? t('newsletter.subscribing') : t('newsletter.button')}
             </button>
           </form>
         )}

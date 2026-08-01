@@ -1,0 +1,21 @@
+{
+  "name": "WORI - Wadi-Kaja Organization for Refugee & Immigrant Services",
+  "short_name": "WORI",
+  "description": "Empowering refugees, newcomers, and immigrants in Canada through settlement support, housing assistance, language mentorship, and emergency relief.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0D9488",
+  "icons": [
+    {
+      "src": "https://res.cloudinary.com/oqdvximy/image/upload/f_png,c_fill,w_192,h_192/v1784818278/WORI-logo2_l7ckoh",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://res.cloudinary.com/oqdvximy/image/upload/f_png,c_fill,w_512,h_512/v1784818278/WORI-logo2_l7ckoh",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

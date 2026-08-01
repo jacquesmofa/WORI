@@ -128,14 +128,14 @@ export default function HeroSlider() {
       {/* Arrow Controls */}
       <button
         onClick={prev}
-        aria-label="Previous slide"
+        aria-label={t('gallery.previousImage')}
         className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/55 text-white backdrop-blur-sm transition-all border border-white/20"
       >
         <i className="ri-arrow-left-s-line text-xl" />
       </button>
       <button
         onClick={next}
-        aria-label="Next slide"
+        aria-label={t('gallery.nextImage')}
         className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/55 text-white backdrop-blur-sm transition-all border border-white/20"
       >
         <i className="ri-arrow-right-s-line text-xl" />
@@ -147,7 +147,7 @@ export default function HeroSlider() {
           <button
             key={s.id}
             onClick={() => goTo(i)}
-            aria-label={`Go to slide ${i + 1}`}
+            aria-label={`${t('gallery.goToSlide')} ${i + 1}`}
             className={`transition-all rounded-full ${
               i === current
                 ? 'w-6 h-2 bg-gold-500'

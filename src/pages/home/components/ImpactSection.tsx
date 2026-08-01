@@ -44,7 +44,7 @@ export default function ImpactSection() {
               {/* Glassmorphic labels */}
               <div className="absolute top-4 left-4 flex gap-2">
                 <span className="px-3 py-1.5 rounded-lg bg-white/15 backdrop-blur-md border border-white/20 text-xs font-medium text-cream-100">
-                  AODA Compliant
+                  {t('impact.aodaCompliant')}
                 </span>
                 <span className="px-3 py-1.5 rounded-lg bg-white/15 backdrop-blur-md border border-white/20 text-xs font-medium text-cream-100">
                   {t('impact.craRegistered')}

@@ -28,12 +28,10 @@ export default function BookingPage() {
               <i className="ri-chat-heart-line text-emerald-800 text-2xl" />
             </div>
             <h2 className="font-serif text-xl md:text-2xl font-medium text-charcoal-700 mb-4">
-              Dear Clients,
+              {t('booking.dearClients')}
             </h2>
             <p className="text-sm text-charcoal-600/60 leading-relaxed max-w-lg mx-auto">
-              Please if you need any assistance with settlement programs and other services; such as,
-              writing resumes, getting a job, applying for SIN, OHIP, etc. please feel free to book
-              an appointment using the following link.
+              {t('booking.dearClientsDesc')}
             </p>
           </div>
 
@@ -44,12 +42,12 @@ export default function BookingPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-10 py-5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-base font-bold rounded-full transition-all hover:shadow-lg whitespace-nowrap cursor-pointer"
           >
-            BOOK NOW
+            {t('booking.bookNow')}
             <i className="ri-arrow-right-line text-lg" />
           </a>
 
           <p className="text-xs text-charcoal-600/40 mt-4">
-            You will be redirected to our secure Microsoft Bookings portal where you can fill in all your information.
+            {t('booking.redirectNotice')}
           </p>
         </div>
       </section>

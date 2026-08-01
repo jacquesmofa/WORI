@@ -129,7 +129,7 @@ export default function EventsPage() {
           <section className="px-6 lg:px-10 pt-10 pb-4">
             <div className="max-w-6xl mx-auto">
               <p className="text-sm text-charcoal-600/60 leading-relaxed max-w-2xl">
-                Browse our photo gallery organized by event and activity. Click any category to explore all images inside.
+                {t('events.browseGallery')}
               </p>
             </div>
           </section>
@@ -231,7 +231,7 @@ export default function EventsPage() {
                   className="flex items-center gap-1 hover:text-emerald-800 transition-colors cursor-pointer"
                 >
                   <i className="ri-arrow-left-s-line" />
-                  <span>All Categories</span>
+                  <span>{t('common.allCategories')}</span>
                 </button>
                 <span className="text-charcoal-600/30">/</span>
                 <span className="font-medium text-charcoal-700">{selectedCategory.label}</span>
@@ -247,7 +247,7 @@ export default function EventsPage() {
                   </p>
                 </div>
                 <span className="text-xs text-charcoal-600/40 whitespace-nowrap">
-                  Showing {Math.min(loadedCount, selectedCategory.images.length)} of {selectedCategory.images.length} photos
+                  {t('common.showingOf')} {Math.min(loadedCount, selectedCategory.images.length)} {t('common.of')} {selectedCategory.images.length} {t('common.photos')}
                 </span>
               </div>
             </div>
@@ -262,7 +262,7 @@ export default function EventsPage() {
                     key={i}
                     className="break-inside-avoid mb-3 block w-full overflow-hidden rounded-xl cursor-pointer group relative"
                     onClick={() => openLightbox(selectedCategory.images, i, selectedCategory.label)}
-                    aria-label={`View photo ${i + 1}`}
+                    aria-label={`${t('gallery.viewPhoto')} ${i + 1}`}
                   >
                     <img
                       src={img.url}
@@ -287,9 +287,9 @@ export default function EventsPage() {
                     className="inline-flex items-center gap-2 px-8 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all cursor-pointer"
                   >
                     <i className="ri-add-line" />
-                    Load More Photos
+                    {t('common.loadMorePhotos')}
                     <span className="text-cream-100/60 text-xs">
-                      ({selectedCategory.images.length - loadedCount} remaining)
+                      ({selectedCategory.images.length - loadedCount} {t('common.remaining')})
                     </span>
                   </button>
                 </div>
@@ -310,7 +310,7 @@ export default function EventsPage() {
           <button
             className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors cursor-pointer"
             onClick={closeLightbox}
-            aria-label="Close"
+            aria-label={t('gallery.close')}
           >
             <i className="ri-close-line text-white text-xl" />
           </button>
@@ -325,14 +325,14 @@ export default function EventsPage() {
             <button
               className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors cursor-pointer"
               onClick={(e) => { e.stopPropagation(); setZoom((z) => Math.max(z - 0.25, 1)); }}
-              aria-label="Zoom out"
+              aria-label={t('gallery.zoomOut')}
             >
               <i className="ri-zoom-out-line text-white text-sm" />
             </button>
             <button
               className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors cursor-pointer"
               onClick={(e) => { e.stopPropagation(); setZoom((z) => Math.min(z + 0.25, 3)); }}
-              aria-label="Zoom in"
+              aria-label={t('gallery.zoomIn')}
             >
               <i className="ri-zoom-in-line text-white text-sm" />
             </button>
@@ -340,7 +340,7 @@ export default function EventsPage() {
               <button
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors cursor-pointer"
                 onClick={(e) => { e.stopPropagation(); setZoom(1); }}
-                aria-label="Reset zoom"
+                aria-label={t('gallery.resetZoom')}
               >
                 <i className="ri-refresh-line text-white text-sm" />
               </button>
@@ -351,7 +351,7 @@ export default function EventsPage() {
           <button
             className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors cursor-pointer"
             onClick={(e) => { e.stopPropagation(); goPrev(); }}
-            aria-label="Previous image"
+            aria-label={t('gallery.previousImage')}
           >
             <i className="ri-arrow-left-s-line text-white text-xl" />
           </button>
@@ -360,7 +360,7 @@ export default function EventsPage() {
           <button
             className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors cursor-pointer"
             onClick={(e) => { e.stopPropagation(); goNext(); }}
-            aria-label="Next image"
+            aria-label={t('gallery.nextImage')}
           >
             <i className="ri-arrow-right-s-line text-white text-xl" />
           </button>

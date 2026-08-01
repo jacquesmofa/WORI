@@ -280,9 +280,9 @@ export default function DonatePage() {
                   <i className="ri-arrow-right-line text-charcoal-600/30 group-hover:text-emerald-800 group-hover:translate-x-1 transition-all" />
                 </a>
 
-                {/* PayPal */}
+                {/* PayPal → CanadaHelps (PayPal accepted there) */}
                 <a
-                  href="https://www.paypal.com/donate/?hosted_button_id=WORI_PAYPAL_BUTTON_ID"
+                  href="https://www.canadahelps.org/en/dn/122702"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-4 w-full p-4 rounded-xl bg-cream-200/40 border border-cream-300 hover:border-blue-800/30 transition-all"
@@ -292,10 +292,10 @@ export default function DonatePage() {
                   </div>
                   <div className="flex-1 text-left">
                     <p className="text-sm font-semibold text-charcoal-700 group-hover:text-blue-800 transition-colors">
-                      PayPal
+                      CanadaHelps (PayPal Accepted)
                     </p>
                     <p className="text-xs text-charcoal-600/50">
-                      Quick one-time or recurring donations via PayPal
+                      Donate via CanadaHelps — PayPal, credit card, and more
                     </p>
                   </div>
                   <i className="ri-arrow-right-line text-charcoal-600/30 group-hover:text-blue-800 group-hover:translate-x-1 transition-all" />

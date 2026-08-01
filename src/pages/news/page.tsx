@@ -15,12 +15,12 @@ export default function NewsPage() {
 
   return (
     <PageLayout
-      title="News & Community Updates"
-      subtitle="Press releases, award announcements, program launches, and emergency community alerts from WORI."
+      title={t('pages.news.title')}
+      subtitle={t('pages.news.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784298421/wori-awards-10-2048x1365_zzvzlm.jpg"
       breadcrumb={[
-        { label: 'Home', path: '/' },
-        { label: 'News & Updates' },
+        { label: t('nav.home'), path: '/' },
+        { label: t('pages.news.breadcrumb') },
       ]}
       seo={{
         title: 'News & Community Updates | Wadi-Kaja Organization',
@@ -43,7 +43,7 @@ export default function NewsPage() {
                     : 'bg-cream-200/50 text-charcoal-600 hover:bg-cream-200'
                 }`}
               >
-                {cat}
+                {cat === 'All' ? t('common.all') : cat}
               </button>
             ))}
           </div>
@@ -79,7 +79,7 @@ export default function NewsPage() {
                   <p className="text-sm text-charcoal-600/60 leading-relaxed flex-1">{article.excerpt}</p>
                   <div className="mt-4 pt-4 border-t border-cream-300/40">
                     <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-800 group-hover:text-emerald-700 transition-colors">
-                      Read Full Story <i className="ri-arrow-right-line text-xs" />
+                      {t('pages.news.readFullStory')} <i className="ri-arrow-right-line text-xs" />
                     </span>
                   </div>
                 </div>

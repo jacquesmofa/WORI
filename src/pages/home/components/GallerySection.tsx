@@ -1,18 +1,15 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { galleryCategories } from '@/mocks/galleryData';
 
-// Show specific categories on home page — including Past Events and Upcoming Events
+// Show exactly 6 categories for clean 3x2 grid alignment
 const HOME_CATEGORY_IDS = [
-  'past-events',
-  'upcoming-events',
   'award-ceremony',
-  'outreach-activities',
-  'outreach-activity',
-  'seniors-entertaining-program',
-  'seniors-entertaining-p',
-  'sharing-orphans-needy',
   'welcoming-refugees',
+  'outreach-activities',
+  'seniors-entertaining-program',
+  'sharing-orphans-needy',
   'yoga-session',
 ];
 
@@ -24,8 +21,8 @@ interface CategoryImageState {
 }
 
 export default function GallerySection() {
+  const { t } = useTranslation();
   const [hoveredId, setHoveredId] = useState<string | null>(null);
-  // Track dynamic images per category
   const [imageStates, setImageStates] = useState<Record<string, CategoryImageState>>({});
 
   // Initialize image states from gallery data
@@ -45,7 +42,7 @@ export default function GallerySection() {
     const timers: ReturnType<typeof setInterval>[] = [];
 
     HOME_CATEGORIES.forEach((cat) => {
-      const delay = 2500 + Math.random() * 3000; // 2.5–5.5 second random delay
+      const delay = 2500 + Math.random() * 3000;
       const timer = setInterval(() => {
         setImageStates((prev) => {
           const current = prev[cat.id];
@@ -74,26 +71,26 @@ export default function GallerySection() {
         <div className="max-w-7xl mx-auto mb-8">
           <div className="flex items-end justify-between flex-wrap gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-gold-600 mb-1">Community Moments</p>
-              <h2 className="font-serif text-2xl md:text-3xl font-semibold text-charcoal-700">
-                Our Gallery
+              <p className="text-xs font-semibold uppercase tracking-widest text-gold-600 mb-1">{t('events.communityMoments')}</p>
+              <h2 className="font-serif text-2xl md:text-3xl font-semibold text-emerald-800">
+                {t('events.gallery.ourGallery')}
               </h2>
               <p className="text-sm text-charcoal-600/50 mt-1 max-w-md">
-                Real moments from WORI events, programs, and community — click any category to explore.
+                {t('events.gallery.sectionDescription')}
               </p>
             </div>
             <Link
               to="/events"
               className="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-emerald-800 text-emerald-800 hover:bg-emerald-800 hover:text-cream-100 text-sm font-semibold rounded-full transition-all whitespace-nowrap"
             >
-              View All Categories
+              {t('events.gallery.viewAllCategories')}
               <i className="ri-arrow-right-line" />
             </Link>
           </div>
         </div>
 
-        {/* Category Grid — compact masonry */}
-        <div className="max-w-7xl mx-auto columns-1 sm:columns-2 lg:columns-3 gap-3">
+        {/* Clean 3x2 Grid — perfectly aligned */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {HOME_CATEGORIES.map((cat) => {
             const isHovered = hoveredId === cat.id;
             const st = imageStates[cat.id];
@@ -103,12 +100,12 @@ export default function GallerySection() {
               <Link
                 key={cat.id}
                 to="/events"
-                className="break-inside-avoid mb-3 block group relative overflow-hidden rounded-xl cursor-pointer bg-white border border-cream-300/40 hover:border-emerald-800/20 transition-all duration-500"
+                className="group relative overflow-hidden rounded-xl cursor-pointer bg-white border border-cream-300/40 hover:border-emerald-800/20 transition-all duration-500"
                 onMouseEnter={() => setHoveredId(cat.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                aria-label={`View ${cat.label} gallery`}
+                aria-label={t('events.gallery.viewCategory', { name: cat.label })}
               >
-                {/* Cover image with crossfade transition */}
+                {/* Cover image */}
                 <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4/3' }}>
                   <img
                     src={displayImage}
@@ -119,21 +116,16 @@ export default function GallerySection() {
                     className={`w-full h-full object-cover object-center transition-all duration-700 ${
                       isHovered ? 'scale-105' : 'scale-100'
                     }`}
-                    style={{
-                      animationName: 'none',
-                    }}
                   />
 
-                  {/* Fading pop-up / pop-off effect */}
+                  {/* Overlay */}
                   <div
-                    className="absolute inset-0 bg-black/20 transition-opacity duration-700"
+                    className="absolute inset-0 transition-opacity duration-700"
                     style={{
                       opacity: isHovered ? 0.15 : 0.35,
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.08), transparent)',
                     }}
                   />
-
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/8 to-transparent transition-opacity duration-500" />
 
                   {/* Image count badge */}
                   <div className="absolute top-2.5 right-2.5">
@@ -169,7 +161,7 @@ export default function GallerySection() {
                   </div>
                 </div>
 
-                {/* Preview thumbnails — smaller */}
+                {/* Preview thumbnails */}
                 <div className="flex gap-1 px-2.5 py-2">
                   {cat.images.slice(1, 4).map((img, i) => (
                     <div
@@ -178,7 +170,7 @@ export default function GallerySection() {
                     >
                       <img
                         src={img.url}
-                        alt={`${cat.label} preview ${i + 1}`}
+                        alt={t('events.gallery.previewAlt', { name: cat.label, index: i + 1 })}
                         width="32"
                         height="32"
                         loading="lazy"
@@ -205,7 +197,7 @@ export default function GallerySection() {
             to="/events"
             className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-bold rounded-full transition-all"
           >
-            Explore All 13 Categories
+            {t('events.gallery.exploreAllCategories')}
             <i className="ri-image-2-line" />
           </Link>
         </div>

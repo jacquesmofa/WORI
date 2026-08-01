@@ -42,7 +42,7 @@ export default function SudanCrisisSection() {
         </h2>
 
         <p className="text-base text-charcoal-600/70 leading-relaxed max-w-xl mx-auto mb-8">
-          WORI is actively responding to the ongoing conflict in Sudan — supporting displaced families, documenting human rights concerns, and advocating for peace and justice.
+          {t('pages.crisis.sudanDescription')}
         </p>
 
         <Link

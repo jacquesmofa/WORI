@@ -3,96 +3,26 @@ import { Link } from 'react-router-dom';
 import { useSiteContent } from '@/hooks/useSiteContent';
 
 const SETTLEMENT_PROGRAMS = [
-  {
-    key: 'ircc',
-    icon: 'ri-government-line',
-    labelKey: 'settlementMenu.ircc',
-    path: '/services/ircc',
-  },
-  {
-    key: 'language-mentorship',
-    icon: 'ri-chat-1-line',
-    labelKey: 'settlementMenu.languageMentorship',
-    path: '/services/language-mentorship',
-  },
-  {
-    key: 'private-sponsorship',
-    icon: 'ri-hand-heart-line',
-    labelKey: 'settlementMenu.privateSponsorship',
-    path: '/services/private-sponsorship',
-  },
-  {
-    key: 'settlement',
-    icon: 'ri-home-heart-line',
-    labelKey: 'settlementMenu.immigrantSettlement',
-    path: '/services/settlement',
-  },
-  {
-    key: 'language-services',
-    icon: 'ri-translate-2',
-    labelKey: 'settlementMenu.languageServices',
-    path: '/services/language-services',
-  },
+  { key: 'ircc', icon: 'ri-government-line', labelKey: 'settlementMenu.ircc', path: '/services/ircc' },
+  { key: 'language-mentorship', icon: 'ri-chat-1-line', labelKey: 'settlementMenu.languageMentorship', path: '/services/language-mentorship' },
+  { key: 'private-sponsorship', icon: 'ri-hand-heart-line', labelKey: 'settlementMenu.privateSponsorship', path: '/services/private-sponsorship' },
+  { key: 'settlement', icon: 'ri-home-heart-line', labelKey: 'settlementMenu.immigrantSettlement', path: '/services/settlement' },
+  { key: 'language-services', icon: 'ri-translate-2', labelKey: 'settlementMenu.languageServices', path: '/services/language-services' },
 ];
 
 const WELLBEING_PROGRAMS = [
-  {
-    key: 'youth',
-    icon: 'ri-user-star-line',
-    labelKey: 'wellbeingMenu.youth',
-    path: '/services/youth',
-  },
-  {
-    key: 'employment',
-    icon: 'ri-briefcase-line',
-    labelKey: 'wellbeingMenu.employment',
-    path: '/services/employment',
-  },
-  {
-    key: 'mental-health',
-    icon: 'ri-mental-health-line',
-    labelKey: 'wellbeingMenu.mentalHealth',
-    path: '/services/mental-health',
-  },
-  {
-    key: 'housing',
-    icon: 'ri-building-2-line',
-    labelKey: 'wellbeingMenu.housing',
-    path: '/services/housing',
-  },
-  {
-    key: 'women-empowerment',
-    icon: 'ri-women-line',
-    labelKey: 'wellbeingMenu.womenEmpowerment',
-    path: '/services/women-empowerment',
-  },
-  {
-    key: 'seniors',
-    icon: 'ri-user-heart-line',
-    labelKey: 'wellbeingMenu.seniors',
-    path: '/services/seniors',
-  },
-  {
-    key: 'food-security',
-    icon: 'ri-restaurant-2-line',
-    labelKey: 'wellbeingMenu.foodSecurity',
-    path: '/services/food-security',
-  },
+  { key: 'youth', icon: 'ri-user-star-line', labelKey: 'wellbeingMenu.youth', path: '/services/youth' },
+  { key: 'employment', icon: 'ri-briefcase-line', labelKey: 'wellbeingMenu.employment', path: '/services/employment' },
+  { key: 'mental-health', icon: 'ri-mental-health-line', labelKey: 'wellbeingMenu.mentalHealth', path: '/services/mental-health' },
+  { key: 'housing', icon: 'ri-building-2-line', labelKey: 'wellbeingMenu.housing', path: '/services/housing' },
+  { key: 'women-empowerment', icon: 'ri-women-line', labelKey: 'wellbeingMenu.womenEmpowerment', path: '/services/women-empowerment' },
+  { key: 'seniors', icon: 'ri-user-heart-line', labelKey: 'wellbeingMenu.seniors', path: '/services/seniors' },
+  { key: 'food-security', icon: 'ri-restaurant-2-line', labelKey: 'wellbeingMenu.foodSecurity', path: '/services/food-security' },
 ];
 
 const COMMUNITY_PROGRAMS = [
-  {
-    key: 'community-engagement',
-    icon: 'ri-group-line',
-    labelKey: 'wellbeingMenu.communityEngagement',
-    path: '/services/community-engagement',
-  },
-  {
-    key: 'event-celebrations',
-    icon: 'ri-calendar-event-line',
-    labelKey: 'wellbeingMenu.eventCelebrations',
-    path: '/events',
-  },
+  { key: 'community-engagement', icon: 'ri-group-line', labelKey: 'wellbeingMenu.communityEngagement', path: '/services/community-engagement' },
+  { key: 'event-celebrations', icon: 'ri-calendar-event-line', labelKey: 'wellbeingMenu.eventCelebrations', path: '/events' },
 ];
 
 export default function AboutOrgSection() {
@@ -129,17 +59,17 @@ export default function AboutOrgSection() {
               {/* Header */}
               <div className="px-5 py-4 border-b border-emerald-700/60 flex items-center justify-between">
                 <h3 className="font-serif text-xl font-semibold text-cream-100">
-                  Our Programs
+                  {t('programs.sectionTitle')}
                 </h3>
                 <span className="text-[10px] font-bold text-gold-400 bg-gold-500/10 px-2 py-0.5 rounded-full uppercase tracking-wider">
-                  14 Programs
+                  {t('programs.badgeCount')}
                 </span>
               </div>
 
               {/* Settlement & Resources */}
               <div className="px-5 pt-3 pb-1">
                 <span className="text-[10px] font-bold text-gold-400/70 uppercase tracking-[0.15em]">
-                  Settlement & Resources
+                  {t('programs.catSettlement')}
                 </span>
               </div>
               <ul className="divide-y divide-emerald-700/30">
@@ -149,7 +79,7 @@ export default function AboutOrgSection() {
               {/* Wellbeing & Empowerment */}
               <div className="px-5 pt-3 pb-1 border-t border-emerald-700/30">
                 <span className="text-[10px] font-bold text-gold-400/70 uppercase tracking-[0.15em]">
-                  Wellbeing & Empowerment
+                  {t('programs.catWellbeing')}
                 </span>
               </div>
               <ul className="divide-y divide-emerald-700/30">
@@ -159,7 +89,7 @@ export default function AboutOrgSection() {
               {/* Community & Events */}
               <div className="px-5 pt-3 pb-1 border-t border-emerald-700/30">
                 <span className="text-[10px] font-bold text-gold-400/70 uppercase tracking-[0.15em]">
-                  Community & Events
+                  {t('programs.catCommunity')}
                 </span>
               </div>
               <ul className="divide-y divide-emerald-700/30">
@@ -172,7 +102,7 @@ export default function AboutOrgSection() {
                   to="/services"
                   className="flex items-center justify-center gap-2 text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors group"
                 >
-                  <span>View All Programs</span>
+                  <span>{t('common.viewAllPrograms')}</span>
                   <i className="ri-arrow-right-line text-xs transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
@@ -183,18 +113,18 @@ export default function AboutOrgSection() {
           <div className="flex-1 flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
             <div className="flex-1">
               <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-semibold text-emerald-800 mb-5 leading-tight">
-                Wadi-Kaja Organization for Refugee and Immigrant
+                {t('programs.orgName')}
               </h2>
 
               <p className="text-base text-charcoal-600/75 leading-relaxed mb-5">
-                Wadi-Kaja Organization for Refugees and Immigrants (WORI) is a non-profit organization in Toronto, Canada. The organization helps with refugees, and new immigrants in GTA. The organization also provides settlement services, translation and interpretation for new immigrants to Canada. Our mission is to improve the quality of life of Refugees and Immigrants, through programs and services to promote their social and economic inclusion to enable them to become contributing members of Canadian society and to live in dignity.
+                {t('programs.orgDesc')}
               </p>
 
               <Link
                 to="/about/mission"
                 className="inline-flex items-center gap-2 text-emerald-800 font-semibold text-sm hover:text-emerald-700 transition-colors group"
               >
-                View Our Vision and Mission
+                {t('common.viewOurVision')}
                 <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -211,9 +141,9 @@ export default function AboutOrgSection() {
               <div className="mt-4 p-4 bg-white rounded-xl border border-cream-200">
                 <div className="flex items-center gap-2 mb-1">
                   <i className="ri-shield-check-fill text-emerald-700 text-sm" />
-                  <span className="text-xs font-semibold text-emerald-800 uppercase tracking-wide">CRA Registered</span>
+                  <span className="text-xs font-semibold text-emerald-800 uppercase tracking-wide">{t('common.craRegistered')}</span>
                 </div>
-                <p className="text-xs text-charcoal-600/60 font-medium">Charity No. 748873338RR0001</p>
+                <p className="text-xs text-charcoal-600/60 font-medium">{t('programs.charityNo')}</p>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import PageLayout from '@/components/feature/PageLayout';
 import { boardMembers } from '@/mocks/pagesData';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const BOARD_SEO = {
   title: 'Leadership, Board & Team | Wadi-Kaja Organization',
@@ -56,10 +57,11 @@ const volunteers = [
 ];
 
 export default function BoardPage() {
+  const { t } = useTranslation();
   return (
     <PageLayout
-      title="Board & Management"
-      subtitle="Meet the diverse team of leaders, professionals, and community advocates who govern WORI with integrity and vision."
+      title={t('pages.board.title')}
+      subtitle={t('pages.board.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784298421/wori-awards-10-2048x1365_zzvzlm.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },

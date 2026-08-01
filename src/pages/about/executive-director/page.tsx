@@ -1,14 +1,16 @@
 import PageLayout from '@/components/feature/PageLayout';
 import { executiveDirector } from '@/mocks/pagesData';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function ExecutiveDirectorPage() {
+  const { t } = useTranslation();
   const paragraphs = executiveDirector.letter.split('\n\n');
 
   return (
     <PageLayout
-      title="Executive Director's Desk"
-      subtitle="Annual letters, public announcements, and reflections from the leadership of WORI."
+      title={t('pages.executiveDirector.title')}
+      subtitle={t('pages.executiveDirector.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },

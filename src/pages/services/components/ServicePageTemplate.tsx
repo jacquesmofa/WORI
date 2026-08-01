@@ -12,18 +12,139 @@ interface ServicePageProps {
   seoDescription?: string;
 }
 
-const sectionImages: string[] = [
-  `${CLD}/v1784649543/Arrived-Refugee-Photos-page-004_orwibh.jpg`,
-  `${CLD}/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg`,
-  `${CLD}/v1784648610/yoga-session-img20_l4w0jx.jpg`,
-  `${CLD}/v1784649560/Arrived-Refugee-Photos-page-012_ocnovf.jpg`,
-  `${CLD}/v1784298421/wori-awards-10-2048x1365_zzvzlm.jpg`,
-  `${CLD}/v1784295210/IMG_20200424_121422_452_hunip7.jpg`,
-  `${CLD}/v1784646872/Photo-1_idgega.jpg`,
-  `${CLD}/v1785062749/Wadi-Kaja-canada-day-2026_bwe3qt.jpg`,
-  `${CLD}/v1784649688/Day23_img28_jqixge.jpg`,
-  `${CLD}/v1784649666/Day23_img41_qwxabt.jpg`,
-];
+// Per-service unique section images — no more repeating across programs
+const serviceSectionImages: Record<string, string[]> = {
+  settlement: [
+    `${CLD}/v1784649543/Arrived-Refugee-Photos-page-004_orwibh.jpg`,
+    `${CLD}/v1784649649/Day23_img34_ghbgnh.jpg`,
+    `${CLD}/v1784649560/Arrived-Refugee-Photos-page-012_ocnovf.jpg`,
+    `${CLD}/v1784649674/Day23_img44_fkgdgq.jpg`,
+    `${CLD}/v1784649550/Arrived-Refugee-Photos-page-008_e6teua.jpg`,
+    `${CLD}/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg`,
+    `${CLD}/v1784649567/Arrived-Refugee-Photos-page-011_rtygf7.jpg`,
+    `${CLD}/v1784649604/Day23_img14_e7dzgv.jpg`,
+  ],
+  ircc: [
+    `${CLD}/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg`,
+    `${CLD}/v1784295067/IMG-20201006-WA0161_g4vz3n.jpg`,
+    `${CLD}/v1784295065/IMG-20201006-WA0158_zszvac.jpg`,
+    `${CLD}/v1784295059/IMG-20201006-WA0110_igfxya.jpg`,
+    `${CLD}/v1784295055/IMG-20201006-WA0094_evrdcc.jpg`,
+    `${CLD}/v1784295048/IMG-20201006-WA0075_cjxny2.jpg`,
+    `${CLD}/v1784295037/IMG-20201006-WA0049_r9eutl.jpg`,
+    `${CLD}/v1784294998/IMG-20200922-WA0077_z4rcqe.jpg`,
+  ],
+  'language-mentorship': [
+    `${CLD}/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg`,
+    `${CLD}/v1784649622/Day23_img22_moiseg.jpg`,
+    `${CLD}/v1784649654/Day23_img38_l0g3ac.jpg`,
+    `${CLD}/v1784649647/Day23_img33_di2orl.jpg`,
+    `${CLD}/v1784295067/IMG-20201006-WA0091_irqvja.jpg`,
+    `${CLD}/v1784295057/IMG-20201006-WA0099_qpsqui.jpg`,
+    `${CLD}/v1784295016/IMG-20200929-WA0088_bqjh5b.jpg`,
+    `${CLD}/v1784649612/Day23_img18_mzwoko.jpg`,
+  ],
+  'private-sponsorship': [
+    `${CLD}/v1784649535/Arrived-Refugee-Photos-page-001_grvjts.jpg`,
+    `${CLD}/v1784649538/Arrived-Refugee-Photos-page-002_gwzljx.jpg`,
+    `${CLD}/v1784649540/Arrived-Refugee-Photos-page-003_pw0kaj.jpg`,
+    `${CLD}/v1784649547/Arrived-Refugee-Photos-page-006_jqrq1l.jpg`,
+    `${CLD}/v1784649555/Arrived-Refugee-Photos-page-009_sgctuy.jpg`,
+    `${CLD}/v1784649557/Arrived-Refugee-Photos-page-010_cq79yl.jpg`,
+    `${CLD}/v1784649565/Arrived-Refugee-Photos-page-014_gm7qef.jpg`,
+    `${CLD}/v1784649518/Arrived-Refugee-Photos-17_iffhdb.jpg`,
+  ],
+  'language-services': [
+    `${CLD}/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg`,
+    `${CLD}/v1784295062/IMG-20201006-WA0124_ijkkru.jpg`,
+    `${CLD}/v1784649597/Day23_img12_gaorcc.jpg`,
+    `${CLD}/v1784649579/Day23_img4_bwozyq.jpg`,
+    `${CLD}/v1784295051/IMG-20201006-WA0084_oljwjr.jpg`,
+    `${CLD}/v1784295041/IMG-20201006-WA0155_jnkngk.jpg`,
+    `${CLD}/v1784649617/Day23_img21_kru1y9.jpg`,
+    `${CLD}/v1784649632/Day23_img25_tv7gfm.jpg`,
+  ],
+  'mental-health': [
+    `${CLD}/v1784648610/yoga-session-img20_l4w0jx.jpg`,
+    `${CLD}/v1784648568/yoga-session-img1_vnjmwh.jpg`,
+    `${CLD}/v1784648614/yoga-session-img22_eezl8t.jpg`,
+    `${CLD}/v1784648645/yoga-session-img39_cwys01.jpg`,
+    `${CLD}/v1784648629/yoga-session-img29_igaxx9.jpg`,
+    `${CLD}/v1784648649/yoga-session-img34_jfqvxy.jpg`,
+    `${CLD}/v1784648651/yoga-session-img40_etdqql.jpg`,
+    `${CLD}/v1784648559/yoga-session-img53_dnidc7.jpg`,
+  ],
+  employment: [
+    `${CLD}/v1784295067/IMG-20201006-WA0161_g4vz3n.jpg`,
+    `${CLD}/v1784295066/IMG-20201006-WA0160_qnnfyq.jpg`,
+    `${CLD}/v1784295056/IMG-20201006-WA0104_txhn3t.jpg`,
+    `${CLD}/v1784295044/IMG-20201006-WA0057_k4wyj6.jpg`,
+    `${CLD}/v1784295000/IMG-20201006-WA0009_inusqi.jpg`,
+    `${CLD}/v1784294990/IMG-20200922-WA0033_gmpa4k.jpg`,
+    `${CLD}/v1784649594/Day23_img10_e3iej2.jpg`,
+    `${CLD}/v1784649664/Day23_img40_ci4dlt.jpg`,
+  ],
+  housing: [
+    `${CLD}/v1784649560/Arrived-Refugee-Photos-page-012_ocnovf.jpg`,
+    `${CLD}/v1784649562/Arrived-Refugee-Photos-page-013_vllclz.jpg`,
+    `${CLD}/v1784649572/Day23_img2_ghcsds.jpg`,
+    `${CLD}/v1784649589/Day23_img9_tndnvx.jpg`,
+    `${CLD}/v1784295025/IMG-20201006-WA0014_qj8ukd.jpg`,
+    `${CLD}/v1784295014/IMG-20200922-WA0071_wov2ky.jpg`,
+    `${CLD}/v1784649642/Day23_img31_juj7wt.jpg`,
+    `${CLD}/v1784649577/Day23_img5_umnepc.jpg`,
+  ],
+  'women-empowerment': [
+    `${CLD}/v1784298529/wori-awards-14-1536x1024_axrgst.jpg`,
+    `${CLD}/v1784298432/wori-awards-12-1536x1024_tjvoe9.jpg`,
+    `${CLD}/v1784298443/wori-awards-14-1536x1024_axrgst.jpg`,
+    `${CLD}/v1784298405/wori-awards-8-1536x1024_yet9b1.jpg`,
+    `${CLD}/v1784295042/IMG-20201006-WA0056_ijybpe.jpg`,
+    `${CLD}/v1784295017/IMG-20200929-WA0097_zdgpmf.jpg`,
+    `${CLD}/v1784294993/IMG-20200922-WA0055_eoqtql.jpg`,
+    `${CLD}/v1784649661/Day23_img35_pm6vpe.jpg`,
+  ],
+  seniors: [
+    `${CLD}/v1784646872/Photo-1_idgega.jpg`,
+    `${CLD}/v1784646873/Photo-2_cb6klb.jpg`,
+    `${CLD}/v1784646875/Photo-3_slxubn.jpg`,
+    `${CLD}/v1784646879/Photo-6_krdh5d.jpg`,
+    `${CLD}/v1784646880/Photo-8_gtdqgv.jpg`,
+    `${CLD}/v1784646882/Photo-9_mlkds6.jpg`,
+    `${CLD}/v1784298597/Photo-5-1024x682_kli91d.jpg`,
+    `${CLD}/v1784298590/Photo-7-1024x682_prr2hx.jpg`,
+  ],
+  'food-security': [
+    `${CLD}/v1784295210/IMG_20200424_121422_452_hunip7.jpg`,
+    `${CLD}/v1784295209/IMG_20200424_121004_354_vfyb7r.jpg`,
+    `${CLD}/v1784295208/IMG_20200424_121918_579_lvs4si.jpg`,
+    `${CLD}/v1784295206/IMG_20200424_121918_572_rlpdxm.jpg`,
+    `${CLD}/v1784295204/IMG_20200424_121748_031_cpzyus.jpg`,
+    `${CLD}/v1784295197/IMG_20200424_121004_338_p0gp0s.jpg`,
+    `${CLD}/v1784295196/IMG_20200424_120850_071_zd5c1c.jpg`,
+    `${CLD}/v1784295180/IMG_20200424_121748_036_ye0px5.jpg`,
+  ],
+  youth: [
+    `${CLD}/v1784649622/Day23_img22_moiseg.jpg`,
+    `${CLD}/v1784649629/Day23_img26_l3hthg.jpg`,
+    `${CLD}/v1784649651/Day23_img37_itvlry.jpg`,
+    `${CLD}/v1784649656/Day23_img36_fqvpuh.jpg`,
+    `${CLD}/v1784649587/Day23_img8_plxkyf.jpg`,
+    `${CLD}/v1784649584/Day23_img6_imozlc.jpg`,
+    `${CLD}/v1784649574/Day23_img3_a5fwyu.jpg`,
+    `${CLD}/v1784649570/Day23_img1_ncz57d.jpg`,
+  ],
+  'community-engagement': [
+    `${CLD}/v1785062749/Wadi-Kaja-canada-day-2026_bwe3qt.jpg`,
+    `${CLD}/v1784650837/Canada-Day-2022_uvumg9.jpg`,
+    `${CLD}/v1784298489/wori-awards-20-1536x1024_uqyztr.jpg`,
+    `${CLD}/v1784298013/wori-awards-20-2000x1200_ewun79.jpg`,
+    `${CLD}/v1784298411/wori-awards-9-2048x1365_upzyxt.jpg`,
+    `${CLD}/v1784298395/wori-awards-6-1536x1024_jd80a2.jpg`,
+    `${CLD}/v1784298389/wori-awards-4-1536x1024_d46mfl.jpg`,
+    `${CLD}/v1784298377/wori-awards-1-2048x1365_m59hir.jpg`,
+  ],
+};
 
 export default function ServicePage({ serviceKey, seoTitle, seoDescription }: ServicePageProps) {
   const { t } = useTranslation();
@@ -32,14 +153,14 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
 
   const bgImages: Record<string, string> = {
     settlement: `${CLD}/v1784649543/Arrived-Refugee-Photos-page-004_orwibh.jpg`,
-    ircc: `${CLD}/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg`,
-    'language-mentorship': `${CLD}/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg`,
-    'private-sponsorship': `${CLD}/v1784649543/Arrived-Refugee-Photos-page-004_orwibh.jpg`,
-    'language-services': `${CLD}/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg`,
+    ircc: `${CLD}/v1784295067/IMG-20201006-WA0091_irqvja.jpg`,
+    'language-mentorship': `${CLD}/v1784649622/Day23_img22_moiseg.jpg`,
+    'private-sponsorship': `${CLD}/v1784649535/Arrived-Refugee-Photos-page-001_grvjts.jpg`,
+    'language-services': `${CLD}/v1784295062/IMG-20201006-WA0124_ijkkru.jpg`,
     'mental-health': `${CLD}/v1784648610/yoga-session-img20_l4w0jx.jpg`,
-    employment: `${CLD}/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg`,
+    employment: `${CLD}/v1784295067/IMG-20201006-WA0161_g4vz3n.jpg`,
     housing: `${CLD}/v1784649560/Arrived-Refugee-Photos-page-012_ocnovf.jpg`,
-    'women-empowerment': `${CLD}/v1784648610/yoga-session-img20_l4w0jx.jpg`,
+    'women-empowerment': `${CLD}/v1784298529/wori-awards-14-1536x1024_axrgst.jpg`,
     seniors: `${CLD}/v1784646872/Photo-1_idgega.jpg`,
     'food-security': `${CLD}/v1784295210/IMG_20200424_121422_452_hunip7.jpg`,
     youth: `${CLD}/v1784649622/Day23_img22_moiseg.jpg`,
@@ -84,6 +205,22 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
   const heroSubtitle = t(`pages.services.${serviceKey}.heroSubtitle`) !== `pages.services.${serviceKey}.heroSubtitle`
     ? t(`pages.services.${serviceKey}.heroSubtitle`)
     : data.heroSubtitle;
+
+  const sectionTitle = (idx: number, fallback: string) => {
+    const key = `pages.services.${serviceKey}.sections.${idx}.title`;
+    const translated = t(key);
+    return translated !== key ? translated : fallback;
+  };
+  const sectionDesc = (idx: number, fallback: string) => {
+    const key = `pages.services.${serviceKey}.sections.${idx}.description`;
+    const translated = t(key);
+    return translated !== key ? translated : fallback;
+  };
+  const ctaLabel = () => {
+    const key = `pages.services.${serviceKey}.ctaLabel`;
+    const translated = t(key);
+    return translated !== key ? translated : data.cta.label;
+  };
 
   const pageTitle = seoTitle || heroTitle;
   const pageDescription = seoDescription || heroSubtitle || data.heroSubtitle || '';
@@ -131,33 +268,36 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
           )}
 
           <div className="space-y-16 md:space-y-20">
-            {data.sections.map((section, idx) => (
-              <div
-                key={section.title}
-                className={`flex flex-col lg:flex-row gap-8 lg:gap-14 items-start ${
-                  idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
-              >
-                <div className="w-full lg:w-1/2">
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-cream-200/50">
-                    <img
-                      src={sectionImages[idx % sectionImages.length]}
-                      alt={section.title}
-                      className="w-full h-full object-cover object-center"
-                    />
+            {data.sections.map((section, idx) => {
+              const sectionImgs = serviceSectionImages[serviceKey] || serviceSectionImages.settlement;
+              return (
+                <div
+                  key={section.title}
+                  className={`flex flex-col lg:flex-row gap-8 lg:gap-14 items-start ${
+                    idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                  }`}
+                >
+                  <div className="w-full lg:w-1/2">
+                    <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-cream-200/50">
+                      <img
+                        src={sectionImgs[idx % sectionImgs.length]}
+                        alt={section.title}
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </div>
+                  </div>
+                  <div className="w-full lg:w-1/2 flex flex-col justify-center">
+                    <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
+                      0{idx + 1}
+                    </span>
+                    <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 leading-tight mb-4">
+                      {sectionTitle(idx, section.title)}
+                    </h2>
+                    <ExpandableText text={sectionDesc(idx, section.description)} maxLength={500} />
                   </div>
                 </div>
-                <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                  <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
-                    0{idx + 1}
-                  </span>
-                  <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 leading-tight mb-4">
-                    {section.title}
-                  </h2>
-                  <ExpandableText text={section.description} maxLength={500} />
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -180,19 +320,23 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
                 {t('pages.services.common.eligibilityDesc')}
               </p>
               <ul className="space-y-3">
-                {[
-                  'Government-assisted refugees (GARs)',
-                  'Privately sponsored refugees',
-                  'Asylum claimants & protected persons',
-                  'Permanent residents & convention refugees',
-                  'Temporary residents with work/study permits',
-                  'Naturalized Canadian citizens (first 3 years)',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <i className="ri-checkbox-circle-fill text-gold-500 text-sm mt-0.5 shrink-0" />
-                    <span className="text-sm text-charcoal-700">{item}</span>
-                  </li>
-                ))}
+                {[0, 1, 2, 3, 4, 5].map((idx) => {
+                  const key = `pages.services.common.eligibilityItems.${idx}`;
+                  const item = t(key);
+                  return (
+                    <li key={idx} className="flex items-start gap-2.5">
+                      <i className="ri-checkbox-circle-fill text-gold-500 text-sm mt-0.5 shrink-0" />
+                      <span className="text-sm text-charcoal-700">{item !== key ? item : [
+                        'Government-assisted refugees (GARs)',
+                        'Privately sponsored refugees',
+                        'Asylum claimants & protected persons',
+                        'Permanent residents & convention refugees',
+                        'Temporary residents with work/study permits',
+                        'Naturalized Canadian citizens (first 3 years)',
+                      ][idx]}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
@@ -251,7 +395,7 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
               to={data.cta.path}
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all"
             >
-              {data.cta.label}
+              {ctaLabel()}
               <i className="ri-arrow-right-line" />
             </Link>
             <Link

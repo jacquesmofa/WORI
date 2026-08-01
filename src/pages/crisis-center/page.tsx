@@ -1,16 +1,18 @@
 import PageLayout from '@/components/feature/PageLayout';
 import { crisisData } from '@/mocks/pagesData';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function CrisisCenterPage() {
+  const { t } = useTranslation();
   return (
     <PageLayout
-      title="Crisis Center"
-      subtitle="Immediate resources, emergency contacts, and crisis response information for affected communities and those seeking to help."
+      title={t('pages.crisis.title')}
+      subtitle={t('pages.crisis.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649813/sudan-img_d04jwo.png"
       breadcrumb={[
-        { label: 'Home', path: '/' },
-        { label: 'Crisis Center' },
+        { label: t('nav.home'), path: '/' },
+        { label: t('pages.crisis.title') },
       ]}
       seo={{
         title: 'Crisis Response Center | WORI Emergency Relief & Resources',
@@ -43,14 +45,14 @@ export default function CrisisCenterPage() {
                     className="inline-flex items-center gap-2 px-6 py-3 bg-gold-500 hover:bg-gold-400 text-emerald-900 text-sm font-semibold rounded-full transition-all"
                   >
                     <i className="ri-heart-3-line" />
-                    Donate to Crisis Fund
+                    {t('pages.crisis.donateCrisis')}
                   </Link>
                   <Link
                     to="/volunteer"
                     className="inline-flex items-center gap-2 px-6 py-3 border border-cream-100/30 hover:border-cream-100/60 text-cream-100 text-sm font-medium rounded-full transition-all"
                   >
                     <i className="ri-user-heart-line" />
-                    Volunteer for Response
+                    {t('pages.crisis.volunteerResponse')}
                   </Link>
                 </div>
               </div>
@@ -70,7 +72,7 @@ export default function CrisisCenterPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-cream-200/30">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-10">
-            Emergency Resources
+            {t('pages.crisis.emergencyResources')}
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -100,7 +102,7 @@ export default function CrisisCenterPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             <div>
               <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-6">
-                How to Help
+                {t('pages.crisis.howToHelp')}
               </h2>
               <div className="space-y-4">
                 {crisisData.waysToHelp.map((way, idx) => (
@@ -114,14 +116,14 @@ export default function CrisisCenterPage() {
               </div>
             </div>
             <div className="bg-emerald-900 rounded-2xl p-6 md:p-8">
-              <h3 className="font-serif text-xl text-cream-100 mb-4">Stay Informed</h3>
+              <h3 className="font-serif text-xl text-cream-100 mb-4">{t('pages.crisis.stayInformed')}</h3>
               <p className="text-sm text-cream-100/60 leading-relaxed mb-5">
-                Receive urgent crisis alerts and verified updates directly from WORI. We never share your information.
+                {t('pages.crisis.stayInformedDesc')}
               </p>
               <form className="flex items-stretch gap-0 mb-3" onSubmit={(e) => e.preventDefault()}>
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder={t('pages.crisis.enterEmail')}
                   className="flex-1 bg-transparent border-b border-cream-100/25 px-0 py-2.5 text-sm text-cream-100 placeholder:text-cream-100/30 focus:outline-none focus:border-gold-500/60 transition-colors"
                 />
                 <button
@@ -135,7 +137,7 @@ export default function CrisisCenterPage() {
                 to="/news"
                 className="inline-flex items-center gap-1 text-sm font-medium text-gold-400 hover:text-gold-300 transition-colors"
               >
-                Read all news updates <i className="ri-arrow-right-line text-xs" />
+                {t('pages.crisis.readAllNews')} <i className="ri-arrow-right-line text-xs" />
               </Link>
             </div>
           </div>

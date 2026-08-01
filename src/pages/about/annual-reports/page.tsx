@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom';
 import PageLayout from '@/components/feature/PageLayout';
+import { useTranslation } from 'react-i18next';
 
 export default function AnnualReportsPage() {
+  const { t } = useTranslation();
   const pdfUrl = 'https://drive.google.com/uc?export=download&id=1rktOxTQlT8KGbzesyAr_47MYROihlUOJ';
   const googleViewerUrl = 'https://drive.google.com/uc?export=view&id=1rktOxTQlT8KGbzesyAr_47MYROihlUOJ';
 
   return (
     <PageLayout
-      title="Annual Reports & Financials"
-      subtitle="Full financial transparency and impact reporting. Every dollar is accounted for, every outcome is measured."
+      title={t('pages.annualReports.title')}
+      subtitle={t('pages.annualReports.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784298421/wori-awards-10-2048x1365_zzvzlm.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },

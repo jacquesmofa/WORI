@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import PageLayout from '@/components/feature/PageLayout';
 import { missionVision } from '@/mocks/pagesData';
+import { useTranslation } from 'react-i18next';
 
 export default function MissionPage() {
+  const { t } = useTranslation();
   return (
     <PageLayout
-      title="Mission, Vision & Values"
-      subtitle="The foundational principles that guide every service, every partnership, and every decision at WORI."
+      title={t('pages.mission.title')}
+      subtitle={t('pages.mission.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784649543/Arrived-Refugee-Photos-page-004_orwibh.jpg"
       breadcrumb={[
         { label: 'Home', path: '/' },
