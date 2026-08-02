@@ -58,15 +58,16 @@ const volunteers = [
 
 export default function BoardPage() {
   const { t } = useTranslation();
+  const stats: { label: string; value: string }[] = t('pages.board.stats', { returnObjects: true }) as { label: string; value: string }[] || [];
+
   return (
     <PageLayout
       title={t('pages.board.title')}
       subtitle={t('pages.board.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784298421/wori-awards-10-2048x1365_zzvzlm.jpg"
       breadcrumb={[
-        { label: 'Home', path: '/' },
-        { label: 'About & Governance', path: '/about' },
-        { label: 'Board & Management' },
+        { label: t('pages.board.breadcrumb1'), path: '/about' },
+        { label: t('pages.board.breadcrumb2') },
       ]}
       seo={BOARD_SEO}
     >
@@ -76,27 +77,20 @@ export default function BoardPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
             <div className="lg:col-span-1">
               <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
-                Governance
+                {t('pages.board.governance')}
               </span>
               <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 leading-tight mb-4">
-                Stewardship with Purpose
+                {t('pages.board.stewardshipTitle')}
               </h2>
               <p className="text-sm text-charcoal-600/60 leading-relaxed mb-4">
-                WORI is governed by a volunteer Board of Directors who bring expertise in refugee law, finance, community organizing, mental health, philanthropy, and youth leadership.
+                {t('pages.board.stewardshipDesc1')}
               </p>
               <p className="text-sm text-charcoal-600/60 leading-relaxed">
-                The Board meets quarterly, oversees strategic direction, ensures financial accountability, and maintains full compliance with Canada Revenue Agency charitable regulations.
+                {t('pages.board.stewardshipDesc2')}
               </p>
             </div>
             <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {[
-                { label: 'Board Members', value: '8' },
-                { label: 'Diverse Backgrounds', value: '4 Continents' },
-                { label: 'Independent', value: 'Non-Profit' },
-                { label: 'CRA Compliant', value: 'Since 2012' },
-                { label: 'Charity Reg.', value: '748873338RR0001' },
-                { label: 'Toronto Based', value: 'Scarborough, ON' },
-              ].map((stat) => (
+              {stats.map((stat) => (
                 <div
                   key={stat.label}
                   className="bg-cream-200/40 rounded-xl p-4 text-center border border-cream-300/40"
@@ -114,7 +108,7 @@ export default function BoardPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-cream-200/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 text-center mb-12">
-            Board of Directors
+            {t('pages.board.boardSectionTitle')}
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -144,7 +138,7 @@ export default function BoardPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-8">
-            Management Team
+            {t('pages.board.managementSectionTitle')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {managementTeam.map((person) => (
@@ -177,7 +171,7 @@ export default function BoardPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-cream-100">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-8">
-            Volunteers
+            {t('pages.board.volunteersSectionTitle')}
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
             {volunteers.map((name) => (
@@ -197,24 +191,24 @@ export default function BoardPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-emerald-900">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-cream-100 mb-4">
-            Governance Documents
+            {t('pages.board.governanceDocsTitle')}
           </h2>
           <p className="text-sm text-cream-100/60 mb-8 max-w-xl mx-auto">
-            WORI maintains full transparency. Access our annual report covering organizational activities from 2020 through 2022.
+            {t('pages.board.governanceDocsDesc')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               to="/about/executive-director"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-gold-500 hover:bg-gold-400 text-emerald-900 text-sm font-semibold rounded-full transition-all"
             >
-              View Annual Report
+              {t('pages.board.viewAnnualReport')}
               <i className="ri-arrow-right-line" />
             </Link>
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 border border-cream-100/30 hover:border-cream-100/60 text-cream-100 text-sm font-medium rounded-full transition-all"
             >
-              Governance Inquiries
+              {t('pages.board.governanceInquiries')}
             </Link>
           </div>
         </div>

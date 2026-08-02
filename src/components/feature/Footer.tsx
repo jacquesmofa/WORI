@@ -1,18 +1,62 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
+const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
+const WEB3FORMS_KEY = '383b7ca6-d26f-4508-87d5-99a05e4d1282';
+
 export default function Footer() {
   const { t } = useTranslation();
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      setEmail('');
-      setTimeout(() => setSubmitted(false), 3000);
+    const formEl = e.currentTarget as HTMLFormElement;
+    const data = new FormData(formEl);
+
+    const honeypot = (data.get('phone_alt') as string || '').trim();
+    if (honeypot) {
+      setStatus('success');
+      return;
+    }
+
+    const emailVal = (data.get('email') as string || '').trim();
+    if (!emailVal) return;
+
+    setStatus('loading');
+    setErrorMsg('');
+
+    const payload: Record<string, string> = {
+      access_key: WEB3FORMS_KEY,
+      email: emailVal,
+      subject: 'New Newsletter Subscription - WORI',
+      from_name: 'WORI Newsletter',
+    };
+
+    try {
+      const response = await fetch(WEB3FORMS_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result: { success?: boolean; message?: string } = await response.json();
+
+      if (response.ok && result.success) {
+        setStatus('success');
+        formRef.current?.reset();
+        setTimeout(() => setStatus('idle'), 4000);
+      } else {
+        setStatus('error');
+        setErrorMsg(result.message || t('common.somethingWrong'));
+        setTimeout(() => { setStatus('idle'); setErrorMsg(''); }, 4000);
+      }
+    } catch {
+      setStatus('error');
+      setErrorMsg(t('common.somethingWrong'));
+      setTimeout(() => { setStatus('idle'); setErrorMsg(''); }, 4000);
     }
   };
 
@@ -87,28 +131,41 @@ export default function Footer() {
             <h4 className="text-xs font-semibold uppercase tracking-widest text-cream-200/60 mb-4">
               {t('newsletter.title')}
             </h4>
-            <form onSubmit={handleSubmit} className="flex items-stretch gap-0 mb-2">
+            <form ref={formRef} onSubmit={handleSubmit} data-readdy-form className="flex items-stretch gap-0 mb-2">
+              <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }}>
+                <input
+                  type="text"
+                  name="phone_alt"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  readOnly
+                />
+              </div>
               <input
                 type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t('newsletter.placeholder')}
+                name="email"
                 required
                 maxLength={254}
+                placeholder={t('newsletter.placeholder')}
                 className="flex-1 bg-transparent border-b border-cream-200/25 px-0 py-2.5 text-sm text-cream-100 placeholder:text-cream-200/40 focus:outline-none focus:border-gold-500/60 transition-colors"
               />
               <button
                 type="submit"
-                className="px-3 py-2.5 border-b border-cream-200/25 text-cream-100 hover:text-gold-500 transition-colors"
+                disabled={status === 'loading'}
+                className="px-3 py-2.5 border-b border-cream-200/25 text-cream-100 hover:text-gold-500 transition-colors disabled:opacity-50"
                 aria-label="Subscribe"
               >
                 <i className="ri-arrow-right-line text-lg" />
               </button>
             </form>
-            {submitted && (
+            {status === 'success' && (
               <p className="text-xs text-gold-400 animate-fade-in">
                 {t('common.success')}
               </p>
+            )}
+            {status === 'error' && errorMsg && (
+              <p className="text-xs text-red-300">{errorMsg}</p>
             )}
             <p className="text-xs text-cream-200/40 mt-2">
               {t('newsletter.privacy')}
@@ -169,7 +226,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Lower Section - Typography Mark */}
+      {/* Lower Section */}
       <div className="border-t border-cream-100/8 px-6 lg:px-10 py-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-cream-200/35">

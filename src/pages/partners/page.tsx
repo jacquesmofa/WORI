@@ -26,7 +26,7 @@ export default function PartnersPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20">
         <div className="max-w-5xl mx-auto">
           <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
-            Government
+            {t('pages.partners.government')}
           </span>
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-8">
             {t('pages.partners.governmentPartners')}
@@ -63,7 +63,7 @@ export default function PartnersPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-cream-200/30">
         <div className="max-w-5xl mx-auto">
           <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
-            Foundations
+            {t('pages.partners.foundations')}
           </span>
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-8">
             {t('pages.partners.foundationSupporters')}
@@ -97,7 +97,7 @@ export default function PartnersPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20">
         <div className="max-w-5xl mx-auto">
           <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
-            Corporate
+            {t('pages.partners.corporate')}
           </span>
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-8">
             {t('pages.partners.corporateSponsors')}
@@ -131,7 +131,7 @@ export default function PartnersPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-cream-200/30">
         <div className="max-w-5xl mx-auto">
           <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
-            Community
+            {t('pages.partners.community')}
           </span>
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-8">
             {t('pages.partners.communityPartners')}

@@ -211,7 +211,7 @@ export default function ProgramsSection() {
             </div>
 
             {/* About Image */}
-            <div className="w-full lg:w-64 xl:w-72 shrink-0">
+            <div className="w-full lg:w-80 xl:w-[360px] shrink-0">
               <div className="rounded-2xl overflow-hidden" style={{ height: '280px' }}>
                 <img
                   src={aboutImage}
@@ -219,13 +219,25 @@ export default function ProgramsSection() {
                   className="w-full h-full object-cover object-top"
                 />
               </div>
-              <div className="mt-4 p-4 bg-white rounded-xl border border-cream-200">
+              <div className="mt-5 p-4 bg-white rounded-xl border border-cream-200">
                 <div className="flex items-center gap-2 mb-1">
                   <i className="ri-shield-check-fill text-emerald-700 text-sm" />
                   <span className="text-xs font-semibold text-emerald-800 uppercase tracking-wide">{t('programs.craRegistered')}</span>
                 </div>
                 <p className="text-xs text-charcoal-600/60 font-medium">{t('programs.charityNo')}</p>
               </div>
+
+              {/* Office Building */}
+              <div className="mt-5 rounded-2xl overflow-hidden border border-cream-200" style={{ height: '520px' }}>
+                <img
+                  src="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1785663567/10_Milner_Business_Court_Building_web_jl4kkw.png"
+                  alt="WORI Office - 10 Milner Business Court, Scarborough"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              <p className="mt-2 text-[11px] text-charcoal-500/60 text-center font-medium">
+                10 Milner Business Court, Suite 306, Scarborough, ON
+              </p>
             </div>
           </div>
         </div>

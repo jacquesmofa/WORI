@@ -12,108 +12,539 @@ media_library:
     cloud_name: oqdvximy
     api_key: "628222561339787"
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
 collections:
+  # ── 1. HOME PAGE & SITE-WIDE CONTENT ──
   - name: "pages"
     label: "Website Pages"
     files:
       - file: "src/data/site-content.json"
         label: "Site Content Database"
         name: "site_content"
+        format: "json"
         fields:
+          # ── ENGLISH ──
           - label: "English Content"
             name: "en"
             widget: "object"
             fields:
-              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
-              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
-              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
-              - { label: "Hero Image URL", name: "heroImage", widget: "string", required: false }
-              - { label: "Hero CTA Primary", name: "heroCtaPrimary", widget: "string", required: false }
-              - { label: "Hero CTA Secondary", name: "heroCtaSecondary", widget: "string", required: false }
-              - { label: "Vision Label", name: "visionLabel", widget: "string", required: false }
-              - { label: "Vision Title", name: "visionTitle", widget: "string", required: false }
-              - { label: "Vision Description", name: "visionDescription", widget: "text", required: false }
-              - { label: "Vision Image", name: "visionImage", widget: "image", required: false }
-              - { label: "About Organization Description", name: "aboutDescription", widget: "text", required: false }
-              - { label: "Sudan Crisis Title", name: "sudanCrisisTitle", widget: "string", required: false }
-              - { label: "Sudan Crisis Message", name: "sudanCrisisMessage", widget: "text", required: false }
-              - { label: "Gallery Section Title", name: "galleryTitle", widget: "string", required: false }
-              - { label: "Gallery Section Subtitle", name: "gallerySubtitle", widget: "text", required: false }
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Primary", name: "ctaPrimary", widget: "string", required: false }
+                  - { label: "CTA Secondary", name: "ctaSecondary", widget: "string", required: false }
+              - label: "Vision"
+                name: "vision"
+                widget: "object"
+                fields:
+                  - { label: "Vision Text", name: "text", widget: "text", required: false }
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+              - label: "Impact Section"
+                name: "impact"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Text", name: "cta", widget: "string", required: false }
+
+          # ── FRENCH ──
           - label: "French Content"
             name: "fr"
             widget: "object"
             fields:
-              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
-              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
-              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
-              - { label: "Vision Label", name: "visionLabel", widget: "string", required: false }
-              - { label: "Vision Title", name: "visionTitle", widget: "string", required: false }
-              - { label: "Vision Description", name: "visionDescription", widget: "text", required: false }
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Primary", name: "ctaPrimary", widget: "string", required: false }
+                  - { label: "CTA Secondary", name: "ctaSecondary", widget: "string", required: false }
+              - label: "Vision"
+                name: "vision"
+                widget: "object"
+                fields:
+                  - { label: "Vision Text", name: "text", widget: "text", required: false }
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+              - label: "Impact Section"
+                name: "impact"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Text", name: "cta", widget: "string", required: false }
+
+          # ── ARABIC ──
           - label: "Arabic Content"
             name: "ar"
             widget: "object"
             fields:
-              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
-              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
-              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
-              - { label: "Vision Label", name: "visionLabel", widget: "string", required: false }
-              - { label: "Vision Title", name: "visionTitle", widget: "string", required: false }
-              - { label: "Vision Description", name: "visionDescription", widget: "text", required: false }
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Primary", name: "ctaPrimary", widget: "string", required: false }
+                  - { label: "CTA Secondary", name: "ctaSecondary", widget: "string", required: false }
+              - label: "Vision"
+                name: "vision"
+                widget: "object"
+                fields:
+                  - { label: "Vision Text", name: "text", widget: "text", required: false }
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+              - label: "Impact Section"
+                name: "impact"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Text", name: "cta", widget: "string", required: false }
+
+          # ── AMHARIC ──
           - label: "Amharic Content"
             name: "am"
             widget: "object"
             fields:
-              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
-              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
-              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Primary", name: "ctaPrimary", widget: "string", required: false }
+                  - { label: "CTA Secondary", name: "ctaSecondary", widget: "string", required: false }
+              - label: "Vision"
+                name: "vision"
+                widget: "object"
+                fields:
+                  - { label: "Vision Text", name: "text", widget: "text", required: false }
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+              - label: "Impact Section"
+                name: "impact"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Text", name: "cta", widget: "string", required: false }
+
+          # ── SOMALI ──
           - label: "Somali Content"
             name: "so"
             widget: "object"
             fields:
-              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
-              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
-              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Primary", name: "ctaPrimary", widget: "string", required: false }
+                  - { label: "CTA Secondary", name: "ctaSecondary", widget: "string", required: false }
+              - label: "Vision"
+                name: "vision"
+                widget: "object"
+                fields:
+                  - { label: "Vision Text", name: "text", widget: "text", required: false }
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+              - label: "Impact Section"
+                name: "impact"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Text", name: "cta", widget: "string", required: false }
+
+          # ── TIGRINYA ──
           - label: "Tigrinya Content"
             name: "ti"
             widget: "object"
             fields:
-              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
-              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
-              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Primary", name: "ctaPrimary", widget: "string", required: false }
+                  - { label: "CTA Secondary", name: "ctaSecondary", widget: "string", required: false }
+              - label: "Vision"
+                name: "vision"
+                widget: "object"
+                fields:
+                  - { label: "Vision Text", name: "text", widget: "text", required: false }
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+              - label: "Impact Section"
+                name: "impact"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Text", name: "cta", widget: "string", required: false }
+
+          # ── SWAHILI ──
           - label: "Swahili Content"
             name: "sw"
             widget: "object"
             fields:
-              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
-              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
-              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Primary", name: "ctaPrimary", widget: "string", required: false }
+                  - { label: "CTA Secondary", name: "ctaSecondary", widget: "string", required: false }
+              - label: "Vision"
+                name: "vision"
+                widget: "object"
+                fields:
+                  - { label: "Vision Text", name: "text", widget: "text", required: false }
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+              - label: "Impact Section"
+                name: "impact"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Text", name: "cta", widget: "string", required: false }
+
+          # ── OROMO ──
           - label: "Oromo Content"
             name: "om"
             widget: "object"
             fields:
-              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
-              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
-              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Primary", name: "ctaPrimary", widget: "string", required: false }
+                  - { label: "CTA Secondary", name: "ctaSecondary", widget: "string", required: false }
+              - label: "Vision"
+                name: "vision"
+                widget: "object"
+                fields:
+                  - { label: "Vision Text", name: "text", widget: "text", required: false }
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+              - label: "Impact Section"
+                name: "impact"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Text", name: "cta", widget: "string", required: false }
+
+          # ── HAUSA ──
           - label: "Hausa Content"
             name: "ha"
             widget: "object"
             fields:
-              - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
-              - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
-              - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Primary", name: "ctaPrimary", widget: "string", required: false }
+                  - { label: "CTA Secondary", name: "ctaSecondary", widget: "string", required: false }
+              - label: "Vision"
+                name: "vision"
+                widget: "object"
+                fields:
+                  - { label: "Vision Text", name: "text", widget: "text", required: false }
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+              - label: "Impact Section"
+                name: "impact"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Text", name: "cta", widget: "string", required: false }
 
+          # ── FARSI (NEW) ──
+          - label: "Farsi Content"
+            name: "fa"
+            widget: "object"
+            fields:
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Primary", name: "ctaPrimary", widget: "string", required: false }
+                  - { label: "CTA Secondary", name: "ctaSecondary", widget: "string", required: false }
+              - label: "Vision"
+                name: "vision"
+                widget: "object"
+                fields:
+                  - { label: "Vision Text", name: "text", widget: "text", required: false }
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+              - label: "Impact Section"
+                name: "impact"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Text", name: "cta", widget: "string", required: false }
+
+          # ── HEBREW (NEW) ──
+          - label: "Hebrew Content"
+            name: "he"
+            widget: "object"
+            fields:
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Primary", name: "ctaPrimary", widget: "string", required: false }
+                  - { label: "CTA Secondary", name: "ctaSecondary", widget: "string", required: false }
+              - label: "Vision"
+                name: "vision"
+                widget: "object"
+                fields:
+                  - { label: "Vision Text", name: "text", widget: "text", required: false }
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+              - label: "Impact Section"
+                name: "impact"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Text", name: "cta", widget: "string", required: false }
+
+          # ── URDU (NEW) ──
+          - label: "Urdu Content"
+            name: "ur"
+            widget: "object"
+            fields:
+              - label: "Hero Section"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Subtitle", name: "subtitle", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Primary", name: "ctaPrimary", widget: "string", required: false }
+                  - { label: "CTA Secondary", name: "ctaSecondary", widget: "string", required: false }
+              - label: "Vision"
+                name: "vision"
+                widget: "object"
+                fields:
+                  - { label: "Vision Text", name: "text", widget: "text", required: false }
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+              - label: "Impact Section"
+                name: "impact"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Image URL", name: "image", widget: "string", required: false }
+                  - { label: "CTA Text", name: "cta", widget: "string", required: false }
+
+      # ── ABOUT PAGE ──
       - file: "src/data/about.json"
         label: "About Page Content"
         name: "about"
+        format: "json"
         fields:
-          - { label: "Mission Statement (English)", name: "mission_en", widget: "text" }
-          - { label: "Mission Statement (Arabic)", name: "mission_ar", widget: "text" }
-          - { label: "Mission Statement (Swahili)", name: "mission_sw", widget: "text" }
-          - { label: "Mission Statement (Oromo)", name: "mission_om", widget: "text" }
-          - { label: "Mission Statement (Hausa)", name: "mission_ha", widget: "text" }
-          - { label: "Vision Statement (English)", name: "vision_en", widget: "text" }
-          - { label: "Vision Statement (Arabic)", name: "vision_ar", widget: "text" }
-          - { label: "Executive Director Name", name: "executive_director_name", widget: "string" }
-          - { label: "Executive Director Title", name: "executive_director_title", widget: "string" }
-          - { label: "Annual Letter (English)", name: "annual_letter_en", widget: "text" }
-          - { label: "Executive Director Photo", name: "executive_director_photo", widget: "image" }
+          - { label: "Mission Statement (English)", name: "mission_en", widget: "text", required: false }
+          - { label: "Mission Statement (French)", name: "mission_fr", widget: "text", required: false }
+          - { label: "Mission Statement (Arabic)", name: "mission_ar", widget: "text", required: false }
+          - { label: "Mission Statement (Amharic)", name: "mission_am", widget: "text", required: false }
+          - { label: "Mission Statement (Somali)", name: "mission_so", widget: "text", required: false }
+          - { label: "Mission Statement (Tigrinya)", name: "mission_ti", widget: "text", required: false }
+          - { label: "Mission Statement (Swahili)", name: "mission_sw", widget: "text", required: false }
+          - { label: "Mission Statement (Oromo)", name: "mission_om", widget: "text", required: false }
+          - { label: "Mission Statement (Hausa)", name: "mission_ha", widget: "text", required: false }
+          - { label: "Mission Statement (Farsi)", name: "mission_fa", widget: "text", required: false }
+          - { label: "Mission Statement (Hebrew)", name: "mission_he", widget: "text", required: false }
+          - { label: "Mission Statement (Urdu)", name: "mission_ur", widget: "text", required: false }
+          - { label: "Vision Statement (English)", name: "vision_en", widget: "text", required: false }
+          - { label: "Vision Statement (French)", name: "vision_fr", widget: "text", required: false }
+          - { label: "Vision Statement (Arabic)", name: "vision_ar", widget: "text", required: false }
+          - { label: "Executive Director Name", name: "executive_director_name", widget: "string", required: false }
+          - { label: "Executive Director Title", name: "executive_director_title", widget: "string", required: false }
+          - { label: "Annual Letter (English)", name: "annual_letter_en", widget: "text", required: false }
+          - { label: "Executive Director Photo", name: "executive_director_photo", widget: "image", required: false }
+
+  # ── 2. NEWS & EVENTS ──
+  - name: "news"
+    label: "News & Events"
+    folder: "public/content/news"
+    create: true
+    format: "json"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title (English)", name: "title_en", widget: "string" }
+      - { label: "Title (French)", name: "title_fr", widget: "string", required: false }
+      - { label: "Title (Arabic)", name: "title_ar", widget: "string", required: false }
+      - { label: "Title (Amharic)", name: "title_am", widget: "string", required: false }
+      - { label: "Title (Somali)", name: "title_so", widget: "string", required: false }
+      - { label: "Title (Tigrinya)", name: "title_ti", widget: "string", required: false }
+      - { label: "Title (Swahili)", name: "title_sw", widget: "string", required: false }
+      - { label: "Title (Oromo)", name: "title_om", widget: "string", required: false }
+      - { label: "Title (Hausa)", name: "title_ha", widget: "string", required: false }
+      - { label: "Title (Farsi)", name: "title_fa", widget: "string", required: false }
+      - { label: "Title (Hebrew)", name: "title_he", widget: "string", required: false }
+      - { label: "Title (Urdu)", name: "title_ur", widget: "string", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Category", name: "category", widget: "select", options: ["Awards", "Crisis Response", "Partnership", "Program Launch", "Community", "Employment"] }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Summary (English)", name: "summary_en", widget: "text", required: false }
+      - { label: "Body (English)", name: "body_en", widget: "markdown", required: false }
+      - { label: "Body (French)", name: "body_fr", widget: "markdown", required: false }
+      - { label: "Body (Arabic)", name: "body_ar", widget: "markdown", required: false }
+
+  # ── 3. TEAM & BOARD PROFILES ──
+  - name: "team"
+    label: "Team & Board Profiles"
+    folder: "public/content/team"
+    create: true
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Full Name", name: "name", widget: "string" }
+      - { label: "Role / Title (English)", name: "role_en", widget: "string" }
+      - { label: "Role / Title (French)", name: "role_fr", widget: "string", required: false }
+      - { label: "Role / Title (Arabic)", name: "role_ar", widget: "string", required: false }
+      - { label: "Profile Photo", name: "photo", widget: "image", required: false }
+      - { label: "Biography (English)", name: "bio_en", widget: "markdown", required: false }
+      - { label: "Biography (French)", name: "bio_fr", widget: "markdown", required: false }
+      - { label: "Biography (Arabic)", name: "bio_ar", widget: "markdown", required: false }
+      - { label: "Order Priority", name: "order", widget: "number", default: 1, value_type: "int" }
+
+  # ── 4. CRISIS ALERTS ──
+  - name: "alerts"
+    label: "Crisis Alerts & Banners"
+    folder: "public/content/alerts"
+    create: true
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Alert Title (English)", name: "title_en", widget: "string" }
+      - { label: "Alert Title (French)", name: "title_fr", widget: "string", required: false }
+      - { label: "Alert Title (Arabic)", name: "title_ar", widget: "string", required: false }
+      - { label: "Active Banner", name: "active", widget: "boolean", default: false }
+      - { label: "Banner Message (English)", name: "body_en", widget: "markdown" }
+      - { label: "Banner Message (French)", name: "body_fr", widget: "markdown", required: false }
+      - { label: "Banner Message (Arabic)", name: "body_ar", widget: "markdown", required: false }
+      - { label: "Action Button Text", name: "buttonText", widget: "string", required: false }
+      - { label: "Action Button Link", name: "buttonLink", widget: "string", required: false }

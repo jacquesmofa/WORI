@@ -43,7 +43,7 @@ export default function NewsPage() {
                     : 'bg-cream-200/50 text-charcoal-600 hover:bg-cream-200'
                 }`}
               >
-                {cat === 'All' ? t('common.all') : cat}
+                {cat === 'All' ? t('common.all') : t(`pages.news.categoryNames.${cat}`, cat)}
               </button>
             ))}
           </div>
@@ -59,28 +59,28 @@ export default function NewsPage() {
                 key={article.id}
                 className="group bg-cream-100 rounded-2xl overflow-hidden border border-cream-300/50 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-900/5 flex flex-col"
               >
-                <div className="aspect-[16/10] overflow-hidden">
+                <Link to={`/news/${article.id}`} className="aspect-[16/10] overflow-hidden block">
                   <img
                     src={article.image}
                     alt={article.title}
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
-                </div>
+                </Link>
                 <div className="p-5 md:p-6 flex flex-col flex-1">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="px-2.5 py-0.5 rounded-md bg-emerald-800/8 text-emerald-800 text-[10px] font-semibold uppercase tracking-wider">
-                      {article.category}
+                      {t(`pages.news.categoryNames.${article.category}`, article.category)}
                     </span>
                     <span className="text-xs text-charcoal-600/40">{article.date}</span>
                   </div>
-                  <h3 className="font-serif text-lg font-medium text-charcoal-700 mb-2 leading-tight group-hover:text-emerald-800 transition-colors">
-                    {article.title}
-                  </h3>
-                  <p className="text-sm text-charcoal-600/60 leading-relaxed flex-1">{article.excerpt}</p>
+                  <Link to={`/news/${article.id}`} className="font-serif text-lg font-medium text-charcoal-700 mb-2 leading-tight group-hover:text-emerald-800 transition-colors block">
+                    {t(`pages.news.articles.${article.id}.title`, article.title)}
+                  </Link>
+                  <p className="text-sm text-charcoal-600/60 leading-relaxed flex-1">{t(`pages.news.articles.${article.id}.excerpt`, article.excerpt)}</p>
                   <div className="mt-4 pt-4 border-t border-cream-300/40">
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-800 group-hover:text-emerald-700 transition-colors">
+                    <Link to={`/news/${article.id}`} className="inline-flex items-center gap-1 text-sm font-medium text-emerald-800 group-hover:text-emerald-700 transition-colors">
                       {t('pages.news.readFullStory')} <i className="ri-arrow-right-line text-xs" />
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </article>

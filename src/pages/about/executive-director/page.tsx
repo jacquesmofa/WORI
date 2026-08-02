@@ -1,11 +1,13 @@
 import PageLayout from '@/components/feature/PageLayout';
-import { executiveDirector } from '@/mocks/pagesData';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+const EXEC_DIRECTOR_IMAGE = 'https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784647735/nasseradin-bahar-abdullah_nlj0th.jpg';
+
 export default function ExecutiveDirectorPage() {
   const { t } = useTranslation();
-  const paragraphs = executiveDirector.letter.split('\n\n');
+  const letter = t('pages.executiveDirector.letter');
+  const paragraphs = letter.split('\n\n');
 
   return (
     <PageLayout
@@ -13,9 +15,9 @@ export default function ExecutiveDirectorPage() {
       subtitle={t('pages.executiveDirector.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784295067/IMG-20201006-WA0115_xhjjlt.jpg"
       breadcrumb={[
-        { label: 'Home', path: '/' },
-        { label: 'About & Governance', path: '/about' },
-        { label: "Executive Director's Desk" },
+        { label: t('nav.home'), path: '/' },
+        { label: t('pages.executiveDirector.breadcrumb1'), path: '/about' },
+        { label: t('pages.executiveDirector.breadcrumb2') },
       ]}
       seo={{
         title: 'Executive Director\'s Desk | Wadi-Kaja Organization',
@@ -31,16 +33,16 @@ export default function ExecutiveDirectorPage() {
             <div className="w-full lg:w-2/5 shrink-0">
               <div className="rounded-2xl overflow-hidden mb-6">
                 <img
-                  src={executiveDirector.image}
-                  alt={executiveDirector.name}
+                  src={EXEC_DIRECTOR_IMAGE}
+                  alt="Nasseradin Bahar Abdullah"
                   className="w-full h-80 md:h-96 lg:h-[480px] object-cover object-top"
                 />
               </div>
               <h2 className="font-serif text-xl font-medium text-charcoal-700 mb-1">
-                {executiveDirector.name}
+                Nasseradin Bahar Abdullah
               </h2>
               <p className="text-sm text-gold-600 font-medium mb-4">
-                {executiveDirector.title}
+                {t('pages.executiveDirector.directorTitle')}
               </p>
               <div className="space-y-2 text-sm text-charcoal-600/60">
                 <p>
@@ -67,7 +69,7 @@ export default function ExecutiveDirectorPage() {
                     rel="noopener noreferrer"
                     className="text-emerald-800 hover:text-emerald-700 underline transition-colors"
                   >
-                    Book Online: Book Now
+                    {t('pages.executiveDirector.bookOnline')}
                   </a>
                 </p>
               </div>
@@ -89,27 +91,27 @@ export default function ExecutiveDirectorPage() {
               </div>
 
               <div className="mt-10 pt-8 border-t border-cream-300/50">
-                <h3 className="font-serif text-lg text-charcoal-700 mb-4">More from the Director's Desk</h3>
+                <h3 className="font-serif text-lg text-charcoal-700 mb-4">{t('pages.executiveDirector.moreFromDirector')}</h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between py-3 px-4 rounded-xl bg-cream-200/30 hover:bg-cream-200/50 transition-colors cursor-pointer">
-                    <span className="text-sm font-medium text-charcoal-700">2025 Annual Letter</span>
-                    <span className="text-xs text-charcoal-600/50">January 2025</span>
+                    <span className="text-sm font-medium text-charcoal-700">{t('pages.executiveDirector.letterTitle1')}</span>
+                    <span className="text-xs text-charcoal-600/50">{t('pages.executiveDirector.letterDate1')}</span>
                   </div>
 
                   <Link
                     to="/news"
                     className="flex items-center justify-between py-3 px-4 rounded-xl bg-cream-200/30 hover:bg-cream-200/50 transition-colors cursor-pointer"
                   >
-                    <span className="text-sm font-medium text-charcoal-700">WORI Awards 2025 Opening Remarks</span>
-                    <span className="text-xs text-charcoal-600/50">November 2025</span>
+                    <span className="text-sm font-medium text-charcoal-700">{t('pages.executiveDirector.letterTitle2')}</span>
+                    <span className="text-xs text-charcoal-600/50">{t('pages.executiveDirector.letterDate2')}</span>
                   </Link>
 
                   <Link
                     to="/crisis-center"
                     className="flex items-center justify-between py-3 px-4 rounded-xl bg-cream-200/30 hover:bg-cream-200/50 transition-colors cursor-pointer"
                   >
-                    <span className="text-sm font-medium text-charcoal-700">Response to Sudan Crisis</span>
-                    <span className="text-xs text-charcoal-600/50">February 2026</span>
+                    <span className="text-sm font-medium text-charcoal-700">{t('pages.executiveDirector.letterTitle3')}</span>
+                    <span className="text-xs text-charcoal-600/50">{t('pages.executiveDirector.letterDate3')}</span>
                   </Link>
                 </div>
               </div>
@@ -123,13 +125,13 @@ export default function ExecutiveDirectorPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
-              Annual Report
+              {t('pages.executiveDirector.annualReport')}
             </span>
             <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-2">
-              WORI Report 2020-2022
+              {t('pages.executiveDirector.annualReportTitle')}
             </h2>
             <p className="text-sm text-charcoal-600/60 max-w-xl mx-auto">
-              View our comprehensive report covering organizational activities, financial statements, and impact from 2020 through 2022.
+              {t('pages.executiveDirector.annualReportDesc')}
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden border border-cream-300/50" style={{ height: '700px' }}>
@@ -148,16 +150,16 @@ export default function ExecutiveDirectorPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-4">
-            Connect with Leadership
+            {t('pages.executiveDirector.connectLeadership')}
           </h2>
           <p className="text-sm text-charcoal-600/60 mb-6 max-w-xl mx-auto">
-            For media inquiries, partnership proposals, or speaking requests, please reach out to the Executive Director's office.
+            {t('pages.executiveDirector.connectLeadershipDesc')}
           </p>
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all"
           >
-            Contact the Director's Office
+            {t('pages.executiveDirector.contactOffice')}
             <i className="ri-arrow-right-line" />
           </Link>
         </div>

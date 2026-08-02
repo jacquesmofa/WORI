@@ -31,6 +31,7 @@ import CommunityEngagementPage from "../pages/services/community-engagement/page
 import DonatePage from "../pages/donate/page";
 import CrisisCenterPage from "../pages/crisis-center/page";
 import NewsPage from "../pages/news/page";
+import NewsDetailPage from "../pages/news/detail/page";
 import PartnersPage from "../pages/partners/page";
 import ContactPage from "../pages/contact/page";
 import VolunteerPage from "../pages/volunteer/page";
@@ -75,6 +76,7 @@ const routes: RouteObject[] = [
   { path: "/donate", element: <DonatePage /> },
   { path: "/crisis-center", element: <CrisisCenterPage /> },
   { path: "/news", element: <NewsPage /> },
+  { path: "/news/:id", element: <NewsDetailPage /> },
   { path: "/events", element: <EventsPage /> },
   { path: "/partners", element: <PartnersPage /> },
   { path: "/contact", element: <ContactPage /> },

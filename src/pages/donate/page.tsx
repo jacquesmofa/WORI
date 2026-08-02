@@ -63,7 +63,7 @@ export default function DonatePage() {
       subtitle={t('donate.supportMission')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784295210/IMG_20200424_121422_452_hunip7.jpg"
       breadcrumb={[
-        { label: 'Home', path: '/' },
+        { label: t('nav.home'), path: '/' },
         { label: t('nav.donate') },
       ]}
       seo={{
@@ -77,14 +77,14 @@ export default function DonatePage() {
       <section className="bg-emerald-950 border-y border-emerald-900">
         <div className="max-w-6xl mx-auto px-6 lg:px-10 py-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
           {[
-            { icon: 'ri-shield-check-line', text: 'CRA Registered Charity' },
-            { icon: 'ri-file-text-line', text: 'Tax Receipts Issued' },
-            { icon: 'ri-lock-line', text: 'SSL Secure Checkout' },
-            { icon: 'ri-verified-badge-line', text: '100% to Programs' },
+            { icon: 'ri-shield-check-line', key: 'donate.trustBadges.craRegistered' },
+            { icon: 'ri-file-text-line', key: 'donate.trustBadges.taxReceipts' },
+            { icon: 'ri-lock-line', key: 'donate.trustBadges.sslSecure' },
+            { icon: 'ri-verified-badge-line', key: 'donate.trustBadges.percentToPrograms' },
           ].map((badge) => (
-            <div key={badge.text} className="flex items-center gap-2 text-xs font-medium text-cream-100/60">
+            <div key={badge.key} className="flex items-center gap-2 text-xs font-medium text-cream-100/60">
               <i className={`${badge.icon} text-gold-400`} />
-              <span>{badge.text}</span>
+              <span>{t(badge.key)}</span>
             </div>
           ))}
         </div>
@@ -97,29 +97,17 @@ export default function DonatePage() {
             <div className="lg:col-span-5 space-y-7">
               <div>
                 <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-500 uppercase tracking-wider mb-4">
-                  Support Our Mission
+                  {t('donate.supportOurMission')}
                 </span>
                 <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-4 leading-tight">
-                  Every Gift Builds Futures
+                  {t('donate.everyGiftBuilds')}
                 </h2>
                 <div className="space-y-3 text-sm text-charcoal-600/70 leading-relaxed">
-                  <p>
-                    <strong>Wadi-Kaja Organization for Refugee and Immigrant (WORI)</strong>
-                    {' '}is a registered Canadian charity dedicated to uplifting refugees,
-                    newcomers, and vulnerable families.
-                  </p>
-                  <p>
-                    Your generosity provides essential support to orphans, seniors,
-                    at-risk women, and low-income households — offering hope, stability,
-                    and access to vital resources.
-                  </p>
-                  <p>
-                    We are committed to building a compassionate and inclusive
-                    community where everyone has the opportunity to thrive.
-                  </p>
+                  <p dangerouslySetInnerHTML={{ __html: t('donate.donationStory1') }} />
+                  <p>{t('donate.donationStory2')}</p>
+                  <p>{t('donate.donationStory3')}</p>
                   <p className="text-charcoal-700 font-medium">
-                    All donations are eligible for a tax receipt.<br />
-                    Every contribution makes a meaningful impact.
+                    {t('donate.donationStory4')}
                   </p>
                 </div>
               </div>
@@ -127,9 +115,9 @@ export default function DonatePage() {
               {/* Impact Tiers */}
               <div className="space-y-3">
                 {[
-                  { amount: '$50', impact: 'Provides one week of temporary housing support' },
-                  { amount: '$150', impact: 'Funds a month of language mentorship for one newcomer' },
-                  { amount: '$500', impact: 'Sponsors a full settlement package including housing, employment coaching, and mental health check-ins' },
+                  { amount: '$50', key: 'donate.impact50' },
+                  { amount: '$150', key: 'donate.impact150' },
+                  { amount: '$500', key: 'donate.impact500' },
                 ].map((tier) => (
                   <div
                     key={tier.amount}
@@ -140,7 +128,7 @@ export default function DonatePage() {
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-charcoal-700">{tier.amount}</p>
-                      <p className="text-xs text-charcoal-600/60">{tier.impact}</p>
+                      <p className="text-xs text-charcoal-600/60">{t(tier.key)}</p>
                     </div>
                   </div>
                 ))}
@@ -157,7 +145,7 @@ export default function DonatePage() {
                   Scarborough, ON M1B 3C6
                 </p>
                 <p className="text-sm text-charcoal-600/50 mt-2">
-                  Charity Registration: 748873338RR0001
+                  {t('donate.charityNumber')}
                 </p>
               </div>
 
@@ -218,17 +206,13 @@ export default function DonatePage() {
               {/* Payment Method Icons */}
               <div className="flex flex-wrap items-center justify-center gap-3 py-2">
                 {[
-                  { name: 'Visa', color: 'bg-blue-800' },
-                  { name: 'Mastercard', color: 'bg-red-700' },
-                  { name: 'Amex', color: 'bg-blue-600' },
-                  { name: 'Interac', color: 'bg-orange-600' },
-                  { name: 'PayPal', color: 'bg-blue-700' },
+                  'Visa', 'Mastercard', 'Amex', 'Interac', 'PayPal',
                 ].map((method) => (
                   <div
-                    key={method.name}
+                    key={method}
                     className="px-3 py-1.5 rounded-md bg-charcoal-800/5 border border-charcoal-800/10 text-xs font-semibold text-charcoal-600/70 tracking-wide"
                   >
-                    {method.name}
+                    {method}
                   </div>
                 ))}
               </div>
@@ -236,14 +220,14 @@ export default function DonatePage() {
               {/* Trust Badges */}
               <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 py-2">
                 {[
-                  { icon: 'ri-shield-check-line', text: 'SSL Encrypted' },
-                  { icon: 'ri-lock-line', text: 'Secure Payment' },
-                  { icon: 'ri-file-text-line', text: 'Tax Receipt' },
-                  { icon: 'ri-verified-badge-line', text: 'CRA Registered' },
+                  { icon: 'ri-shield-check-line', key: 'donate.trustBadges.sslEncrypted' },
+                  { icon: 'ri-lock-line', key: 'donate.trustBadges.securePayment' },
+                  { icon: 'ri-file-text-line', key: 'donate.trustBadges.taxReceiptBadge' },
+                  { icon: 'ri-verified-badge-line', key: 'donate.trustBadges.craRegistered' },
                 ].map((badge) => (
-                  <div key={badge.text} className="flex items-center gap-1.5 text-xs text-charcoal-600/40">
+                  <div key={badge.key} className="flex items-center gap-1.5 text-xs text-charcoal-600/40">
                     <i className={`${badge.icon} text-emerald-800/60`} />
-                    <span>{badge.text}</span>
+                    <span>{t(badge.key)}</span>
                   </div>
                 ))}
               </div>
@@ -251,8 +235,8 @@ export default function DonatePage() {
               {/* Divider */}
               <div className="flex items-center gap-4 py-2">
                 <div className="flex-1 h-px bg-cream-300/50" />
-                <span className="text-xs text-charcoal-600/40 font-medium uppercase tracking-wider">
-                  Other Ways to Give
+                <span className="text-xs text-charcoal-600/40 font-medium uppercase tracking-wider whitespace-nowrap">
+                  {t('donate.otherWaysToGive')}
                 </span>
                 <div className="flex-1 h-px bg-cream-300/50" />
               </div>
@@ -274,7 +258,7 @@ export default function DonatePage() {
                       CanadaHelps
                     </p>
                     <p className="text-xs text-charcoal-600/50">
-                      Donate through Canada&apos;s trusted charity platform
+                      {t('donate.canadahelpsCTA')}
                     </p>
                   </div>
                   <i className="ri-arrow-right-line text-charcoal-600/30 group-hover:text-emerald-800 group-hover:translate-x-1 transition-all" />
@@ -295,7 +279,7 @@ export default function DonatePage() {
                       CanadaHelps (PayPal Accepted)
                     </p>
                     <p className="text-xs text-charcoal-600/50">
-                      Donate via CanadaHelps — PayPal, credit card, and more
+                      {t('donate.paypalCTA')}
                     </p>
                   </div>
                   <i className="ri-arrow-right-line text-charcoal-600/30 group-hover:text-blue-800 group-hover:translate-x-1 transition-all" />
@@ -311,10 +295,10 @@ export default function DonatePage() {
                   </div>
                   <div className="flex-1 text-left">
                     <p className="text-sm font-semibold text-charcoal-700 group-hover:text-gold-600 transition-colors">
-                      Interac e-Transfer
+                      {t('donate.etransfer')}
                     </p>
                     <p className="text-xs text-charcoal-600/50">
-                      Send directly to info@wadikajaorganization.org
+                      {t('donate.etransferCTA')}
                     </p>
                   </div>
                   <i className="ri-arrow-right-line text-charcoal-600/30 group-hover:text-gold-600 group-hover:translate-x-1 transition-all" />
@@ -322,7 +306,7 @@ export default function DonatePage() {
               </div>
 
               <p className="text-xs text-charcoal-600/40 text-center leading-relaxed">
-                Secure payment processing powered by Zeffy. Tax receipts issued via email within 48 hours.
+                {t('donate.secureProcessing')}
               </p>
             </div>
           </div>
@@ -333,16 +317,16 @@ export default function DonatePage() {
       <section className="px-6 lg:px-10 py-14 md:py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-4">
-            Have Questions About Donating?
+            {t('donate.haveQuestions')}
           </h2>
           <p className="text-sm text-charcoal-600/60 mb-6 max-w-xl mx-auto">
-            Our fundraising team is happy to discuss corporate partnerships, major gifts, legacy giving, or event sponsorships.
+            {t('donate.haveQuestionsDesc')}
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all whitespace-nowrap"
           >
-            Contact Fundraising Team
+            {t('donate.contactFundraising')}
             <i className="ri-arrow-right-line" />
           </Link>
         </div>

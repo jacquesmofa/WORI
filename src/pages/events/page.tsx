@@ -170,9 +170,9 @@ export default function EventsPage() {
                         {/* Category title */}
                         <div className="absolute bottom-3 left-3 right-3">
                           <h3 className="font-serif text-base font-semibold text-white leading-tight">
-                            {cat.label}
+                            {t(`pages.events.gallery.categories.${cat.id}.label`, cat.label)}
                           </h3>
-                          <p className="text-xs text-white/70 mt-0.5 line-clamp-1">{cat.description}</p>
+                          <p className="text-xs text-white/70 mt-0.5 line-clamp-1">{t(`pages.events.gallery.categories.${cat.id}.description`, cat.description)}</p>
                         </div>
 
                         {/* View gallery icon */}
@@ -240,10 +240,10 @@ export default function EventsPage() {
               <div className="mt-4 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
                 <div>
                   <h2 className="font-serif text-xl md:text-2xl font-medium text-charcoal-700">
-                    {selectedCategory.label}
+                    {t(`pages.events.gallery.categories.${selectedCategory.id}.label`, selectedCategory.label)}
                   </h2>
                   <p className="text-sm text-charcoal-600/60 mt-1 max-w-xl leading-relaxed">
-                    {selectedCategory.description}
+                    {t(`pages.events.gallery.categories.${selectedCategory.id}.description`, selectedCategory.description)}
                   </p>
                 </div>
                 <span className="text-xs text-charcoal-600/40 whitespace-nowrap">

@@ -14,9 +14,15 @@ const LANGUAGES = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
   { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+  { code: 'fa', name: 'فارسی', flag: '🇮🇷' },
+  { code: 'he', name: 'עברית', flag: '🇮🇱' },
+  { code: 'ur', name: 'اردو', flag: '🇵🇰' },
   { code: 'am', name: 'አማርኛ', flag: '🇪🇹' },
-  { code: 'so', name: 'Soomaali', flag: '🇸🇴' },
   { code: 'ti', name: 'ትግርኛ', flag: '🇪🇷' },
+  { code: 'so', name: 'Soomaali', flag: '🇸🇴' },
+  { code: 'sw', name: 'Kiswahili', flag: '🇹🇿' },
+  { code: 'om', name: 'Afaan Oromoo', flag: '🇪🇹' },
+  { code: 'ha', name: 'Harshen Hausa', flag: '🇳🇬' },
 ];
 
 const getStoredPwd = () => {

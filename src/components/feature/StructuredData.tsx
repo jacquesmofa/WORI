@@ -27,7 +27,7 @@ export default function StructuredData({ type = 'NGO', data }: StructuredDataPro
         'telephone': '+1-647-777-8322',
         'contactType': 'Customer Support',
         'availableLanguage': [
-          'English', 'Arabic', 'French', 'Amharic', 'Farsi',
+          'English', 'Arabic', 'French', 'Amharic', 'Farsi', 'Hebrew',
           'Swahili', 'Tigrinya', 'Urdu', 'Somali', 'Oromo', 'Hausa',
         ],
       },

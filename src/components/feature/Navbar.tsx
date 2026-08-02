@@ -94,6 +94,8 @@ export default function Navbar({ transparent: forceTransparent }: NavbarProps = 
         { label: t('wellbeingMenu.womenEmpowerment'), path: '/services/women-empowerment' },
         { label: t('wellbeingMenu.seniors'), path: '/services/seniors' },
         { label: t('wellbeingMenu.foodSecurity'), path: '/services/food-security' },
+        { label: t('wellbeingMenu.youth'), path: '/services/youth' },
+        { label: t('wellbeingMenu.communityEngagement'), path: '/services/community-engagement' },
       ],
     },
     {

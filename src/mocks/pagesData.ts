@@ -166,7 +166,7 @@ export const boardMembers = [
     name: 'Hamdan Mohamat Youssouif',
     role: 'Board Member',
     bio: 'Bringing international perspective and a strong commitment to human rights, community development, and refugee support to the WORI board.',
-    image: `${CLD}/v1784296204/Adam-Ahmed-274x300_nz8avx.jpg`,
+    image: `${CLD}/v1784296205/Hamdan-Mohamat-Youssouif-274x300_bgvj0o.jpg`,
   },
 ];
 

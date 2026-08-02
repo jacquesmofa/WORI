@@ -37,10 +37,10 @@ export default function AboutPage() {
                 {t('pages.about.missionVision')}
               </h2>
               <p className="text-base text-charcoal-600/70 leading-relaxed mb-4">
-                {missionVision.mission}
+                {t('pages.about.missionText', missionVision.mission)}
               </p>
               <p className="text-base text-charcoal-600/70 leading-relaxed mb-6">
-                {missionVision.vision}
+                {t('pages.about.visionText', missionVision.vision)}
               </p>
               <Link
                 to="/about/mission"
@@ -53,17 +53,21 @@ export default function AboutPage() {
             <div className="bg-cream-200/40 rounded-2xl p-6 md:p-8">
               <h3 className="font-serif text-lg text-charcoal-700 mb-4">{t('pages.about.ourCoreValues')}</h3>
               <div className="space-y-4">
-                {missionVision.values.slice(0, 4).map((v) => (
+                {(() => {
+                  const i18nValues = t('pages.about.values', { returnObjects: true }) as Array<{title: string; description: string}> | string;
+                  const vals = Array.isArray(i18nValues) ? i18nValues : [];
+                  return missionVision.values.slice(0, 4).map((v, idx) => (
                   <div key={v.title} className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-emerald-800/8 flex items-center justify-center shrink-0 mt-0.5">
                       <i className={`${v.icon} text-emerald-800 text-sm`} />
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-charcoal-700">{v.title}</h4>
-                      <p className="text-xs text-charcoal-600/60 leading-relaxed mt-0.5">{v.description}</p>
+                      <h4 className="text-sm font-semibold text-charcoal-700">{vals[idx]?.title || v.title}</h4>
+                      <p className="text-xs text-charcoal-600/60 leading-relaxed mt-0.5">{vals[idx]?.description || v.description}</p>
                     </div>
                   </div>
-                ))}
+                ));
+                })()}
               </div>
               <Link
                 to="/about/mission"
@@ -122,7 +126,10 @@ export default function AboutPage() {
           <div className="relative">
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-emerald-800/15 md:-translate-x-px" />
             <div className="space-y-10 md:space-y-14">
-              {aboutTimeline.map((item, idx) => (
+              {(() => {
+                const i18nTimeline = t('pages.about.timeline', { returnObjects: true }) as Array<{title: string; description: string}> | string;
+                const tl = Array.isArray(i18nTimeline) ? i18nTimeline : [];
+                return aboutTimeline.map((item, idx) => (
                 <div
                   key={item.year}
                   className={`relative flex flex-col md:flex-row items-start gap-6 md:gap-10 ${
@@ -139,12 +146,13 @@ export default function AboutPage() {
                         </span>
                       )}
                     </div>
-                    <h3 className="font-serif text-lg font-medium text-charcoal-700 mb-2">{item.title}</h3>
-                    <p className="text-sm text-charcoal-600/60 leading-relaxed">{item.description}</p>
+                    <h3 className="font-serif text-lg font-medium text-charcoal-700 mb-2">{tl[idx]?.title || item.title}</h3>
+                    <p className="text-sm text-charcoal-600/60 leading-relaxed">{tl[idx]?.description || item.description}</p>
                   </div>
                   <div className="hidden md:block md:w-1/2" />
                 </div>
-              ))}
+              ));
+              })()}
             </div>
           </div>
         </div>

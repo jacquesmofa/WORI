@@ -4,8 +4,9 @@ import { useTranslation } from 'react-i18next';
 
 export default function AnnualReportsPage() {
   const { t } = useTranslation();
-  const pdfUrl = 'https://drive.google.com/uc?export=download&id=1rktOxTQlT8KGbzesyAr_47MYROihlUOJ';
-  const googleViewerUrl = 'https://drive.google.com/uc?export=view&id=1rktOxTQlT8KGbzesyAr_47MYROihlUOJ';
+  const pdfUrl = 'https://drive.google.com/uc?export=download&id=1Nd6W_BpCOe8UU_rOouasdAN6aL08sV5c';
+  const googlePreviewUrl = 'https://drive.google.com/file/d/1Nd6W_BpCOe8UU_rOouasdAN6aL08sV5c/preview';
+  const stats: { label: string; value: string }[] = t('pages.annualReports.stats', { returnObjects: true }) as { label: string; value: string }[] || [];
 
   return (
     <PageLayout
@@ -13,9 +14,8 @@ export default function AnnualReportsPage() {
       subtitle={t('pages.annualReports.subtitle')}
       bgImage="https://res.cloudinary.com/oqdvximy/image/upload/f_auto,q_auto,e_improve/v1784298421/wori-awards-10-2048x1365_zzvzlm.jpg"
       breadcrumb={[
-        { label: 'Home', path: '/' },
-        { label: 'About & Governance', path: '/about' },
-        { label: 'Annual Reports & Financials' },
+        { label: t('pages.annualReports.breadcrumb1'), path: '/about' },
+        { label: t('pages.annualReports.breadcrumb2') },
       ]}
       seo={{
         title: 'Annual Reports & Financials | WORI Transparency',
@@ -30,21 +30,17 @@ export default function AnnualReportsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
             <div className="lg:col-span-1">
               <span className="inline-block px-3 py-1 rounded-full border border-gold-500/40 text-xs font-medium text-gold-600 uppercase tracking-wider mb-4">
-                Accountability
+                {t('pages.annualReports.accountability')}
               </span>
               <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 leading-tight mb-4">
-                Radical Transparency
+                {t('pages.annualReports.radicalTransparency')}
               </h2>
               <p className="text-sm text-charcoal-600/60 leading-relaxed">
-                As a registered Canadian charity (CRN: 748873338RR0001), WORI is committed to the highest standards of financial accountability.
+                {t('pages.annualReports.radicalTransparencyDesc')}
               </p>
             </div>
             <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {[
-                { label: 'Program Spending', value: '86%' },
-                { label: 'Audited Since', value: '2012' },
-                { label: 'T3010 Filed', value: 'Annually' },
-              ].map((stat) => (
+              {stats.map((stat) => (
                 <div
                   key={stat.label}
                   className="bg-cream-200/40 rounded-xl p-4 text-center border border-cream-300/40"
@@ -63,10 +59,10 @@ export default function AnnualReportsPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-3">
-              WORI Report 2020-2022
+              {t('pages.annualReports.reportTitle')}
             </h2>
             <p className="text-sm text-charcoal-600/60 max-w-xl mx-auto">
-              Our comprehensive report covering organizational activities, financial statements, and impact from 2020 through 2022.
+              {t('pages.annualReports.reportDesc')}
             </p>
           </div>
 
@@ -79,10 +75,10 @@ export default function AnnualReportsPage() {
                 className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-xs font-semibold rounded-full transition-all whitespace-nowrap cursor-pointer"
               >
                 <i className="ri-download-line" />
-                Download PDF
+                {t('pages.annualReports.downloadPDF')}
               </a>
               <span className="text-xs text-charcoal-600/50">
-                Use browser controls (Ctrl + / Ctrl -) to zoom in and out of the document
+                {t('pages.annualReports.browserControls')}
               </span>
             </div>
           </div>
@@ -91,7 +87,7 @@ export default function AnnualReportsPage() {
           <div className="rounded-2xl overflow-hidden border border-cream-300/50 bg-white">
             <div className="relative" style={{ height: '850px' }}>
               <iframe
-                src={googleViewerUrl}
+                src={googlePreviewUrl}
                 title="WORI Report 2020-2022"
                 width="100%"
                 height="100%"
@@ -108,7 +104,7 @@ export default function AnnualReportsPage() {
               className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all whitespace-nowrap"
             >
               <i className="ri-mail-line" />
-              Request a Copy by Email
+              {t('pages.annualReports.requestCopy')}
             </a>
           </div>
         </div>
@@ -118,16 +114,16 @@ export default function AnnualReportsPage() {
       <section className="px-6 lg:px-10 py-14 md:py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-4">
-            Have Questions About Our Finances?
+            {t('pages.annualReports.haveQuestions')}
           </h2>
           <p className="text-sm text-charcoal-600/60 mb-6 max-w-xl mx-auto">
-            We welcome donor and stakeholder inquiries about our financial stewardship.
+            {t('pages.annualReports.financialStewardship')}
           </p>
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-cream-100 text-sm font-semibold rounded-full transition-all whitespace-nowrap"
           >
-            Contact Us
+            {t('pages.annualReports.contactUs')}
             <i className="ri-arrow-right-line" />
           </Link>
         </div>

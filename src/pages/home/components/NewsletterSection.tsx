@@ -1,6 +1,9 @@
 import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
+const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
+const WEB3FORMS_KEY = '383b7ca6-d26f-4508-87d5-99a05e4d1282';
+
 export default function NewsletterSection() {
   const { t } = useTranslation();
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -24,37 +27,28 @@ export default function NewsletterSection() {
     setStatus('loading');
     setErrorMsg('');
 
-    const params = new URLSearchParams();
-    params.append('access_key', '383b7ca6-d26f-4508-87d5-99a05e4d1282');
-    params.append('subject', 'New Newsletter Subscription');
-    params.append('from_name', 'WORI Newsletter');
-    data.forEach((val, key) => {
-      if (key !== 'website_alt' && typeof val === 'string') {
-        params.append(key, val);
-      }
-    });
+    const payload: Record<string, string> = {
+      access_key: WEB3FORMS_KEY,
+      email: emailVal,
+      subject: 'New Newsletter Subscription - WORI',
+      from_name: 'WORI Newsletter',
+    };
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch(WEB3FORMS_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: params.toString(),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       });
 
-      const responseText = await response.text();
-      let parsed: { success?: boolean; message?: string } = {};
-      try {
-        parsed = JSON.parse(responseText);
-      } catch {
-        parsed = {};
-      }
+      const result: { success?: boolean; message?: string } = await response.json();
 
-      if (response.ok && parsed?.success) {
+      if (response.ok && result.success) {
         setStatus('success');
         formRef.current?.reset();
       } else {
         setStatus('error');
-        setErrorMsg(parsed?.message || t('newsletter.somethingWrong'));
+        setErrorMsg(result.message || t('newsletter.somethingWrong'));
       }
     } catch {
       setStatus('error');
