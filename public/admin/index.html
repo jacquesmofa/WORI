@@ -11,7 +11,6 @@
         margin: 0;
         padding: 0;
       }
-      /* Override Decap CMS to match WORI warm tones */
       :root {
         --primary-color: #C0392B;
         --accent-color: #D4A76A;
@@ -30,13 +29,78 @@
       .css-1vyrqgv-ToolbarButton-button-button-default-default-enabled-enabled-active {
         background-color: #A93226 !important;
       }
-      /* Muted background for sidebar */
-      .css-1w2vgp6-SidebarContainerContainer, .css-2btsgj-SidebarContainerContainer {
+      .css-2btsgj-SidebarContainerContainer, .css-1w2vgp6-SidebarContainerContainer {
         background-color: #F5EDE3 !important;
       }
+
+      /* Loading state */
+      #cms-loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        color: #C0392B;
+        font-size: 18px;
+        background: #FDF8F3;
+      }
+      #cms-loading .spinner {
+        width: 24px;
+        height: 24px;
+        border: 3px solid #F5EDE3;
+        border-top: 3px solid #C0392B;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin-right: 12px;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
     </style>
+
+    <script>
+      // Prevent auto-init — we'll load config manually to bypass all caching
+      window.CMS_MANUAL_INIT = true;
+    </script>
   </head>
   <body>
+    <div id="cms-loading">
+      <div class="spinner"></div>
+      <span>Loading CMS...</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <script>
+      (async function() {
+        try {
+          // Force fresh config fetch with cache busting
+          const configUrl = '/admin/config.yml?v=' + Date.now();
+          const response = await fetch(configUrl, { cache: 'no-store' });
+
+          if (!response.ok) {
+            throw new Error('Failed to load config: ' + response.status);
+          }
+
+          const yamlText = await response.text();
+          const config = jsyaml.load(yamlText);
+
+          // Register CMS and init
+          const { CMS } = window;
+          CMS.init({ config });
+
+          // Remove loading indicator
+          const loading = document.getElementById('cms-loading');
+          if (loading) loading.remove();
+        } catch (err) {
+          const loading = document.getElementById('cms-loading');
+          if (loading) {
+            loading.innerHTML = '<span style="color:#C0392B;">Failed to load CMS config. Please try refreshing the page (Ctrl+Shift+R).</span>';
+          }
+          console.error('CMS init error:', err);
+        }
+      })();
+    </script>
   </body>
 </html>
