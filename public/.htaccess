@@ -3,6 +3,9 @@ DirectoryIndex index.html
 RewriteEngine On
 RewriteBase /
 
+# ── API: Route admin save requests to PHP backend ──
+RewriteRule ^api/save-content$ /api/save-content.php [L]
+
 # Force HTTPS (uncomment on production if SSL is active)
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
