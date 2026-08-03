@@ -5,14 +5,23 @@
  * Handles saving site content changes from the admin dashboard
  * by committing directly to the GitHub repository.
  * 
- * SETUP: Replace the two values below with your actual credentials.
+ * CREDENTIALS: Stored in config.local.php (never overwritten by deploys).
+ * If config.local.php doesn't exist yet, copy config.local.example.php,
+ * rename it, fill in your real credentials, and upload it to cPanel.
  */
- 
+
 // ──────────────────────────────────────────────
-// CONFIGURE THESE TWO VALUES
+// Load credentials from config.local.php
 // ──────────────────────────────────────────────
-$GITHUB_TOKEN = 'PASTE_YOUR_GITHUB_TOKEN_HERE';      // Your GitHub Personal Access Token
-$ADMIN_PASSWORD = 'CHOOSE_A_STRONG_PASSWORD_HERE';    // Staff will use this to log into /admin
+$CONFIG_FILE = __DIR__ . '/config.local.php';
+
+if (file_exists($CONFIG_FILE)) {
+    require_once $CONFIG_FILE;
+} else {
+    // No config file found — use placeholders (will fail with a helpful error)
+    $GITHUB_TOKEN   = '';
+    $ADMIN_PASSWORD = '';
+}
 // ──────────────────────────────────────────────
 
 // Only accept POST requests
@@ -32,9 +41,19 @@ if (!$payload) {
     exit;
 }
 
+// Check if server is configured
+if (empty($GITHUB_TOKEN) || empty($ADMIN_PASSWORD)) {
+    http_response_code(500);
+    echo json_encode([
+        'error' => 'Server not configured.',
+        'details' => 'The config.local.php file is missing or empty. Please create it on your cPanel server — see config.local.example.php for instructions.'
+    ]);
+    exit;
+}
+
 // Validate password
 $password = isset($payload['password']) ? $payload['password'] : '';
-if (empty($ADMIN_PASSWORD) || $password !== $ADMIN_PASSWORD) {
+if ($password !== $ADMIN_PASSWORD) {
     http_response_code(401);
     echo json_encode(['error' => 'Unauthorized. Invalid admin password.']);
     exit;
@@ -48,12 +67,6 @@ $updatedContent = isset($payload['updatedContent']) ? $payload['updatedContent']
 if (empty($repoOwner) || empty($repoName) || !$updatedContent) {
     http_response_code(400);
     echo json_encode(['error' => 'Missing required fields: repoOwner, repoName, updatedContent.']);
-    exit;
-}
-
-if (empty($GITHUB_TOKEN) || $GITHUB_TOKEN === 'PASTE_YOUR_GITHUB_TOKEN_HERE') {
-    http_response_code(500);
-    echo json_encode(['error' => 'Server not configured. GitHub token is missing.']);
     exit;
 }
 

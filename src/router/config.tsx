@@ -1,48 +1,51 @@
+import { lazy } from "react";
 import type { RouteObject } from "react-router-dom";
 import NotFound from "../pages/NotFound";
-import Home from "../pages/home/page";
-import AdminPage from "../pages/admin/page";
+
+// ── Lazy-loaded page imports (code-split each route) ──
+const Home = lazy(() => import("../pages/home/page"));
+const AdminPage = lazy(() => import("../pages/admin/page"));
 
 // About & Governance
-import AboutPage from "../pages/about/page";
-import MissionPage from "../pages/about/mission/page";
-import ExecutiveDirectorPage from "../pages/about/executive-director/page";
-import BoardPage from "../pages/about/board/page";
-import AnnualReportsPage from "../pages/about/annual-reports/page";
+const AboutPage = lazy(() => import("../pages/about/page"));
+const MissionPage = lazy(() => import("../pages/about/mission/page"));
+const ExecutiveDirectorPage = lazy(() => import("../pages/about/executive-director/page"));
+const BoardPage = lazy(() => import("../pages/about/board/page"));
+const AnnualReportsPage = lazy(() => import("../pages/about/annual-reports/page"));
 
 // Settlement & Resources
-import SettlementPage from "../pages/services/settlement/page";
-import IrccPage from "../pages/services/ircc/page";
-import LanguageMentorshipPage from "../pages/services/language-mentorship/page";
-import PrivateSponsorshipPage from "../pages/services/private-sponsorship/page";
-import LanguageServicesPage from "../pages/services/language-services/page";
+const SettlementPage = lazy(() => import("../pages/services/settlement/page"));
+const IrccPage = lazy(() => import("../pages/services/ircc/page"));
+const LanguageMentorshipPage = lazy(() => import("../pages/services/language-mentorship/page"));
+const PrivateSponsorshipPage = lazy(() => import("../pages/services/private-sponsorship/page"));
+const LanguageServicesPage = lazy(() => import("../pages/services/language-services/page"));
 
 // Wellbeing & Empowerment
-import MentalHealthPage from "../pages/services/mental-health/page";
-import EmploymentPage from "../pages/services/employment/page";
-import HousingPage from "../pages/services/housing/page";
-import WomenEmpowermentPage from "../pages/services/women-empowerment/page";
-import SeniorsPage from "../pages/services/seniors/page";
-import FoodSecurityPage from "../pages/services/food-security/page";
-import YouthPage from "../pages/services/youth/page";
-import CommunityEngagementPage from "../pages/services/community-engagement/page";
+const MentalHealthPage = lazy(() => import("../pages/services/mental-health/page"));
+const EmploymentPage = lazy(() => import("../pages/services/employment/page"));
+const HousingPage = lazy(() => import("../pages/services/housing/page"));
+const WomenEmpowermentPage = lazy(() => import("../pages/services/women-empowerment/page"));
+const SeniorsPage = lazy(() => import("../pages/services/seniors/page"));
+const FoodSecurityPage = lazy(() => import("../pages/services/food-security/page"));
+const YouthPage = lazy(() => import("../pages/services/youth/page"));
+const CommunityEngagementPage = lazy(() => import("../pages/services/community-engagement/page"));
 
 // Action & Information
-import DonatePage from "../pages/donate/page";
-import CrisisCenterPage from "../pages/crisis-center/page";
-import NewsPage from "../pages/news/page";
-import NewsDetailPage from "../pages/news/detail/page";
-import PartnersPage from "../pages/partners/page";
-import ContactPage from "../pages/contact/page";
-import VolunteerPage from "../pages/volunteer/page";
-import EventsPage from "../pages/events/page";
-import ProgramsServicesPage from "../pages/services/page";
-import BookingPage from "../pages/booking/page";
+const DonatePage = lazy(() => import("../pages/donate/page"));
+const CrisisCenterPage = lazy(() => import("../pages/crisis-center/page"));
+const NewsPage = lazy(() => import("../pages/news/page"));
+const NewsDetailPage = lazy(() => import("../pages/news/detail/page"));
+const PartnersPage = lazy(() => import("../pages/partners/page"));
+const ContactPage = lazy(() => import("../pages/contact/page"));
+const VolunteerPage = lazy(() => import("../pages/volunteer/page"));
+const EventsPage = lazy(() => import("../pages/events/page"));
+const ProgramsServicesPage = lazy(() => import("../pages/services/page"));
+const BookingPage = lazy(() => import("../pages/booking/page"));
 
 // Legal
-import PrivacyPage from "../pages/privacy/page";
-import TermsPage from "../pages/terms/page";
-import AccessibilityPage from "../pages/accessibility/page";
+const PrivacyPage = lazy(() => import("../pages/privacy/page"));
+const TermsPage = lazy(() => import("../pages/terms/page"));
+const AccessibilityPage = lazy(() => import("../pages/accessibility/page"));
 
 const routes: RouteObject[] = [
   { path: "/", element: <Home /> },

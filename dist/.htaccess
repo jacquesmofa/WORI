@@ -3,6 +3,11 @@ DirectoryIndex index.html
 RewriteEngine On
 RewriteBase /
 
+# ── Security: Block access to config files ──
+<FilesMatch "config\.local\.php$">
+  Require all denied
+</FilesMatch>
+
 # ── API: Route admin save requests to PHP backend ──
 RewriteRule ^api/save-content$ /api/save-content.php [L]
 
