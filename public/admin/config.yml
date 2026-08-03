@@ -2,7 +2,7 @@ backend:
   name: github
   repo: jacquesmofa/WORI
   branch: main
-  auth_type: pkce
+  base_url: https://wori-cms-auth.woriwadikaja.workers.dev
 
 media_folder: "public/images"
 public_folder: "/images"
