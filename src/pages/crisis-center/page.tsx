@@ -1,10 +1,24 @@
 import PageLayout from '@/components/feature/PageLayout';
-import { crisisData } from '@/mocks/pagesData';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 export default function CrisisCenterPage() {
   const { t } = useTranslation();
+
+  const resourceCards = [
+    { title: t('pages.crisis.resourceHousingTitle'), description: t('pages.crisis.resourceHousingDesc'), contact: '1-800-WORI-SAFE', icon: 'ri-home-heart-line' },
+    { title: t('pages.crisis.resourceMentalHealthTitle'), description: t('pages.crisis.resourceMentalHealthDesc'), contact: '1-800-WORI-CARE', icon: 'ri-mental-health-line' },
+    { title: t('pages.crisis.resourceLegalTitle'), description: t('pages.crisis.resourceLegalDesc'), contact: 'legal@wori.org', icon: 'ri-scales-3-line' },
+    { title: t('pages.crisis.resourceFoodTitle'), description: t('pages.crisis.resourceFoodDesc'), contact: 'food@wori.org', icon: 'ri-restaurant-2-line' },
+  ];
+
+  const waysToHelp = [
+    t('pages.crisis.helpWay1'),
+    t('pages.crisis.helpWay2'),
+    t('pages.crisis.helpWay3'),
+    t('pages.crisis.helpWay4'),
+  ];
+
   return (
     <PageLayout
       title={t('pages.crisis.title')}
@@ -30,14 +44,14 @@ export default function CrisisCenterPage() {
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                   <span className="text-xs font-semibold text-red-400 uppercase tracking-wider">
-                    Active Crisis — {crisisData.activeCrisis.date}
+                    {t('pages.crisis.activeCrisis')} — {t('pages.crisis.sudanDate')}
                   </span>
                 </div>
                 <h2 className="font-serif text-2xl md:text-3xl text-cream-100 mb-4">
-                  {crisisData.activeCrisis.title}
+                  {t('pages.crisis.sudanTitle')}
                 </h2>
                 <p className="text-sm md:text-base text-cream-100/70 leading-relaxed mb-6">
-                  {crisisData.activeCrisis.description}
+                  {t('pages.crisis.sudanDescription')}
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link
@@ -76,7 +90,7 @@ export default function CrisisCenterPage() {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {crisisData.resources.map((resource) => (
+            {resourceCards.map((resource) => (
               <div
                 key={resource.title}
                 className="bg-cream-100 rounded-2xl p-6 border border-cream-300/50 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-900/5"
@@ -105,7 +119,7 @@ export default function CrisisCenterPage() {
                 {t('pages.crisis.howToHelp')}
               </h2>
               <div className="space-y-4">
-                {crisisData.waysToHelp.map((way, idx) => (
+                {waysToHelp.map((way, idx) => (
                   <div key={idx} className="flex items-start gap-3">
                     <div className="w-7 h-7 rounded-full bg-gold-500/15 flex items-center justify-center shrink-0 mt-0.5">
                       <span className="text-xs font-bold text-gold-600">{idx + 1}</span>

@@ -17,14 +17,14 @@ const serviceSectionImages: Record<string, string[]> = {
   settlement: [
     `${CLD}/v1785638951/nicole-geri-gMJ3tFOLvnA-unsplash_tt0jlz.jpg`,
     `${CLD}/v1785638971/oxana-melis-xXS03_k8yc0-unsplash_ikhhhv.jpg`,
-    `${CLD}/v1785638985/dillon-kydd-2F92872IMCs-unsplash_tt7wn6.jpg`,
-    `${CLD}/v1785639003/brian-zhu-0IM71KfH3mo-unsplash_kjdnlb.jpg`,
+    `${CLD}/v1784295066/IMG-20201006-WA0160_qnnfyq.jpg`,
+    `${CLD}/v1784295065/IMG-20201006-WA0157_uswbal.jpg`,
     `${CLD}/v1785638937/vitaly-gariev-tw-mAZXr6H4-unsplash_gq8lsz.jpg`,
   ],
   ircc: [
     `${CLD}/v1785638951/jason-hafso-C2keINMOhIE-unsplash_a9ntcy.jpg`,
     `${CLD}/v1785638977/tom-carnegie-7k294YFeVbI-unsplash_iykt9w.jpg`,
-    `${CLD}/v1785639005/eduard-pretsi-ops8lDcAwVo-unsplash_sa0zry.jpg`,
+    `${CLD}/v1784295066/IMG-20201006-WA0164_zlk7c8.jpg`,
     `${CLD}/v1785639010/small-group-network-bxiOjnbjRM0-unsplash_fq1izu.jpg`,
   ],
   'language-mentorship': [
@@ -35,10 +35,10 @@ const serviceSectionImages: Record<string, string[]> = {
     `${CLD}/v1785638963/ling-app-KGS_h4GnlbI-unsplash_vhotdj.jpg`,
   ],
   'private-sponsorship': [
-    `${CLD}/v1785638937/vitaly-gariev-tw-mAZXr6H4-unsplash_gq8lsz.jpg`,
-    `${CLD}/v1785638954/francis-odeyemi-ZendTXpyTeU-unsplash_wnr2sl.jpg`,
-    `${CLD}/v1785638957/vitaly-gariev-_Am5E9vcsu8-unsplash_k5b2mz.jpg`,
-    `${CLD}/v1785638961/sarah-b-ifO_r0SxGX4-unsplash_e4c2g0.jpg`,
+    `${CLD}/v1784649540/Arrived-Refugee-Photos-page-003_pw0kaj.jpg`,
+    `${CLD}/v1784649547/Arrived-Refugee-Photos-page-006_jqrq1l.jpg`,
+    `${CLD}/v1784649688/Day23_img28_jqixge.jpg`,
+    `${CLD}/v1784649557/Arrived-Refugee-Photos-page-010_cq79yl.jpg`,
   ],
   'language-services': [
     `${CLD}/v1785638932/ling-app-TFtIBULUMP0-unsplash_xq7dn3.jpg`,
@@ -49,7 +49,7 @@ const serviceSectionImages: Record<string, string[]> = {
   'mental-health': [
     `${CLD}/v1785638972/marcel-strauss-fzqxoFJytiE-unsplash_xgiusw.jpg`,
     `${CLD}/v1785638966/vitaly-gariev-qgK7izTlg5g-unsplash_dgkfxm.jpg`,
-    `${CLD}/v1785638940/total-shape-Ianw4RdVuoo-unsplash_utmqa9.jpg`,
+    `${CLD}/v1784648575/yoga-session-img4_lta5mx.jpg`,
     `${CLD}/v1785638941/vitaly-gariev-k-sCcKy6ED4-unsplash_aqaqi7.jpg`,
     `${CLD}/v1785638937/vitaly-gariev-tw-mAZXr6H4-unsplash_gq8lsz.jpg`,
   ],
@@ -72,7 +72,7 @@ const serviceSectionImages: Record<string, string[]> = {
     `${CLD}/v1785638965/budka-damdinsuren-UZ4x1O4IXz4-unsplash_jm71uu.jpg`,
   ],
   seniors: [
-    `${CLD}/v1785638946/vitaly-gariev-XcHGzdXaLX0-unsplash_sl641t.jpg`,
+    `${CLD}/v1784295062/IMG-20201006-WA0129_zvwbq1.jpg`,
     `${CLD}/v1785638980/age-cymru-D394dKgOjec-unsplash_nut9ay.jpg`,
     `${CLD}/v1785638993/vlad-sargu-ItphH2lGzuI-unsplash_k4rgxm.jpg`,
     `${CLD}/v1785638943/tan-duong-cAJHIdijOmY-unsplash_j0ioal.jpg`,
@@ -90,10 +90,10 @@ const serviceSectionImages: Record<string, string[]> = {
     `${CLD}/v1785639007/cybele-and-bevan-_zHU5J8aJ1E-unsplash_s6kbgu.jpg`,
   ],
   'community-engagement': [
-    `${CLD}/v1785638934/camylla-battani-ABVE1cyT7hk-unsplash_mhoh6f.jpg`,
+    `${CLD}/v1784650902/WK-70_crjx7w.jpg`,
     `${CLD}/v1785638945/markus-spiske-cMR8Wc64vqU-unsplash_ajijhl.jpg`,
     `${CLD}/v1785638943/amir-mortezaie-8C11i8fqEdY-unsplash_jpxjz4.jpg`,
-    `${CLD}/v1785638997/kamil-kalkan-BTpIUnszs_Q-unsplash_xcy4cz.jpg`,
+    `${CLD}/v1784650905/WK-71_a2gtfi.jpg`,
   ],
 };
 
@@ -150,27 +150,29 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
     'community-engagement': '/services/community-engagement',
   };
 
-  const heroTitle = t(`pages.services.${serviceKey}.heroTitle`) !== `pages.services.${serviceKey}.heroTitle`
-    ? t(`pages.services.${serviceKey}.heroTitle`)
-    : data.heroTitle;
-  const heroSubtitle = t(`pages.services.${serviceKey}.heroSubtitle`) !== `pages.services.${serviceKey}.heroSubtitle`
-    ? t(`pages.services.${serviceKey}.heroSubtitle`)
-    : data.heroSubtitle;
+  const tryT = (key: string, altKey: string, fallback: string) => {
+    const direct = t(key);
+    if (direct !== key) return direct;
+    const alt = t(altKey);
+    if (alt !== altKey) return alt;
+    return fallback;
+  };
+  const tryCommon = (key: string, fallback: string) => {
+    const direct = t(key);
+    if (direct !== key) return direct;
+    return fallback;
+  };
+  const heroTitle = tryT(`pages.services.${serviceKey}.heroTitle`, `pages.services.common.${serviceKey}.heroTitle`, data.heroTitle);
+  const heroSubtitle = tryT(`pages.services.${serviceKey}.heroSubtitle`, `pages.services.common.${serviceKey}.heroSubtitle`, data.heroSubtitle);
 
   const sectionTitle = (idx: number, fallback: string) => {
-    const key = `pages.services.${serviceKey}.sections.${idx}.title`;
-    const translated = t(key);
-    return translated !== key ? translated : fallback;
+    return tryT(`pages.services.common.${serviceKey}.sections.${idx}.title`, `pages.services.${serviceKey}.sections.${idx}.title`, fallback);
   };
   const sectionDesc = (idx: number, fallback: string) => {
-    const key = `pages.services.${serviceKey}.sections.${idx}.description`;
-    const translated = t(key);
-    return translated !== key ? translated : fallback;
+    return tryT(`pages.services.common.${serviceKey}.sections.${idx}.description`, `pages.services.${serviceKey}.sections.${idx}.description`, fallback);
   };
   const ctaLabel = () => {
-    const key = `pages.services.${serviceKey}.ctaLabel`;
-    const translated = t(key);
-    return translated !== key ? translated : data.cta.label;
+    return tryT(`pages.services.common.${serviceKey}.ctaLabel`, `pages.services.${serviceKey}.ctaLabel`, data.cta.label);
   };
 
   const pageTitle = seoTitle || heroTitle;
@@ -200,7 +202,13 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
           {/* Extra Resource Buttons (e.g. IRCC) */}
           {data.extraButtons && data.extraButtons.length > 0 && (
             <div className="flex flex-wrap gap-4 mb-14">
-              {data.extraButtons.map((btn) => (
+              {data.extraButtons.map((btn, btnIdx) => {
+                const btnKey = `pages.services.${serviceKey}.extraButtons.${btnIdx}`;
+                const btnAltKey = `pages.services.common.${serviceKey}.extraButtons.${btnIdx}`;
+                const btnDirect = t(btnKey);
+                const btnAlt = t(btnAltKey);
+                const btnLabel = btnDirect !== btnKey ? btnDirect : (btnAlt !== btnAltKey ? btnAlt : btn.label);
+                return (
                 <a
                   key={btn.label}
                   href={btn.href}
@@ -211,10 +219,11 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
                     backgroundSize: '200% auto',
                   }}
                 >
-                  <span className="relative z-10">{btn.label}</span>
+                  <span className="relative z-10">{btnLabel}</span>
                   <i className={`${btn.external ? 'ri-external-link-line' : 'ri-arrow-right-line'} relative z-10`} />
                 </a>
-              ))}
+                );
+              })}
             </div>
           )}
 
@@ -264,11 +273,11 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
                   <i className="ri-user-star-line text-gold-600 text-lg" />
                 </div>
                 <h3 className="font-serif text-xl text-charcoal-700">
-                  {t('pages.services.common.eligibility')}
+                  {tryCommon('pages.services.common.eligibility', 'Who Is Eligible')}
                 </h3>
               </div>
               <p className="text-sm text-charcoal-600/70 leading-relaxed mb-6">
-                {t('pages.services.common.eligibilityDesc')}
+                {tryCommon('pages.services.common.eligibilityDesc', 'Services are open to all newcomers regardless of immigration status, country of origin, or length of time in Canada.')}
               </p>
               <ul className="space-y-3">
                 {[0, 1, 2, 3, 4, 5].map((idx) => {
@@ -298,15 +307,15 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
                   <i className="ri-guide-line text-emerald-800 text-lg" />
                 </div>
                 <h3 className="font-serif text-xl text-charcoal-700">
-                  {t('pages.services.common.intakeProcess')}
+                  {tryCommon('pages.services.common.intakeProcess', 'Intake Process')}
                 </h3>
               </div>
               <div className="space-y-4">
                 {[
-                  { step: '01', title: t('pages.services.common.step1Title'), desc: t('pages.services.common.step1Desc'), icon: 'ri-phone-line' },
-                  { step: '02', title: t('pages.services.common.step2Title'), desc: t('pages.services.common.step2Desc'), icon: 'ri-clipboard-line' },
-                  { step: '03', title: t('pages.services.common.step3Title'), desc: t('pages.services.common.step3Desc'), icon: 'ri-links-line' },
-                  { step: '04', title: t('pages.services.common.step4Title'), desc: t('pages.services.common.step4Desc'), icon: 'ri-heart-pulse-line' },
+                  { step: '01', title: tryCommon('pages.services.common.step1Title', 'Initial Contact'), desc: tryCommon('pages.services.common.step1Desc', 'Call, email, or visit our office. Our multilingual intake team will respond within 24 hours.'), icon: 'ri-phone-line' },
+                  { step: '02', title: tryCommon('pages.services.common.step2Title', 'Needs Assessment'), desc: tryCommon('pages.services.common.step2Desc', 'A settlement worker will conduct a confidential needs assessment to identify your priorities.'), icon: 'ri-clipboard-line' },
+                  { step: '03', title: tryCommon('pages.services.common.step3Title', 'Service Matching'), desc: tryCommon('pages.services.common.step3Desc', 'You will be matched with the appropriate program and a dedicated case worker.'), icon: 'ri-links-line' },
+                  { step: '04', title: tryCommon('pages.services.common.step4Title', 'Ongoing Support'), desc: tryCommon('pages.services.common.step4Desc', 'Receive continuous support with regular check-ins and access to additional services as needed.'), icon: 'ri-heart-pulse-line' },
                 ].map((item) => (
                   <div key={item.step} className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-cream-200/50 flex items-center justify-center shrink-0 border border-cream-300/40">
@@ -324,7 +333,7 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
                   to="/contact"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-800 hover:text-emerald-700 transition-colors"
                 >
-                      {t('pages.services.common.connect')} <i className="ri-arrow-right-line" />
+                      {tryCommon('pages.services.common.connect', 'Connect with Us')} <i className="ri-arrow-right-line" />
                 </Link>
               </div>
             </div>
@@ -336,10 +345,10 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
       <section className="px-6 lg:px-10 py-14 md:py-20 bg-cream-200/30">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-2xl md:text-3xl font-medium text-charcoal-700 mb-4">
-            {t('pages.services.common.readyToStep')}
+            {tryCommon('pages.services.common.readyToStep', 'Ready to Take the Next Step?')}
           </h2>
           <p className="text-sm text-charcoal-600/60 mb-8 max-w-xl mx-auto leading-relaxed">
-            {t('pages.services.common.readyToStepDesc')}
+            {tryCommon('pages.services.common.readyToStepDesc', 'Whether you are seeking services, volunteering, or partnering with WORI, we are here to connect.')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
@@ -353,7 +362,7 @@ export default function ServicePage({ serviceKey, seoTitle, seoDescription }: Se
               to="/services"
               className="inline-flex items-center gap-2 px-7 py-3.5 border border-charcoal-700/15 hover:border-charcoal-700/40 text-charcoal-700 text-sm font-medium rounded-full transition-all"
             >
-              {t('pages.services.common.viewAllServices')}
+              {tryCommon('pages.services.common.viewAllServices', 'View All Services')}
             </Link>
           </div>
         </div>
