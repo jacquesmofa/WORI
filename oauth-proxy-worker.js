@@ -5,6 +5,15 @@ const CLIENT_ID = 'Ov23liyEbX99XDmL4YpP';
 const CLIENT_SECRET = '9cc5c723df245f6aa093c1e4a691b052fcd972c1';
 const ORIGIN = 'https://wadikajaorganization.org';
 
+function corsHeaders() {
+  return {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Access-Control-Max-Age': '86400',
+  };
+}
+
 async function handleAuth(url) {
   const scope = url.searchParams.get('scope') || 'repo,user';
   const redirectUri = `${url.origin}/callback`;
@@ -20,7 +29,7 @@ async function handleCallback(url) {
   if (!code) {
     return new Response(
       '<p>Authorization failed — no code received. Please try again.</p>',
-      { status: 400, headers: { 'Content-Type': 'text/html' } }
+      { status: 400, headers: { 'Content-Type': 'text/html', ...corsHeaders() } }
     );
   }
 
@@ -35,7 +44,7 @@ async function handleCallback(url) {
   if (tokenData.error) {
     return new Response(
       `<p>GitHub error: ${tokenData.error_description || tokenData.error}</p>`,
-      { status: 400, headers: { 'Content-Type': 'text/html' } }
+      { status: 400, headers: { 'Content-Type': 'text/html', ...corsHeaders() } }
     );
   }
 
@@ -59,16 +68,35 @@ async function handleCallback(url) {
 </body>
 </html>`;
 
-  return new Response(html, { headers: { 'Content-Type': 'text/html' } });
+  return new Response(html, { headers: { 'Content-Type': 'text/html', ...corsHeaders() } });
 }
 
 export default {
   async fetch(request) {
     const { pathname } = new URL(request.url);
-    if (pathname === '/auth') return handleAuth(new URL(request.url));
-    if (pathname === '/callback') return handleCallback(new URL(request.url));
+
+    // Handle CORS preflight
+    if (request.method === 'OPTIONS') {
+      return new Response(null, { status: 204, headers: corsHeaders() });
+    }
+
+    if (pathname === '/auth') {
+      const response = await handleAuth(new URL(request.url));
+      // Clone the redirect so we can add CORS headers
+      const newResponse = new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: { ...Object.fromEntries(response.headers.entries()), ...corsHeaders() },
+      });
+      return newResponse;
+    }
+
+    if (pathname === '/callback') {
+      return handleCallback(new URL(request.url));
+    }
+
     return new Response('Decap CMS OAuth Proxy running.', {
-      headers: { 'Content-Type': 'text/plain' },
+      headers: { 'Content-Type': 'text/plain', ...corsHeaders() },
     });
   },
 };

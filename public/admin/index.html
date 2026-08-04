@@ -5,71 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <title>WORI Content Management Portal</title>
-
-    <style>
-      html, body { margin: 0; padding: 0; }
-      :root {
-        --primary-color: #C0392B;
-        --accent-color: #D4A76A;
-        --background-color: #FDF8F3;
-        --text-color: #2D2D2D;
-      }
-      [class*="css"],
-      .css-1a84c1p-MenuButtonButton,
-      .css-rjv3sd-AddButton-button-button,
-      .css-1io1vuu-PrimaryButton-Button-button-button-default-default-enabled-enabled,
-      .css-fngg5z-PrimaryButton-Button-button-button-default-default-enabled-enabled,
-      .css-1m1ktum-AddButton-button-button {
-        background-color: #C0392B !important;
-        color: #fff !important;
-      }
-      .css-1vyrqgv-ToolbarButton-button-button-default-default-enabled-enabled-active {
-        background-color: #A93226 !important;
-      }
-      .css-2btsgj-SidebarContainerContainer, .css-1w2vgp6-SidebarContainerContainer {
-        background-color: #F5EDE3 !important;
-      }
-      #cms-loading {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        color: #C0392B;
-        font-size: 18px;
-        background: #FDF8F3;
-      }
-      #cms-loading .spinner {
-        width: 24px;
-        height: 24px;
-        border: 3px solid #F5EDE3;
-        border-top: 3px solid #C0392B;
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
-        margin-right: 12px;
-      }
-      @keyframes spin { to { transform: rotate(360deg); } }
-    </style>
   </head>
   <body>
-    <div id="cms-loading">
-      <div class="spinner"></div>
-      <span>Loading CMS...</span>
-    </div>
-
-    <!-- Decap CMS v3+ with PKCE support — this is the key line -->
+    <!-- Decap CMS v3+ -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-    <script>
-      // Remove loading spinner once CMS mounts
-      var observer = new MutationObserver(function() {
-        if (document.querySelector('[class*="AppRoot"], [class*="CMSApp"]')) {
-          var loading = document.getElementById('cms-loading');
-          if (loading) loading.remove();
-          observer.disconnect();
-        }
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
-    </script>
   </body>
 </html>

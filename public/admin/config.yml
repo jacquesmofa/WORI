@@ -3,6 +3,7 @@ backend:
   repo: jacquesmofa/WORI
   branch: main
   base_url: https://wori-cms-auth.woriwadikaja.workers.dev
+  auth_endpoint: auth
 
 media_folder: "public/images"
 public_folder: "/images"
