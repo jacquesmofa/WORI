@@ -3,7 +3,6 @@
 
 const CLIENT_ID = 'Ov23liyEbX99XDmL4YpP';
 const CLIENT_SECRET = '9cc5c723df245f6aa093c1e4a691b052fcd972c1';
-const ORIGIN = 'https://wadikajaorganization.org';
 
 function corsHeaders() {
   return {
@@ -48,21 +47,21 @@ async function handleCallback(url) {
     );
   }
 
+  // Decap CMS expects: { token: "gho_xxxx" } posted to window.opener
   const html = `<!DOCTYPE html>
 <html>
 <head><meta charset="utf-8"><title>Authenticating…</title></head>
 <body>
 <p style="font-family:system-ui,sans-serif;text-align:center;margin-top:60px;font-size:16px;">
-  Authenticated! This window will close automatically.
+  Authenticated! Redirecting…
 </p>
 <script>
 (function(){
-  var token = ${JSON.stringify(tokenData)};
-  window.opener.postMessage(JSON.stringify({
-    type: 'authorization',
-    data: token
-  }), '${ORIGIN}');
-  setTimeout(function(){ window.close(); }, 600);
+  var accessToken = ${JSON.stringify(tokenData.access_token)};
+  if (window.opener) {
+    window.opener.postMessage({ token: accessToken }, '*');
+  }
+  setTimeout(function(){ window.close(); }, 300);
 })();
 </script>
 </body>
@@ -73,7 +72,8 @@ async function handleCallback(url) {
 
 export default {
   async fetch(request) {
-    const { pathname } = new URL(request.url);
+    const url = new URL(request.url);
+    const { pathname } = url;
 
     // Handle CORS preflight
     if (request.method === 'OPTIONS') {
@@ -81,18 +81,11 @@ export default {
     }
 
     if (pathname === '/auth') {
-      const response = await handleAuth(new URL(request.url));
-      // Clone the redirect so we can add CORS headers
-      const newResponse = new Response(response.body, {
-        status: response.status,
-        statusText: response.statusText,
-        headers: { ...Object.fromEntries(response.headers.entries()), ...corsHeaders() },
-      });
-      return newResponse;
+      return handleAuth(url);
     }
 
     if (pathname === '/callback') {
-      return handleCallback(new URL(request.url));
+      return handleCallback(url);
     }
 
     return new Response('Decap CMS OAuth Proxy running.', {
